@@ -1,3 +1,7 @@
+# Or run with a specific K value (e.g., K=5)
+#python3 src/solver/rodar_modelo.py results/parsed_data 5
+
+# In src/solver/rodar_modelo.py
 # arquivo: rodar_modelo.py
 
 import gurobipy as gp
@@ -160,21 +164,37 @@ def resolver_modelo_cobertura(E, S, K):
 # ==============================================================================
 
 if __name__ == "__main__":
-    E_path = "parsed_output/E_for_gurobi.pkl"
-    S_path = "parsed_output/S_for_gurobi.pkl"
+    # The script now expects the path to the parsed data directory as the first argument
+    # and the value of K as the second (optional) argument.
+    if len(sys.argv) < 2:
+        print("Erro: Forneça o caminho para o diretório com os arquivos pickle.")
+        print("Uso: python src/solver/rodar_modelo.py <diretorio_dos_dados> [K]")
+        sys.exit(1)
+
+    data_directory = sys.argv[1]
+    
+    E_path = os.path.join(data_directory, "E_for_gurobi.pkl")
+    S_path = os.path.join(data_directory, "S_for_gurobi.pkl")
 
     if not (os.path.exists(E_path) and os.path.exists(S_path)):
-        print("Erro: Arquivos pickle não encontrados. Rode antes: python parse_edges.py teste_dani.txt")
+        print(f"Erro: Arquivos pickle não encontrados nos caminhos esperados:")
+        print(f"  - {os.path.abspath(E_path)}")
+        print(f"  - {os.path.abspath(S_path)}")
+        print("\nRode o script de parse primeiro. Exemplo:")
+        print("python src/utils/parse_edges.py instances/my_testes/teste_dani.txt results/parsed_data")
         sys.exit(1)
 
     # Carregar os dados extraídos
+    print(f"Carregando arquivos de {os.path.abspath(data_directory)}...")
     with open(E_path, "rb") as f:
         E = pickle.load(f)
     with open(S_path, "rb") as f:
         S = pickle.load(f)
 
-    # Ler K da linha de comando (padrão = 3)
-    K = int(sys.argv[1]) if len(sys.argv) > 1 else 7
+    # Ler K da linha de comando (padrão = 7)
+    # K is now the second argument (index 2)
+    K = int(sys.argv[2]) if len(sys.argv) > 2 else 7
+    print(f"Usando K = {K}")
 
     # Resolver modelo
     caminhos_otimos = resolver_modelo_cobertura(E, S, K)

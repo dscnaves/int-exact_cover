@@ -1,4 +1,4 @@
-# Comando para fazer código rodar: python3 parse_edges.py teste_dani.txt
+# Comando para fazer código rodar: python3 src/solver/rodar_modelo.py results/parsed_data
 
 
 """
@@ -436,16 +436,17 @@ def preparar_E_S(grafo: Grafo, caminhos_por_grupo: List[CaminhosGrupo]):
 # -----------------------
 # main
 # -----------------------
-def main():
 
+def main():
     # sys.argv é uma lista com tudo que foi digitado no terminal
     if len(sys.argv) < 2:
-        print("Uso: python parse_edges.py <arquivo_edges> [output_dir]")
+        print("Uso: python src/utils/parse_edges.py <arquivo_edges> [output_dir]")
         sys.exit(1)
-    filepath = sys.argv[1] # sys.argv[1] = o arquivo de entrada
-    # sys.argv[2] = a pasta de saída
-    # passou um segundo argumento, ele será o diretório de saída, Caso contrário, o programa cria uma pasta chamada "parsed_output"
-    output_dir = sys.argv[2] if len(sys.argv) >= 3 else "parsed_output"
+    
+    filepath = sys.argv[1]
+    
+    # If an output directory is provided, use it. Otherwise, default to 'results/parsed_data'.
+    output_dir = sys.argv[2] if len(sys.argv) >= 3 else "results/parsed_data"
 
     print(f"Lendo arquivo: {filepath} ...")
 
@@ -454,9 +455,13 @@ def main():
 
     # exporta os resultados para arquivos (CSV, JSON, pickle)
     exports = export_results(output_dir, grafo, caminhos_por_grupo, vertices_set)
-    print("Arquivos gerados:")
+    
+    print("-" * 30)
+    print(f"Arquivos de saída gerados em: {os.path.abspath(output_dir)}")
+    print("-" * 30)
     for k, v in exports.items():
-        print(f"  {k}: {v}")
+        print(f"  {k}: {os.path.abspath(v)}")
+    print("-" * 30)
 
     # preparar E e S para rodar com Gurobi
     E, S = preparar_E_S(grafo, caminhos_por_grupo)
