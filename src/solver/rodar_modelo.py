@@ -1,5 +1,5 @@
 # Or run with a specific K value (e.g., K=5)
-#python3 src/solver/rodar_modelo.py results/parsed_data 5
+# python3 src/solver/rodar_modelo.py results/parsed_data 5
 
 # In src/solver/rodar_modelo.py
 # arquivo: rodar_modelo.py
@@ -98,27 +98,92 @@ def gerar_conjunto_P(S, K):
         P.update(gerar_subcaminhos(s, K))
     return list(P)
 
+
+
+# -------------------------
+# Helpers para formatação de saída
+# -------------------------
+def subcaminho_edges_to_vertices(edge_list):
+    """
+    edge_list: lista/tupla de arestas no formato (u,v)
+    Retorna lista de vértices [v1, v2, v3, ...] ou None se não for possível inferir.
+    """
+    if not edge_list:
+        return []
+    vertices = []
+    # assumimos que edge_list[0] = (u0, v0), etc.
+    try:
+        u0, v0 = edge_list[0]
+    except Exception:
+        # caso arestas estejam em formato inesperado, retornamos string
+        return None
+
+    vertices.append(u0)
+    current = v0
+    vertices.append(current)
+    for (a, b) in edge_list[1:]:
+        # verifique consistência
+        if a != current:
+            # tentativa simples: se (a,b) não conectar, ainda adicionamos a,b para não perder info
+            vertices.append(a)
+            vertices.append(b)
+            current = b
+        else:
+            vertices.append(b)
+            current = b
+    return vertices
+
+def status_to_string(status_code):
+    mapping = {
+        GRB.LOADED: "LOADED",
+        GRB.OPTIMAL: "OPTIMAL",
+        GRB.INFEASIBLE: "INFEASIBLE",
+        GRB.UNBOUNDED: "UNBOUNDED",
+        GRB.INF_OR_UNBD: "INF_OR_UNBD",
+        GRB.TIME_LIMIT: "TIME_LIMIT",
+        GRB.INTERRUPTED: "INTERRUPTED",
+        GRB.SUBOPTIMAL: "SUBOPTIMAL",
+        GRB.USER_OBJ_LIMIT: "USER_OBJ_LIMIT"
+    }
+    return mapping.get(status_code, f"STATUS_{status_code}")
+
+
+
+
+
 # ==============================================================================
-# Função principal
+# Função principal: Resolução do modelo e gravação dos resultados em arquivo .txt
 # ==============================================================================
 
-def resolver_modelo_cobertura(E, S, K):
+def resolver_modelo_cobertura(E, S, K, output_dir=None, instance_id=None):
+    """
+    Constrói e resolve o modelo. Em seguida grava resultados em arquivo .txt em output_dir.
+    Retorna lista de subcaminhos escolhidos (cada subcaminho é tuple de arestas).
+    """
     print("--- Iniciando a resolução do modelo ---")
     print(f"Grafo com {len(E)} arestas e {len(S)} caminhos.")
-    
     P = gerar_conjunto_P(S, K)
     print(f"Total de subcaminhos únicos gerados (|P|): {len(P)}")
-    
+
+    # preparacao do diretorio de saída
+    if output_dir is None:
+        output_dir = os.path.join("results", "gurobi")
+    os.makedirs(output_dir, exist_ok=True)
+
+    # definir nome do arquivo de saída
+    if instance_id is None:
+        instance_id = os.path.basename(os.path.abspath("."))  # fallback: nome do cwd
+    safe_instance = instance_id.replace(" ", "_")
+    out_path = os.path.join(output_dir, f"{safe_instance}_gurobi_result.txt")
+
     try:
         m = gp.Model("cobertura_de_arestas")
-
-        # Mapear índice -> subcaminho
         p_index = {i: p for i, p in enumerate(P)}
 
-        # Variáveis binárias x[i]
+        # Variáveis binárias
         x = m.addVars(len(P), vtype=GRB.BINARY, name="x")
 
-        # Objetivo: minimizar número de subcaminhos escolhidos
+        # Objetivo
         m.setObjective(x.sum(), GRB.MINIMIZE)
 
         # Restrições: cada aresta deve ser coberta exatamente 1 vez
@@ -131,32 +196,101 @@ def resolver_modelo_cobertura(E, S, K):
         print("Modelo construído. Iniciando otimização...\n")
         m.optimize()
 
-        print("\n--- Resultados da Otimização ---")
-        if m.Status == GRB.OPTIMAL:
-            print("Solução ótima encontrada!")
-            print(f"Valor da Função Objetivo: {m.ObjVal:.0f}\n")
+        # Coleta de informações do modelo
+        status = m.Status
+        status_str = status_to_string(status)
+        objval = None
+        objbound = None
+        mipgap = None
+        nodecount = None
+        runtime = None
 
-            caminhos_escolhidos = [p_index[i] for i in p_index if x[i].X > 0.5]
+        if status in [GRB.OPTIMAL, GRB.SUBOPTIMAL, GRB.TIME_LIMIT, GRB.USER_OBJ_LIMIT]:
+            try:
+                objval = m.ObjVal
+            except Exception:
+                objval = None
+        try:
+            objbound = m.ObjBound
+        except Exception:
+            objbound = None
+        try:
+            mipgap = m.MIPGap
+        except Exception:
+            mipgap = None
+        try:
+            nodecount = m.NodeCount
+        except Exception:
+            nodecount = None
+        try:
+            runtime = m.Runtime
+        except Exception:
+            runtime = None
 
-            print(f"Número de subcaminhos escolhidos: {len(caminhos_escolhidos)}")
-            max_len = max(len(p) for p in caminhos_escolhidos)
-            print(f"Tamanho máximo de arestas em um subcaminho escolhido: {max_len}\n")
+        # extrair solução (se houver)
+        caminhos_escolhidos = []
+        if status in [GRB.OPTIMAL, GRB.SUBOPTIMAL] or (hasattr(m, "ObjVal") and m.Status == GRB.OPTIMAL):
+            # pegar x[i] com X > 0.5
+            for i in p_index:
+                try:
+                    val = x[i].X
+                except Exception:
+                    val = 0
+                if val > 0.5:
+                    caminhos_escolhidos.append(p_index[i])
 
-            print("Subcaminhos selecionados:")
-            for i, p in enumerate(caminhos_escolhidos, 1):
-                print(f"  {i}: {p}")
+        # montar texto de saída
+        lines = []
+        lines.append(f"ID_instances (pasta_dados/instance_id): {instance_id}")
+        lines.append(f"resultado da função objetivo: {objval if objval is not None else 'N/A'}")
+        lines.append(f"n de subcaminhos gerados: {len(P)}")
+        lines.append(f"limite inferior (bound limit): {objbound if objbound is not None else 'N/A'}")
+        lines.append(f"GAP: {mipgap if mipgap is not None else 'N/A'}")
+        lines.append(f"quantos nós da árvore de recursão/decisão que o gurobi percorreu: {nodecount if nodecount is not None else 'N/A'}")
+        lines.append(f"tempo demorado para o gurobi chegar nessa solução: {runtime if runtime is not None else 'N/A'} (segundos)")
+        lines.append(f"Status numérico do Gurobi: {status}")
+        lines.append(f"Status texto do Gurobi: {status_str}")
+        found_optimal = (status == GRB.OPTIMAL)
+        lines.append(f"a solução ótima foi encontrada?: {'Sim' if found_optimal else 'Não'}")
+        lines.append("")
+
+        # solução ótima encontrada e detalhamento dos subcaminhos
+        lines.append("solução ótima encontrada (lista de subcaminhos):")
+        if caminhos_escolhidos:
+            lines.append(f"número de subcaminhos escolhidos: {len(caminhos_escolhidos)}")
+            for idx, sub in enumerate(caminhos_escolhidos, start=1):
+                # sub é uma tupla de arestas (u,v)
+                vertices = subcaminho_edges_to_vertices(list(sub))
+                if vertices is None:
+                    vert_str = "(não foi possível inferir sequência de vértices)"
+                else:
+                    vert_str = "->".join(str(v) for v in vertices)
+                lines.append(f"subcaminho {idx} n°vertices ({len(vertices) if vertices is not None else 'N/A'}): ({vert_str})")
+                # também opcional: listar as arestas
+                edges_str = ", ".join(f"({a},{b})" for (a, b) in sub)
+                lines.append(f"  arestas: {edges_str}")
+                lines.append("")  # linha em branco entre subcaminhos
         else:
-            print(f"Modelo não ótimo. Status: {m.Status}")
+            lines.append("Nenhum subcaminho foi selecionado pela solução (ou não há solução disponível).")
+
+        # escrever arquivo
+        with open(out_path, "w", encoding="utf-8") as fout:
+            fout.write("\n".join(lines))
+
+        print(f"\nResultados gravados em: {os.path.abspath(out_path)}")
+        # também imprimir um sumário na saída padrão
+        print("\n--- Resumo ---")
+        for ln in lines[:12]:
+            print(ln)
+        print("... (ver arquivo para detalhes completos)")
 
     except gp.GurobiError as e:
         print(f"Erro do Gurobi: {e.errno} - {e}")
+        caminhos_escolhidos = []
     except Exception as e:
         print(f"Ocorreu um erro: {e}")
+        caminhos_escolhidos = []
 
-    caminhos_escolhidos = []
-    if m.Status == GRB.OPTIMAL:
-        caminhos_escolhidos = [p_index[i] for i in p_index if x[i].X > 0.5]
-        ...
     return caminhos_escolhidos
 
 # ==============================================================================
@@ -164,15 +298,13 @@ def resolver_modelo_cobertura(E, S, K):
 # ==============================================================================
 
 if __name__ == "__main__":
-    # The script now expects the path to the parsed data directory as the first argument
-    # and the value of K as the second (optional) argument.
     if len(sys.argv) < 2:
         print("Erro: Forneça o caminho para o diretório com os arquivos pickle.")
         print("Uso: python src/solver/rodar_modelo.py <diretorio_dos_dados> [K]")
         sys.exit(1)
 
     data_directory = sys.argv[1]
-    
+
     E_path = os.path.join(data_directory, "E_for_gurobi.pkl")
     S_path = os.path.join(data_directory, "S_for_gurobi.pkl")
 
@@ -184,21 +316,21 @@ if __name__ == "__main__":
         print("python src/utils/parse_edges.py instances/my_testes/teste_dani.txt results/parsed_data")
         sys.exit(1)
 
-    # Carregar os dados extraídos
     print(f"Carregando arquivos de {os.path.abspath(data_directory)}...")
     with open(E_path, "rb") as f:
         E = pickle.load(f)
     with open(S_path, "rb") as f:
         S = pickle.load(f)
 
-    # Ler K da linha de comando (padrão = 7)
-    # K is now the second argument (index 2)
     K = int(sys.argv[2]) if len(sys.argv) > 2 else 7
     print(f"Usando K = {K}")
 
-    # Resolver modelo
-    caminhos_otimos = resolver_modelo_cobertura(E, S, K)
+    # tentar descobrir um instance_id mais informativo:
+    # se os pickles foram gerados a partir de um arquivo original, talvez exista um nome embutido.
+    # aqui usamos o nome da pasta como ID; você pode passar um terceiro argumento com o nome da instância.
+    instance_id = os.path.basename(os.path.abspath(data_directory))
+    caminhos_otimos = resolver_modelo_cobertura(E, S, K, output_dir=os.path.join("results", "gurobi"), instance_id=instance_id)
 
-    # Desenhar resultados lado a lado
+    # mostrar figura (se existir solução)
     if caminhos_otimos:
         desenhar_resultados(E, S, caminhos_otimos)
