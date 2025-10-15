@@ -1,5 +1,5 @@
 # Or run with a specific K value (e.g., K=5)
-# python3 src/solver/rodar_modelo.py results/parsed_data 5
+# python3 src/solver/rodar_modelo.py results/py_parsed_data 5
 
 # In src/solver/rodar_modelo.py
 # arquivo: rodar_modelo.py
@@ -383,7 +383,7 @@ if __name__ == "__main__":
         print(f"  - {os.path.abspath(E_path)}")
         print(f"  - {os.path.abspath(S_path)}")
         print("\nRode o script de parse primeiro. Exemplo:")
-        print("python src/utils/parse_edges.py instances/my_testes/teste_dani.txt results/parsed_data")
+        print("python src/utils/parse_edges.py instances/my_testes/teste_dani.txt results/py_parsed_data")
         sys.exit(1)
 
     print(f"Carregando arquivos de {os.path.abspath(data_directory)}...")
