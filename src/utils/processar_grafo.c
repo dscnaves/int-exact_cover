@@ -1,3 +1,7 @@
+// Uso: <arquivo_de_entrada> <arquivo_de_saida>
+// gcc src/utils/processar_grafo.c -o bin/processar_grafo -Wall
+// ./bin/processar_grafo instances/my_testes/teste_dani.txt results/C_parsed_data/teste_dani_parsed.txt
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -47,12 +51,15 @@ void liberarMemoria(Grafo *g);
 // --- FUNÇÃO PRINCIPAL ---
 
 int main(int argc, char *argv[]) {
-    if (argc < 2) {
-        fprintf(stderr, "Uso: %s <nome_do_arquivo_de_entrada>\n", argv[0]);
+    if (argc < 3) {
+        fprintf(stderr, "Uso: %s <arquivo_de_entrada> <arquivo_de_saida>\n", argv[0]);
         return 1;
     }
 
-    FILE *arquivo = fopen(argv[1], "r");
+    const char *arquivo_entrada = argv[1];
+    const char *arquivo_saida = argv[2];
+
+    FILE *arquivo = fopen(arquivo_entrada, "r");
     if (arquivo == NULL) {
         perror("Erro ao abrir o arquivo de entrada");
         return 1;
@@ -61,15 +68,14 @@ int main(int argc, char *argv[]) {
     // Inicializa a estrutura principal do grafo
     Grafo grafo = {0};
 
-    printf("Processando arquivo '%s'...\n", argv[1]);
+    printf("Processando arquivo '%s'...\n", arquivo_entrada);
     processarArquivo(arquivo, &grafo);
     fclose(arquivo);
 
     printf("Calculando vértices únicos...\n");
     calcularVerticesUnicos(&grafo);
 
-    const char *arquivo_saida = "relatorio_grafo.txt";
-    printf("Escrevendo relatório para '%s'...\n", arquivo_saida);
+    printf("Escrevendo relatório para '%s'...\n",    arquivo_saida); // <-- MODIFIED
     escreverRelatorio(&grafo, arquivo_saida);
 
     printf("Limpeza de memória...\n");

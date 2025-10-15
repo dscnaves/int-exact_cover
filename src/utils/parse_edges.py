@@ -1,5 +1,7 @@
-# Comando para fazer código rodar: python3 src/solver/rodar_modelo.py results/parsed_data
 
+# Comando para fazer código rodar: python src/utils/parse_edges.py <arquivo_edges> [output_dir]
+# python3 src/utils/parse_edges.py instances/my_testes/teste_dani.txt results/py_parsed_data
+# or python3 src/utils/parse_edges.py instances/my_testes/teste_dani.txt
 
 """
 Parser de arquivo edges_to_ports_*.anon
@@ -325,6 +327,64 @@ def parse_file(filepath: str):
 
     return grafo, caminhos_por_grupo, vertices, grupo_to_arestas, linhas_lidas
 
+# -----------------------------------------------------
+# To generate the .txt report
+# -----------------------------------------------------
+def export_txt_report(output_dir: str, instance_name: str, grafo: Grafo, all_paths: List[List[Tuple[int, int]]]):
+    """
+    Gera um relatório .txt sumarizando os dados do grafo e os caminhos.
+    """
+    # Define o nome do arquivo de saida
+    report_path = os.path.join(output_dir, f"{instance_name}_parsed.txt")
+    
+    # Garante que o diretório de saída exista
+    os.makedirs(output_dir, exist_ok=True)
+
+    with open(report_path, 'w', encoding='utf-8') as f:
+        f.write("===========================================================\n")
+        f.write(f" Instância: {instance_name}\n")
+        f.write("===========================================================\n")
+        f.write(" Resultados da Extração de Caminhos\n")
+        f.write("------------------------------------------------------------\n")
+        
+        # Escreve o sumário com formatação alinhada
+        f.write(f"{'Número Total de Vértices........':<35}: {grafo.num_vertices}\n")
+        f.write(f"{'Número Total de Arestas.........':<35}: {grafo.num_arestas}\n")
+        f.write(f"{'Número de Caminhos..............':<35}: {len(all_paths)}\n\n")
+
+        f.write("------------------------------------------------------------\n")
+        f.write("      CAMINHOS GERADOS\n")
+        f.write("------------------------------------------------------------\n")
+
+        if not all_paths:
+            f.write("Nenhum caminho foi gerado.\n")
+        
+        # Itera sobre cada caminho para escrevê-lo no arquivo
+        for i, path_edges in enumerate(all_paths, 1):
+            if not path_edges:
+                continue
+
+            # Reconstrói a sequência de vértices a partir das arestas
+            # Ex: [(2,5), (5,10)] -> [2, 5, 10]
+            nodes_in_path = [path_edges[0][0]] + [v for u, v in path_edges]
+            
+            # Formata a string do caminho: (2->5->10)
+            path_str = "->".join(map(str, nodes_in_path))
+            
+            # Formata a string das arestas: (2,5), (5,10)
+            edges_str = ", ".join(map(str, path_edges))
+            
+            # Escreve as informações do subcaminho
+            f.write(f"subcaminho {i} - n°vertices ({len(nodes_in_path)}): ({path_str})\n")
+            f.write(f"  arestas: {edges_str}\n\n")
+
+        f.write("------------------------------------------------------------\n\n")
+        f.write(" Fim do relatório \n")
+        f.write("===========================================================\n")
+        
+    # Retorna o caminho do relatório criado para poder ser impresso no final
+    return report_path
+
 # -----------------------
 # Exportação e integração com Gurobi
 # -----------------------
@@ -445,22 +505,31 @@ def main():
     
     filepath = sys.argv[1]
     
-    # If an output directory is provided, use it. Otherwise, default to 'results/parsed_data'.
-    output_dir = sys.argv[2] if len(sys.argv) >= 3 else "results/parsed_data"
+    # If an output directory is provided, use it. Otherwise, default to 'results/py_parsed_data'.
+    output_dir = sys.argv[2] if len(sys.argv) >= 3 else "results/py_parsed_data"
 
     print(f"Lendo arquivo: {filepath} ...")
 
     # Chama a função parse_file, que abre o arquivo, lê cada linha, cria os vértices, arestas e grupos
     grafo, caminhos_por_grupo, vertices_set, grupo_to_arestas, linhas_lidas = parse_file(filepath)
 
+    S = []
+    for cg in caminhos_por_grupo:
+        for caminho in cg.caminhos:
+            S.append(caminho)
+
     # exporta os resultados para arquivos (CSV, JSON, pickle)
     exports = export_results(output_dir, grafo, caminhos_por_grupo, vertices_set)
+
+    instance_name = os.path.splitext(os.path.basename(filepath))[0]
+    report_file = export_txt_report(output_dir, instance_name, grafo, S)
     
     print("-" * 30)
     print(f"Arquivos de saída gerados em: {os.path.abspath(output_dir)}")
     print("-" * 30)
     for k, v in exports.items():
         print(f"  {k}: {os.path.abspath(v)}")
+    print(f"  txt_report: {os.path.abspath(report_file)}")
     print("-" * 30)
 
     # preparar E e S para rodar com Gurobi

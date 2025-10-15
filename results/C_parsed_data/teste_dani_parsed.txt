@@ -1,0 +1,75 @@
+========================================
+      RELATÓRIO DE ANÁLISE DO GRAFO
+========================================
+
+SUMÁRIO GERAL:
+-----------------
+Número Total de Vértices Únicos: 20
+Número Total de Arestas (linhas lidas): 35
+Número de Caminhos/Grupos Identificados: 5
+
+========================================
+      CAMINHOS PRÉ-DEFINIDOS (GRUPOS)
+========================================
+
+CAMINHO: 1p6 (Total de 18 arestas)
+--------------------------------------------------
+  Aresta: 1 -> 5
+  Aresta: 2 -> 5
+  Aresta: 5 -> 10
+  Aresta: 7 -> 15
+  Aresta: 10 -> 1
+  Aresta: 12 -> 8
+  Aresta: 13 -> 9
+  Aresta: 15 -> 1
+  Aresta: 18 -> 10
+  Aresta: 1 -> 10
+  Aresta: 2 -> 15
+  Aresta: 5 -> 1
+  Aresta: 7 -> 14
+  Aresta: 10 -> 18
+  Aresta: 11 -> 19
+  Aresta: 12 -> 20
+  Aresta: 14 -> 7
+  Aresta: 15 -> 20
+
+CAMINHO: 1p17 (Total de 12 arestas)
+--------------------------------------------------
+  Aresta: 3 -> 10
+  Aresta: 4 -> 10
+  Aresta: 5 -> 10
+  Aresta: 10 -> 1
+  Aresta: 16 -> 2
+  Aresta: 17 -> 3
+  Aresta: 1 -> 10
+  Aresta: 3 -> 5
+  Aresta: 4 -> 12
+  Aresta: 8 -> 16
+  Aresta: 9 -> 17
+  Aresta: 13 -> 6
+
+CAMINHO: 2p6 (Total de 5 arestas)
+--------------------------------------------------
+  Aresta: 3 -> 10
+  Aresta: 8 -> 1
+  Aresta: 9 -> 2
+  Aresta: 19 -> 12
+  Aresta: 20 -> 13
+
+CAMINHO: 10p6 (Total de 4 arestas)
+--------------------------------------------------
+  Aresta: 5 -> 10
+  Aresta: 14 -> 5
+  Aresta: 10 -> 18
+  Aresta: 14 -> 7
+
+CAMINHO: 5p17 (Total de 7 arestas)
+--------------------------------------------------
+  Aresta: 6 -> 15
+  Aresta: 7 -> 15
+  Aresta: 11 -> 15
+  Aresta: 15 -> 1
+  Aresta: 2 -> 15
+  Aresta: 6 -> 11
+  Aresta: 15 -> 20
+
