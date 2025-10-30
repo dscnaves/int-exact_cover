@@ -111,52 +111,11 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
 
     # Para cada aresta restante, se ainda não visitada, comece por sua origem e siga
     for u,v in remaining_edges:
-        if (u,v) in cover_edges:
-            # pula para a próxima aresta do loop se essa já estiver sido visitada por iterações anteriores
-            continue
-
-        # Cria uma lista vazia p que vai guardar o caminho construído a partir da aresta (u,v)
-        p = []
-
-        # Inicializa cur_u como o nó atual
-        cur_u = u
-
-        # Marca a aresta (u,v) como visitada
-        cover_edges.add((u,v))
-
-        # Adiciona (u,v) ao caminho p
-        p.append((u,v))
-
-        # Atualiza o nó atual para o destino da aresta (u,v)
-        cur_u = v
-
-        # percorrer o caminho a partir de cur_u
-        while True:
-            encontrou = False
-
-            # Percorre todos os vizinhos (nx) do nó atual cur_u
-            for nx in adj.get(cur_u, []):
-
-                # Verifica se a aresta ainda não foi visitada
-                if (cur_u, nx) not in cover_edges:
-                    
-                    # Marca a aresta como visitada
-                    cover_edges.add((cur_u, nx))
-
-                    # Adiciona a aresta ao caminho atual p
-                    p.append((cur_u, nx))
-                    
-                    # Atualiza o nó atual para o próximo nó do caminho
-                    cur_u = nx
-
-                    # Indica que seguimos por uma aresta válida
-                    encontrou = True
-
-                    # Sai do for porque seguimos apenas a primeira aresta disponível
-                    break
-            if not encontrou:
-                break
-        caminhos.append(p)
+        p = follow_from(u)
+        
+        # Se conseguiu formar um caminho (p não vazio), adiciona em caminhos
+        if p:
+            caminhos.append(p)
 
     # Retornar caminhos reconstruídos
     return caminhos
