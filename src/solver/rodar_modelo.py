@@ -19,6 +19,10 @@ import random
 # ==============================================================================
 
 def gerar_subcaminhos(s, K):
+    """
+    Given a sequence s (like a path [1,2,3,4]) and a limit K,
+    this generates all subpaths of length up to K.
+    """
     subcaminhos = []
     for i in range(len(s)):
         for j in range(i + 1, min(i + K + 1, len(s) + 1)):
@@ -27,6 +31,10 @@ def gerar_subcaminhos(s, K):
     return subcaminhos
 
 def gerar_conjunto_P(S, K):
+    """
+    Given a list of full paths S,
+    it generates the set of all possible subpaths (up to length K)
+    """
     P = set()
     for s in S:
         P.update(gerar_subcaminhos(s, K))
@@ -39,18 +47,25 @@ def gerar_conjunto_P(S, K):
 # -------------------------
 def subcaminho_edges_to_vertices(sub):
     """
+    This function converts any subpath representation (edges or vertices) into a consistent list of vertices
     Aceita sub como:
       - tupla/lista de arestas: [(u,v), (u2,v2), ...]  -> retorna [u, v, v2, ...]
       - tupla/lista de vértices: [v1, v2, v3, ...]     -> retorna [v1, v2, v3, ...]
       - caso ambíguo retorna None
     """
+
+    # If the subpath is empty (like [] or None), just return an empty list of vertices
     if not sub:
         return []
-    # detectar formato: elementos são pares (arestas) ou escalares (vértices)
+    
+    # --- Detect whether we received edges or vertices ---
     first = sub[0]
-    # aresta-like
+
+    # If the first element is a list or tuple of length 2 => aresta-like
     if isinstance(first, (list, tuple)) and len(first) == 2:
         vertices = []
+
+        # initial vertices = [u0, v0]
         try:
             u0, v0 = first
         except Exception:
@@ -58,11 +73,17 @@ def subcaminho_edges_to_vertices(sub):
         vertices.append(u0)
         current = v0
         vertices.append(current)
+
+
         for item in sub[1:]:
+            # If any item is not a valid pair, abort
             if not (isinstance(item, (list, tuple)) and len(item) == 2):
                 # mistura de formatos -> abortar inferência
                 return None
+            
             a, b = item
+
+            # The edge doesn’t connect
             if a != current:
                 # desconexo no input; adicionamos ambos para não perder informação
                 vertices.append(a)
@@ -121,8 +142,10 @@ def resolver_modelo_cobertura(E, S, K, output_dir=None, instance_id=None):
     Constrói e resolve o modelo. Em seguida grava resultados em arquivo .txt em output_dir.
     Retorna lista de subcaminhos escolhidos (cada subcaminho é tuple de arestas ou vértices).
     """
+
     print("--- Iniciando a resolução do modelo ---")
     print(f"Grafo com {len(E)} arestas e {len(S)} caminhos.")
+   
     P = gerar_conjunto_P(S, K)
     total_subcaminhos_gerados = len(P)
     print(f"Total de subcaminhos únicos gerados (|P|): {total_subcaminhos_gerados}")
@@ -138,6 +161,7 @@ def resolver_modelo_cobertura(E, S, K, output_dir=None, instance_id=None):
     safe_instance = instance_id.replace(" ", "_")
     out_path = os.path.join(output_dir, f"{safe_instance}_gurobi_result.txt")
 
+    # --- Start Formulation ---
     start_time = time.time()
     try:
         m = gp.Model("cobertura_de_arestas")
@@ -149,13 +173,16 @@ def resolver_modelo_cobertura(E, S, K, output_dir=None, instance_id=None):
         # Objetivo: minimizar número de subcaminhos selecionados
         m.setObjective(x.sum(), GRB.MINIMIZE)
 
-        # Restrições: cada aresta deve ser coberta exatamente 1 vez
-        # Nota: assume-se que 'p' pode ser uma sequência de arestas ou de vértices. Tentamos ambas.
+        # --- Restrições: cada aresta deve ser coberta exatamente 1 vez: ∑δe,p​⋅xp​=1 ---
         for e in E:
+
             # montar lista dos índices i cujo p cobre a aresta e
             inds = []
+
             for i, p in p_index.items():
+                
                 # se p contém arestas como tuplas (u,v)
+                # just checks if the elements of p look like edges
                 if p and isinstance(p[0], (list, tuple)) and len(p[0]) == 2:
                     if e in p:
                         inds.append(x[i])
@@ -332,7 +359,3 @@ if __name__ == "__main__":
     # tentar descobrir um instance_id mais informativo:
     instance_id = os.path.basename(os.path.abspath(data_directory))
     caminhos_otimos = resolver_modelo_cobertura(E, S, K, output_dir=os.path.join("results", "gurobi"), instance_id=instance_id)
-
-    # mostrar figura (se existir solução)
-    if caminhos_otimos:
-        desenhar_resultados(E, S, caminhos_otimos)

@@ -4,11 +4,11 @@ Instância: py_parsed_data
 Resultados do Modelo Gurobi
 ------------------------------------------------------------
 • Valor da Função Objetivo........   : N/A
-• Número de Subcaminhos Iniciais...  : 55
+• Número de Subcaminhos Iniciais...  : 61
 • Limite Inferior (Lower Bound)......: inf
 • GAP.............................   : inf%
 • Nós da Árvore de Decisão........   : 0.0
-• Tempo Total de Execução.........   : 0.0055065155029296875 segundos
+• Tempo Total de Execução.........   : 1.1066906452178955 segundos
 • Solução Ótima Encontrada?.......   : NÃO
 • Status texto do Gurobi..........   : INFEASIBLE
 ------------------------------------------------------------

@@ -6,7 +6,6 @@ This repository contains the implementation and experiments related to my underg
 ```
 int-exact_cover
 ├─ README.md
-├─ __init__.py
 ├─ bin
 │  └─ processar_grafo
 ├─ docs
@@ -17,6 +16,7 @@ int-exact_cover
 │  │  ├─ 4 (2023) On_Orchestration_of_Segment_Routing_and_In-Band_Network_Telemetry.pdf
 │  │  └─ notes
 │  └─ reports
+│     ├─ Formulação do Problema.pdf
 │     ├─ Relatório Técnico Parcial.pdf
 │     └─ pind___bolsa_1.pdf
 ├─ instances
@@ -288,21 +288,30 @@ int-exact_cover
 │     ├─ teste_dani_parsed.txt
 │     └─ vertices.csv
 ├─ src
+│  ├─ __init__.py
+│  ├─ __pycache__
+│  │  └─ __init__.cpython-312.pyc
 │  ├─ solver
+│  │  ├─ draw_graph.py
 │  │  ├─ heuristics
 │  │  │  ├─ firsth_heuristic.py
 │  │  │  ├─ v1_primeira_heurística.py
 │  │  │  └─ v2_primeira_heurística.py
 │  │  └─ rodar_modelo.py
 │  └─ utils
+│     ├─ __init__.py
 │     ├─ __pycache__
+│     │  ├─ __init__.cpython-312.pyc
+│     │  ├─ exporters.cpython-312.pyc
 │     │  ├─ file_parser.cpython-312.pyc
-│     │  └─ main.cpython-312.pyc
+│     │  ├─ graph_structs.cpython-312.pyc
+│     │  ├─ main.cpython-312.pyc
+│     │  ├─ main_parse_edges.cpython-312.pyc
+│     │  └─ path_reconstruction.cpython-312.pyc
 │     ├─ exporters.py
 │     ├─ file_parser.py
 │     ├─ graph_structs.py
-│     ├─ main.py
-│     ├─ parse_edges.py
+│     ├─ main_parse_edges.py
 │     ├─ path_reconstruction.py
 │     └─ processar_grafo.c
 └─ structure.md

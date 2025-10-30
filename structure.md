@@ -30,22 +30,31 @@ int-exact_cover
 │       ├── S_for_gurobi.pkl
 │       ├── teste_dani_parsed.txt
 │       └── vertices.csv
-├── src
-│   ├── solver
-│   │   ├── heuristics
-│   │   │   ├── firsth_heuristic.py
-│   │   │   ├── v1_primeira_heurística.py
-│   │   │   └── v2_primeira_heurística.py
-│   │   └── rodar_modelo.py
-│   └─ utils
+├─ src
+│  ├─ __init__.py
+│  ├─ __pycache__
+│  │  └─ __init__.cpython-312.pyc
+│  ├─ solver
+│  │  ├─ draw_graph.py
+│  │  ├─ heuristics
+│  │  │  ├─ firsth_heuristic.py
+│  │  │  ├─ v1_primeira_heurística.py
+│  │  │  └─ v2_primeira_heurística.py
+│  │  └─ rodar_modelo.py
+│  └─ utils
+│     ├─ __init__.py
 │     ├─ __pycache__
+│     │  ├─ __init__.cpython-312.pyc
+│     │  ├─ exporters.cpython-312.pyc
 │     │  ├─ file_parser.cpython-312.pyc
-│     │  └─ main.cpython-312.pyc
+│     │  ├─ graph_structs.cpython-312.pyc
+│     │  ├─ main.cpython-312.pyc
+│     │  ├─ main_parse_edges.cpython-312.pyc
+│     │  └─ path_reconstruction.cpython-312.pyc
 │     ├─ exporters.py
 │     ├─ file_parser.py
 │     ├─ graph_structs.py
-│     ├─ main.py
-│     ├─ parse_edges.py
+│     ├─ main_parse_edges.py
 │     ├─ path_reconstruction.py
 │     └─ processar_grafo.c
 └─ README.md
