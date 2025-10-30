@@ -37,8 +37,16 @@ int-exact_cover
 │   │   │   ├── v1_primeira_heurística.py
 │   │   │   └── v2_primeira_heurística.py
 │   │   └── rodar_modelo.py
-│   └── utils
-│       ├── parse_edges.py
-│       └── processar_grafo.c
-├── README.md
-└── structure.md
+│   └─ utils
+│     ├─ __pycache__
+│     │  ├─ file_parser.cpython-312.pyc
+│     │  └─ main.cpython-312.pyc
+│     ├─ exporters.py
+│     ├─ file_parser.py
+│     ├─ graph_structs.py
+│     ├─ main.py
+│     ├─ parse_edges.py
+│     ├─ path_reconstruction.py
+│     └─ processar_grafo.c
+└─ README.md
+└─ structure.md
