@@ -3,7 +3,7 @@ from collections import defaultdict
 
 def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> List[List[Tuple[int,int]]]:
     """
-    Dado um conjunto de arestas (u,v) que pertencem a um mesmo grupo, tenta ordenar/encadear
+    Dado um conjunto/lista de arestas (u,v) que pertencem a um mesmo grupo, tenta ordenar/encadear
     essas arestas em caminhos. Retorna lista de caminhos (cada caminho é lista de arestas).
     Estratégia:
       - monta digrafo local com adj-list e in-degree/out-degree (apenas considerando arestas do grupo)
@@ -15,7 +15,7 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
     if not arestas_do_grupo:
         return []
 
-    # defaultdict (biblioteca collections): é um dicionário especial que, ao acessar uma chave inexistente, associa a  cahve a uma lista vazia ([])
+    # defaultdict (biblioteca collections): é um dicionário especial que, ao acessar uma chave inexistente, associa a  chave a uma lista vazia ([])
     
     # "dicionário" de lista de adjacência ({1: [2, 3], 2: [4]})
     adj = defaultdict(list)
@@ -26,6 +26,7 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
     # conjunto de nós presentes no subgrafo
     nodes = set()
     
+    # para cada tupla (u,v) pertecente a aresta_do_grupo
     for u, v in arestas_do_grupo:
         adj[u].append(v)
         out_deg[u] += 1
@@ -51,17 +52,21 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
 
     # lista onde os caminhos reconstruídos serão armazenados
     caminhos = []
-    visited_edges = set()  # conjunto de arestas visitadas (u,v)
+    cover_edges = set()
 
-    def follow_from(start):
+    def follow_from(start: int) -> List:
         """
         Função auxiliar que, dado um nó inicial (start), tenta construir um caminho encadeando arestas ainda não usadas
         Estratégia gulosa: sempre segue a primeira aresta disponível
         """
+        # For each iteration, we need to reset visited edges and nodes -> if we don't all the egdes will belong online one path
+        visited_edges = set()  # conjunto de arestas visitadas (u,v)
+        visited_nodes = set()
 
         # lista guardará todas as arestas que formam o caminho a partir de start
         path = []
         u = start
+        visited_nodes.add(u)
         # loop serve para seguir arestas sucessivas do nó atual até não haver mais caminhos não visitados
         while True:
             # procurar aresta u->v não usada
@@ -72,16 +77,19 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
 
                 # Verifica se a aresta (u,v) ainda não foi percorrida
                 if (u,v) not in visited_edges:
-                    # Marca a aresta como visitada
-                    visited_edges.add((u,v))
-                    # Adiciona a aresta (u,v) ao caminho que estamos construindo
-                    path.append((u,v))
-                    # Atualiza o nó atual para o próximo nó no caminho
-                    u = v
-                    # Sinaliza que conseguimos seguir por uma aresta válida
-                    encontrou = True
-                    # Sai do for porque seguimos apenas a primeira aresta disponível (estratégia gulosa)
-                    break
+                    if v not in visited_nodes:
+                        # Marca a aresta como visitada e o próximo nó como também visitado
+                        visited_edges.add((u,v))
+                        cover_edges.add((u,v))
+                        visited_nodes.add(v)
+                        # Adiciona a aresta (u,v) ao caminho que estamos construindo
+                        path.append((u,v))
+                        # Atualiza o nó atual para o próximo nó no caminho
+                        u = v
+                        # Sinaliza que conseguimos seguir por uma aresta válida
+                        encontrou = True
+                        # Sai do for porque seguimos apenas a primeira aresta disponível (estratégia gulosa)
+                        break
 
             # Se não encontramos nenhuma aresta não visitada saindo de u, significa que o caminho acabou
             if not encontrou:
@@ -97,14 +105,14 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
             caminhos.append(p)
 
     # Monta uma lista de arestas que ainda não foram visitadas (podem estar em ciclos ou componentes não conectados a um nó inicial em caso de caminhos "com ramificações")
-    remaining_edges = [e for e in arestas_do_grupo if e not in visited_edges]
+    remaining_edges = [e for e in arestas_do_grupo if e not in cover_edges]
     
-    # --- Tratar componentes cíclicos/ramificados ---
+    # --- Tratar componentes cíclicos/componentes isoladas ---
 
     # Para cada aresta restante, se ainda não visitada, comece por sua origem e siga
     for u,v in remaining_edges:
-        if (u,v) in visited_edges:
-            # pula para a próxima aresta do loop se essa já estiver visitada
+        if (u,v) in cover_edges:
+            # pula para a próxima aresta do loop se essa já estiver sido visitada por iterações anteriores
             continue
 
         # Cria uma lista vazia p que vai guardar o caminho construído a partir da aresta (u,v)
@@ -114,7 +122,7 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
         cur_u = u
 
         # Marca a aresta (u,v) como visitada
-        visited_edges.add((u,v))
+        cover_edges.add((u,v))
 
         # Adiciona (u,v) ao caminho p
         p.append((u,v))
@@ -130,10 +138,10 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
             for nx in adj.get(cur_u, []):
 
                 # Verifica se a aresta ainda não foi visitada
-                if (cur_u, nx) not in visited_edges:
+                if (cur_u, nx) not in cover_edges:
                     
                     # Marca a aresta como visitada
-                    visited_edges.add((cur_u, nx))
+                    cover_edges.add((cur_u, nx))
 
                     # Adiciona a aresta ao caminho atual p
                     p.append((cur_u, nx))

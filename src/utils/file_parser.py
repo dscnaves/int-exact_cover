@@ -2,6 +2,7 @@ from typing import List, Tuple, Dict, Set
 from collections import defaultdict
 from .graph_structs import Aresta, Grafo, CaminhosGrupo  
 from .path_reconstruction import reconstruir_caminhos_por_grupo 
+
 # -----------------------
 # Extrair prefixo do grupo
 # -----------------------

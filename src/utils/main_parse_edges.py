@@ -1,4 +1,4 @@
-# run: python -m src.utils.main instances/my_testes/teste_dani.txt
+# run: python -m src.utils.main_parse_edges instances/my_testes/teste_dani.txt
 
 import sys, os
 from .file_parser import parse_file
