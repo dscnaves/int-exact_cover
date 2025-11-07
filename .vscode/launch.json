@@ -1,0 +1,17 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Run rodar_modelo.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/solver/rodar_modelo.py",
+            "args": ["results/py_parsed_data", "5"],
+            "console": "integratedTerminal"
+        }
+    ]
+}
