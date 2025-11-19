@@ -2,6 +2,81 @@ import os, csv, json, pickle
 from .graph_structs import Grafo, CaminhosGrupo  
 from typing import List, Tuple, Set
 
+
+import os
+from typing import List, Tuple
+
+# NOTA: O 'grafo' deve ser um objeto que possui 'num_vertices' e 'num_arestas'.
+# A função 'reconstruir_caminhos_por_grupo' que você forneceu anteriormente
+# retorna caminhos como List[List[Tuple[int, int]]], onde o interno é lista de arestas.
+
+def export_c_format_data(output_dir: str, instance_name: str, grafo, all_paths: List[List[Tuple[int, int]]]) -> str:
+    """
+    Gera um arquivo de dados em um formato simples e estruturado (cabeçalho e lista de caminhos)
+    otimizado para leitura por algoritmos implementados em C.
+
+    O formato é:
+    # Cabeçalho: VARIAVEL:VALOR
+    # Dados: ID_CAMINHO;NUM_VERTICES;V1,V2,V3,...
+    """
+    
+    # 1. Define o nome do arquivo de saida
+    # Sugestão de extensão para diferenciar o formato
+    c_data_path = os.path.join(output_dir, f"{instance_name}_c_data.txt")
+    
+    # 2. Garante que o diretório de saída exista
+    os.makedirs(output_dir, exist_ok=True)
+
+    with open(c_data_path, 'w', encoding='utf-8') as f:
+        
+        # --- Parte 1: Cabeçalho Global (Metadados) ---
+        f.write("# ARQUIVO DE DADOS PARA ALGORITMO HEURÍSTICO\n")
+        f.write("# CABEÇALHO GLOBAL:\n")
+        
+        # A informação da instância pode ser lida pela busca da chave:
+        f.write(f"INSTANCE_NAME:{instance_name}\n")
+        
+        # O parser C pode procurar estas chaves para pré-alocar memória:
+        num_vertices = getattr(grafo, 'num_vertices', 'N/A')
+        num_arestas = getattr(grafo, 'num_arestas', 'N/A')
+        num_caminhos = len(all_paths)
+        
+        f.write(f"TOTAL_VERTICES:{num_vertices}\n")
+        f.write(f"TOTAL_EDGES:{num_arestas}\n")
+        f.write(f"TOTAL_PATHS:{num_caminhos}\n")
+        f.write("#\n")
+
+        # --- Parte 2: Lista de Caminhos ---
+        f.write("# INÍCIO DA LISTA DE CAMINHOS:\n")
+        f.write("# FORMATO: ID_CAMINHO;NUM_VERTICES;V1,V2,V3,...\n")
+        
+        if not all_paths:
+            f.write("# NENHUM CAMINHO FOI GERADO\n")
+        
+        # Itera sobre cada caminho para escrevê-lo no arquivo
+        for i, path_edges in enumerate(all_paths, 1):
+            if not path_edges:
+                continue
+
+            # Reconstrói a sequência de vértices a partir das arestas
+            # Ex: [(2,5), (5,10)] -> [2, 5, 10]
+            # O caminho de vértices deve ser: [u1] + [v for u, v in arestas]
+            nodes_in_path = [path_edges[0][0]] + [v for u, v in path_edges]
+            
+            # Formata a lista de vértices como uma string separada por vírgulas (V1,V2,V3,...)
+            vertices_str = ",".join(map(str, nodes_in_path))
+            num_vertices_path = len(nodes_in_path)
+            
+            # Escreve a linha de dados no formato estruturado por ';'
+            # Exemplo: 1;4;2,5,10,1
+            f.write(f"{i};{num_vertices_path};{vertices_str}\n")
+
+        f.write("# FIM DA LISTA DE CAMINHOS\n")
+        
+    # Retorna o caminho do relatório criado
+    return c_data_path
+
+
 # -----------------------------------------------------
 # To generate the .txt report
 # -----------------------------------------------------

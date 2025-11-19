@@ -2,7 +2,7 @@
 
 import sys, os
 from .file_parser import parse_file
-from .exporters import export_results, export_txt_report, preparar_E_S
+from .exporters import export_results, export_txt_report, preparar_E_S, export_c_format_data
 
 def main():
     if len(sys.argv) < 2:
@@ -19,12 +19,15 @@ def main():
 
     instance_name = os.path.splitext(os.path.basename(filepath))[0]
     report_file = export_txt_report(output_dir, instance_name, grafo, S)
+    c_data_file = export_c_format_data(output_dir, instance_name, grafo, S)
+
 
     print("-" * 30)
     print(f"Arquivos de saída gerados em: {os.path.abspath(output_dir)}")
     for k, v in exports.items():
         print(f"  {k}: {os.path.abspath(v)}")
     print(f"  txt_report: {os.path.abspath(report_file)}")
+    print(f"  c_data_file: {os.path.abspath(c_data_file)}")
     print("-" * 30)
 
     E, S = preparar_E_S(grafo, caminhos_por_grupo)
