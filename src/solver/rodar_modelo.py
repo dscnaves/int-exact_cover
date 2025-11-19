@@ -27,7 +27,7 @@ def gerar_subcaminhos(s, K):
     for i in range(len(s)):
         for j in range(i + 1, min(i + K + 1, len(s) + 1)):
             sub = tuple(s[i:j])
-        subcaminhos.append(sub)
+            subcaminhos.append(sub)
     return subcaminhos
 
 def gerar_conjunto_P(S, K):

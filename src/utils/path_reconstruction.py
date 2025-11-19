@@ -11,6 +11,11 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
       - se houver ciclos ou componentes disjunta do grafo, escolhe um nó não visitado e percorre até detectar repetição.
     """
 
+    print(f"\n{'='*60}")
+    print(f"DEBUG: Iniciando reconstrução com {len(arestas_do_grupo)} arestas")
+    print(f"DEBUG: Arestas do grupo: {arestas_do_grupo}")
+    print(f"{'='*60}\n")
+
     # Se a lista de arestas estiver vazia, retorna imediatamente uma lista vazia (não tem caminho a reconstruir)
     if not arestas_do_grupo:
         return []
@@ -33,8 +38,17 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
         in_deg[v] += 1
         nodes.add(u); nodes.add(v)
 
+
+    print(f"DEBUG: Nós encontrados: {nodes}")
+    print(f"DEBUG: Lista de adjacência: {dict(adj)}")
+    print(f"DEBUG: Graus de entrada: {dict(in_deg)}")
+    print(f"DEBUG: Graus de saída: {dict(out_deg)}")
+
+
     # Cria uma lista vazia para guardar os nós iniciais
     starts = []
+
+    print(f"DEBUG: Nós iniciais (in_deg==0, out_deg>0): {starts}\n")
 
     # Percorre todos os nós do subgrafo
     for n in nodes:
@@ -59,6 +73,7 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
         Função auxiliar que, dado um nó inicial (start), tenta construir um caminho encadeando arestas ainda não usadas
         Estratégia gulosa: sempre segue a primeira aresta disponível
         """
+
         # For each iteration, we need to reset visited edges and nodes -> if we don't all the egdes will belong online one path
         visited_edges = set()  # conjunto de arestas visitadas (u,v)
         visited_nodes = set()
@@ -81,7 +96,7 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
                         # Marca a aresta como visitada e o próximo nó como também visitado
                         visited_edges.add((u,v))
                         cover_edges.add((u,v))
-                        visited_nodes.add(v)
+                        visited_nodes.add(v)                    
                         # Adiciona a aresta (u,v) ao caminho que estamos construindo
                         path.append((u,v))
                         # Atualiza o nó atual para o próximo nó no caminho
@@ -107,15 +122,58 @@ def reconstruir_caminhos_por_grupo(arestas_do_grupo: List[Tuple[int,int]]) -> Li
     # Monta uma lista de arestas que ainda não foram visitadas (podem estar em ciclos ou componentes não conectados a um nó inicial em caso de caminhos "com ramificações")
     remaining_edges = [e for e in arestas_do_grupo if e not in cover_edges]
     
+    print(f"DEBUG: Arestas cobertas após starts: {cover_edges}")
+    print(f"DEBUG: Arestas restantes: {remaining_edges}")
+    print(f"DEBUG: Total de arestas cobertas: {len(cover_edges)}/{len(arestas_do_grupo)}\n")
+
+
+    def follow_from_edge(u, v):
+        visited_edges = set()
+        path = []
+        
+        # Start by taking the exact edge you want:
+        visited_edges.add((u, v))
+        cover_edges.add((u, v))
+        path.append((u, v))
+
+        # Continue forward from v (no cycles, no repeated nodes)
+        current = v
+        visited_nodes = {u, v}
+
+        while True:
+            found = False
+            for nxt in adj.get(current, []):
+                if (current, nxt) not in visited_edges and nxt not in visited_nodes:
+                    visited_edges.add((current, nxt))
+                    cover_edges.add((current, nxt))
+                    path.append((current, nxt))
+                    visited_nodes.add(nxt)
+                    current = nxt
+                    found = True
+                    break
+            if not found:
+                break
+        return path
+
+
     # --- Tratar componentes cíclicos/componentes isoladas ---
 
     # Para cada aresta restante, se ainda não visitada, comece por sua origem e siga
     for u,v in remaining_edges:
-        p = follow_from(u)
-        
-        # Se conseguiu formar um caminho (p não vazio), adiciona em caminhos
-        if p:
-            caminhos.append(p)
+        if (u,v) not in cover_edges:
+            print(f"DEBUG: Tentando cobrir aresta restante ({u},{v})")
+            print(f"DEBUG: Total de arestas cobertas: {len(cover_edges)}/{len(arestas_do_grupo)}\n")
+            p = follow_from_edge(u, v)
+            if p:
+                caminhos.append(p)
 
+    
+
+    print(f"\n{'='*60}")
+    print(f"DEBUG: Total de caminhos encontrados: {len(caminhos)}")
+    print(f"DEBUG: Arestas finalmente cobertas: {len(cover_edges)}/{len(arestas_do_grupo)}")
+    print(f"DEBUG: Arestas NÃO cobertas: {set(arestas_do_grupo) - cover_edges}")
+    print(f"{'='*60}\n")
+            
     # Retornar caminhos reconstruídos
     return caminhos

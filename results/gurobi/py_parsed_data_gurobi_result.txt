@@ -3,19 +3,90 @@ Instância: py_parsed_data
 ===========================================================
 Resultados do Modelo Gurobi
 ------------------------------------------------------------
-• Valor da Função Objetivo........   : N/A
-• Número de Subcaminhos Iniciais...  : 34
-• Limite Inferior (Lower Bound)......: inf
-• GAP.............................   : inf%
+• Valor da Função Objetivo........   : 24.0
+• Número de Subcaminhos Iniciais...  : 79
+• Limite Inferior (Lower Bound)......: 24.0
+• GAP.............................   : 0.00%
 • Nós da Árvore de Decisão........   : 0.0
-• Tempo Total de Execução.........   : 0.04371976852416992 segundos
-• Solução Ótima Encontrada?.......   : NÃO
-• Status texto do Gurobi..........   : INFEASIBLE
+• Tempo Total de Execução.........   : 0.006661891937255859 segundos
+• Solução Ótima Encontrada?.......   : SIM
+• Status texto do Gurobi..........   : OPTIMAL
 ------------------------------------------------------------
 
 Subcaminhos Selecionados:
 ------------------------------------------------------------
-Nenhum subcaminho foi selecionado pela solução (ou não há solução disponível).
+subcaminho 1 n°vertices (2): (12->20)
+  arestas: (12,20)
+
+subcaminho 2 n°vertices (2): (13->9)
+  arestas: (13,9)
+
+subcaminho 3 n°vertices (2): (13->6)
+  arestas: (13,6)
+
+subcaminho 4 n°vertices (2): (4->12)
+  arestas: (4,12)
+
+subcaminho 5 n°vertices (3): (14->7->15)
+  arestas: (14,7), (7,15)
+
+subcaminho 6 n°vertices (2): (19->12)
+  arestas: (19,12)
+
+subcaminho 7 n°vertices (2): (18->10)
+  arestas: (18,10)
+
+subcaminho 8 n°vertices (4): (5->1->10->18)
+  arestas: (5,1), (1,10), (10,18)
+
+subcaminho 9 n°vertices (3): (14->5->10)
+  arestas: (14,5), (5,10)
+
+subcaminho 10 n°vertices (4): (2->15->1->5)
+  arestas: (2,15), (15,1), (1,5)
+
+subcaminho 11 n°vertices (2): (6->15)
+  arestas: (6,15)
+
+subcaminho 12 n°vertices (2): (15->20)
+  arestas: (15,20)
+
+subcaminho 13 n°vertices (3): (4->10->1)
+  arestas: (4,10), (10,1)
+
+subcaminho 14 n°vertices (4): (9->17->3->10)
+  arestas: (9,17), (17,3), (3,10)
+
+subcaminho 15 n°vertices (2): (8->1)
+  arestas: (8,1)
+
+subcaminho 16 n°vertices (2): (12->8)
+  arestas: (12,8)
+
+subcaminho 17 n°vertices (2): (3->5)
+  arestas: (3,5)
+
+subcaminho 18 n°vertices (2): (20->13)
+  arestas: (20,13)
+
+subcaminho 19 n°vertices (3): (8->16->2)
+  arestas: (8,16), (16,2)
+
+subcaminho 20 n°vertices (2): (2->5)
+  arestas: (2,5)
+
+subcaminho 21 n°vertices (2): (9->2)
+  arestas: (9,2)
+
+subcaminho 22 n°vertices (2): (11->19)
+  arestas: (11,19)
+
+subcaminho 23 n°vertices (3): (6->11->15)
+  arestas: (6,11), (11,15)
+
+subcaminho 24 n°vertices (2): (7->14)
+  arestas: (7,14)
+
 ------------------------------------------------------------
 
 Fim do relatório
