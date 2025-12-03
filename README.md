@@ -3,6 +3,7 @@ This repository contains the implementation and experiments related to my underg
 
 ## Project Structure
 
+
 ```
 int-exact_cover
 ├─ README.md
@@ -280,11 +281,14 @@ int-exact_cover
 │  │  └─ teste_dani_parsed.txt
 │  ├─ gurobi
 │  │  └─ py_parsed_data_gurobi_result.txt
+│  ├─ plots
+│  │  └─ graph.png
 │  └─ py_parsed_data
 │     ├─ E_for_gurobi.pkl
 │     ├─ S_for_gurobi.pkl
 │     ├─ edges.csv
 │     ├─ paths_by_group.json
+│     ├─ teste_dani_c_data.txt
 │     ├─ teste_dani_parsed.txt
 │     └─ vertices.csv
 ├─ src
@@ -295,6 +299,7 @@ int-exact_cover
 │  │  ├─ draw_graph.py
 │  │  ├─ heuristics
 │  │  │  ├─ firsth_heuristic.py
+│  │  │  ├─ heuristic_3.c
 │  │  │  ├─ v1_primeira_heurística.py
 │  │  │  └─ v2_primeira_heurística.py
 │  │  └─ rodar_modelo.py
@@ -308,6 +313,7 @@ int-exact_cover
 │     │  ├─ main.cpython-312.pyc
 │     │  ├─ main_parse_edges.cpython-312.pyc
 │     │  └─ path_reconstruction.cpython-312.pyc
+│     ├─ draw_graph_from_csv.py
 │     ├─ exporters.py
 │     ├─ file_parser.py
 │     ├─ graph_structs.py
