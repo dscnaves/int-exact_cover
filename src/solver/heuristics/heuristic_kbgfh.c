@@ -5,6 +5,7 @@
 
 // Default input_file: int-exact_cover/results/py_parsed_data/teste_dani_c_data.txt
 // Example: ./heuristic_kbgfh int-exact_cover/results/py_parsed_data/teste_dani_c_data.txt 3
+// ./bin/heuristic_kbgfh results/py_parsed_data/edges_to_ports_202202100000.anon_c_data.txt 25
 
 
 #include <stdio.h>      // file I/O (fopen, fgets, printf)
@@ -12,34 +13,50 @@
 #include <string.h>     // strcpy, strtok, strlen, strcmp
 #include <time.h>       // measuring runtime and timestamp for output filenames
 
-#define MAX_LINE 4096   
+#define MAX_LINE 4096
+
+typedef struct Node_t {
+    struct Node_t * prev;
+    struct Node_t * next;
+    int vertex;
+} Node;
 
 typedef struct {
-    int u, v;
-    int id;
+    int vi;      // Initial vertex
+    int vf;
     int covered; // 0/1
 } Edge;
 
 typedef struct {
-    int id;                 // path ID
-    int num_vertices;
-    int *vertices;          // vertex list length = num_vertices  -  [v1, v2, v3, …]
-    int num_edges;          // num_vertices - 1
-    int *edge_ids;          // length = num_edges -> indices into global edges array
+    Edge * edges;
+    int edge_stored;        // number of egdes read/stored
+    int edge_capacity;      // size of the allocated memory
+} ArrayEdges;
+
+typedef struct {
+    int id;
+    Node * head;
+    Node * tail;
+    int length;
 } Path;
+
+typedef struct {
+    Path * paths;
+    int path_stored;        // number of paths read/stored
+    int path_capacity;      // size of the allocated memory
+} ArrayPaths;
 
 typedef struct {
     char instance_name[256];
     int total_vertices;
-    int total_edges_declared;
-    int total_paths_declared;
-    Edge *edges;
-    int edges_count;        // number of egdes sotred in the array of Egdes
-    int edges_capacity;
-    Path *paths;
-    int paths_count;        // number of egdes sotred in the array of Paths
-    int paths_capacity;
+    int total_edges;
+    int total_paths;
+    ArrayEdges arrayEdges;
+    ArrayPaths arrayPaths;      // Paths Pre Selected
 } DataSet;
+
+
+// --- Helper Functions ---
 
 // Convenience function to exit with an error
 void die(const char *msg) {
@@ -47,53 +64,89 @@ void die(const char *msg) {
     exit(EXIT_FAILURE);
 }
 
+// Create and Initialize Node
+Node * create_node(int vertex){
+    Node * n;
+    n = malloc(sizeof(Node));
+    if (!n) die("Memory allocation failed for Node");
+    n->next = NULL;
+    n->prev = NULL;
+    n->vertex = vertex;
+    return n;
+}
+
+ArrayPaths * init_ArrayPaths(){
+    ArrayPaths * ap;
+    ap->path_capacity = 64;
+}
+
+// Initialize DataSet
+DataSet * init_dataset(){
+    DataSet * ds;
+    ds = malloc(sizeof(DataSet));
+    if (!ds) die("Memory allocation failed for DataSet");
+    
+    // Initialize edges array
+    ds->arrayEdges.edge_capacity = 64;
+    ds->arrayEdges.edge_stored = 0;
+    ds->arrayEdges.edges = malloc(ds->arrayEdges.edge_capacity * sizeof(Edge));
+    
+    // Initialize paths array
+    ds->arrayPaths.path_capacity = 64;
+    ds->arrayPaths.path_stored = 0;
+    ds->arrayPaths.paths = malloc(ds->arrayPaths.path_capacity * sizeof(Path));
+
+    if (!ds->arrayEdges.edges || !ds->arrayPaths.paths) die("Memory allocation failed for arrays");
+    return ds;
+}
+
+// Function responsible for Dynamic Memory Management
 void ensure_edges_capacity(DataSet *ds) {
-    if (ds->edges_capacity == 0) {
-        ds->edges_capacity = 64;
-        ds->edges = malloc(ds->edges_capacity * sizeof(Edge));
-    } else if (ds->edges_count >= ds->edges_capacity) {
-        ds->edges_capacity *= 2;
-        ds->edges = realloc(ds->edges, ds->edges_capacity * sizeof(Edge));
+    // Uninitialized
+    if (ds->arrayEdges.edge_capacity == 0) {
+        ds->arrayEdges.edge_capacity = 64;
+        ds->arrayEdges.edges = malloc(ds->arrayEdges.edge_capacity * sizeof(Edge));
+    } 
+    // Checks if the array is full
+    else if (ds->arrayEdges.edge_stored >= ds->arrayEdges.edge_capacity) {
+        ds->arrayEdges.edge_capacity *= 2;
+        ds->arrayEdges.edges = realloc(ds->arrayEdges.edges, ds->arrayEdges.edge_capacity * sizeof(Edge));
+        if (!ds->arrayEdges.edges) die("Realloc failed for edges");
     }
 }
 
-void ensure_paths_capacity(DataSet *ds) {
-    if (ds->paths_capacity == 0) {
-        ds->paths_capacity = 64;
-        ds->paths = malloc(ds->paths_capacity * sizeof(Path));
-    } else if (ds->paths_count >= ds->paths_capacity) {
-        ds->paths_capacity *= 2;
-        ds->paths = realloc(ds->paths, ds->paths_capacity * sizeof(Path));
+void ensure_arrayPaths_capacity(ArrayPaths * ap) {
+    if (ap->path_capacity == 0) {
+        ap->path_capacity = 64;
+        ap->paths = malloc(ap->path_capacity * sizeof(Path));
+    } else if (ap->path_stored >= ap->path_capacity) {
+        ap->path_capacity *= 2;
+        ap->paths = realloc(ap->paths, ap->path_capacity * sizeof(Path));
+        if (!ap->paths) die("Realloc failed for paths");
     }
 }
 
-// linear search for edge (u,v). If not found and create_if_missing==1, add it.
-int find_or_add_edge(DataSet *ds, int u, int v, int create_if_missing) {
-    for (int i = 0; i < ds->edges_count; ++i) {
-        if (ds->edges[i].u == u && ds->edges[i].v == v) return ds->edges[i].id;
+int ** init_coverageEdge(DataSet * ds){
+    int ** cover = malloc(ds->total_edges*sizeof(int));
+    for (int i = 0; i<ds->total_edges; i++){
+        cover[i] = malloc(ds->total_edges*sizeof(int));
     }
-    if (!create_if_missing) return -1;
-    ensure_edges_capacity(ds);
-    int id = ds->edges_count;
-    ds->edges[id].u = u;
-    ds->edges[id].v = v;
-    ds->edges[id].id = id;
-    ds->edges[id].covered = 0;
-    ds->edges_count++;
-    return id;
+    return cover;
 }
 
-void free_dataset(DataSet *ds) {
-    for (int i = 0; i < ds->paths_count; ++i) {
-        free(ds->paths[i].vertices);
-        free(ds->paths[i].edge_ids);
+// Initialize Coverage Matrix (Fixed size logic)
+// We use (total_vertices + 1) to handle 1-based indexing safely
+int ** init_coverageMatrix(int total_vertices){
+    int ** cover = malloc((total_vertices + 1) * sizeof(int*));
+    for (int i = 0; i <= total_vertices; i++){
+        cover[i] = calloc((total_vertices + 1), sizeof(int)); // calloc initializes to 0
     }
-    free(ds->paths);
-    free(ds->edges);
+    return cover;
 }
 
-void parse_input_file(const char *filename, DataSet *ds) {
-    FILE *f = fopen(filename, "r");
+// --- Parsing ---
+void parse_input_file(const char *filename, DataSet *ds){
+    FILE * f = fopen(filename,"r");
     if (!f) {
         char tmp[512];
         snprintf(tmp, sizeof(tmp), "Could not open input file: %s", filename);
@@ -103,8 +156,9 @@ void parse_input_file(const char *filename, DataSet *ds) {
     while (fgets(line, sizeof(line), f)) {
         // strip newline
         size_t L = strlen(line);
-        while (L && (line[L-1]=='\n' || line[L-1]=='\r')) { line[--L] = 0; }
 
+        // "Hello\n\0" -> "Hello\0\0"
+        while (L && (line[L-1]=='\n' || line[L-1]=='\r')) { line[--L] = 0; }
         if (L == 0) continue;
         if (line[0] == '#') continue;
 
@@ -121,11 +175,11 @@ void parse_input_file(const char *filename, DataSet *ds) {
             continue;
         }
         if (strncmp(line, "TOTAL_EDGES:", 12) == 0) {
-            ds->total_edges_declared = atoi(line + 12);
+            ds->total_edges = atoi(line + 12);
             continue;
         }
         if (strncmp(line, "TOTAL_PATHS:", 12) == 0) {
-            ds->total_paths_declared = atoi(line + 12);
+            ds->total_paths = atoi(line + 12);
             continue;
         }
 
@@ -133,91 +187,359 @@ void parse_input_file(const char *filename, DataSet *ds) {
         char *p = line;
         // skip leading spaces
         while (*p == ' ' || *p == '\t') p++;
-        // parse id
+        
+        // 1. Path ID
         char *tok = strtok(p, ";");
         if (!tok) continue;
         int path_id = atoi(tok);
 
+        // 2. Num Vertices
         tok = strtok(NULL, ";");
         if (!tok) continue;
         int num_vertices = atoi(tok);
 
+        // 3. Vertices List
         tok = strtok(NULL, ";");
         if (!tok) continue;
-        // now tok is "V1,V2,..." parse integers
-        int *verts = malloc(sizeof(int) * num_vertices);
-        int idx = 0;
+
+        // Ensure capacity
+        ensure_arrayPaths_capacity(&ds->arrayPaths);
+
+        // Get pointer to the current path slot
+        int p_idx = ds->arrayPaths.path_stored;
+        Path *current_path = &ds->arrayPaths.paths[p_idx];
+
+        current_path->id = path_id;
+        current_path->length = num_vertices;
+        current_path->head = NULL;
+        current_path->tail = NULL;
+
+        // Now tok is "V1,V2,..." parse integers
+        // Parse vertices separated by commas within the last token
+        // Note: The previous strtok ended at ';'. We need to tokenize 'tok' now by ','
+        // However, standard strtok maintains internal state. We must use 'tok' as the new string.
         char *vcur = strtok(tok, ",");
-        while (vcur != NULL && idx < num_vertices) {
-            verts[idx++] = atoi(vcur);
-            vcur = strtok(NULL, ",");
-        }
-        if (idx != num_vertices) {
-            free(verts);
-            die("Mismatch between declared and parsed number of vertices in a path.");
+        int count = 0;
+
+        while (vcur != NULL) {
+            int vertex = atoi(vcur);
+            Node *new_node = create_node(atoi(vcur));
+            
+            if (current_path->head == NULL) {
+                // First node
+                current_path->head = new_node;
+                current_path->tail = new_node;
+            } else {
+                // Append to tail
+                new_node->prev = current_path->tail;
+                current_path->tail->next = new_node;
+                current_path->tail = new_node;
+            }
+            count++;
+            vcur= strtok(NULL, ",");
         }
 
-        // create path struct
-        ensure_paths_capacity(ds);
-        Path *path = &ds->paths[ds->paths_count];
-        path->id = path_id;
-        path->num_vertices = num_vertices;
-        path->vertices = verts;
-        path->num_edges = (num_vertices >= 1) ? (num_vertices - 1) : 0;
-        path->edge_ids = NULL;
-        if (path->num_edges > 0) {
-            path->edge_ids = malloc(sizeof(int) * path->num_edges);
-            for (int i = 0; i < path->num_edges; ++i) {
-                int u = verts[i];
-                int v = verts[i+1];
-                int eid = find_or_add_edge(ds, u, v, 1);
-                path->edge_ids[i] = eid;
-            }
+        if (count != num_vertices) {
+            fprintf(stderr, "Warning: Declared %d vertices but found %d for path %d\n", num_vertices, count, path_id);
         }
-        ds->paths_count++;
+
+        ds->arrayPaths.path_stored++;
     }
     fclose(f);
 }
 
-// Mark all edges as uncovered initially
-void init_coverage(DataSet *ds) {
-    for (int i = 0; i < ds->edges_count; ++i) ds->edges[i].covered = 0;
-}
+// Clean up memory
+void free_dataset(DataSet *ds) {
+    if (!ds) return;
 
-// Utility to produce fragment vertex sequence string
-char *fragment_vertices_string(Path *p, int start_edge_idx, int len_edges) {
-    // fragment covers edges start_edge_idx .. start_edge_idx+len_edges-1
-    // vertices from start vertex = vertices[start_edge_idx] to vertices[start_edge_idx + len_edges]
-    int vlen = len_edges + 1;
-    int start_v = start_edge_idx;
-    int tot = vlen * 8 + 32;
-    char *s = malloc(tot);
-    s[0] = 0;
-    for (int i = 0; i < vlen; ++i) {
-        char tmp[32];
-        snprintf(tmp, sizeof(tmp), "%d", p->vertices[start_v + i]);
-        strcat(s, tmp);
-        if (i+1 < vlen) strcat(s, "->");
+    // Free Edges
+    if (ds->arrayEdges.edges) free(ds->arrayEdges.edges);
+
+    // Free Paths (and their linked lists)
+    if (ds->arrayPaths.paths) {
+        for (int i = 0; i < ds->arrayPaths.path_stored; i++) {
+            Node *curr = ds->arrayPaths.paths[i].head;
+            while (curr) {
+                Node *tmp = curr;
+                curr = curr->next;
+                free(tmp);
+            }
+        }
+        free(ds->arrayPaths.paths);
     }
-    return s;
+
+    free(ds);
 }
 
-int count_uncovered_in_fragment(DataSet *ds, Path *p, int start_edge_idx, int len_edges) {
-    int cnt = 0;
-    for (int i = 0; i < len_edges; ++i) {
-        int eid = p->edge_ids[start_edge_idx + i];
-        if (!ds->edges[eid].covered) cnt++;
+void free_coverageMatrix(int ** matrix, int total_vertices) {
+    for (int i = 0; i <= total_vertices; i++) {
+        free(matrix[i]);
     }
-    return cnt;
+    free(matrix);
 }
 
-int all_edges_covered(DataSet *ds) {
-    for (int i = 0; i < ds->edges_count; ++i)
-        if (!ds->edges[i].covered) return 0;
-    return 1;
+void free_solutions(ArrayPaths *ap) {
+    if (!ap) return;
+
+    // 1. Check if the paths array exists
+    if (ap->paths) {
+        // Iterate over each stored path
+        for (int i = 0; i < ap->path_stored; i++) {
+            Node *curr = ap->paths[i].head;
+            
+            // 2. Free the linked list (Nodes) of this path
+            while (curr != NULL) {
+                Node *temp = curr;     // Save the current node
+                curr = curr->next;     // Move to the next node
+                free(temp);            // Free the current node
+            }
+        }
+        // 3. Free the array holding the Path structs
+        free(ap->paths);
+    }
+
+    // 4. Free the main structure pointer
+    free(ap);
 }
 
-int main(int argc, char **argv) {
+// int fragmentation(int k, DataSet * ds, int ** coverageMatrix, ArrayPaths * chosenPaths, int num_coverEdges){
+    
+//     // First choise of path
+//     Path pcur = ds->arrayPaths.paths[0];
+//     if (pcur.length <= k){
+//         chosenPaths->path_stored++;
+//         ensure_arrayPaths_capacity(chosenPaths);
+//         chosenPaths->paths[0] = pcur;
+
+//         Node * nodeCur = pcur.head;
+//         for(int i = 0; i<pcur.length-1; i++){
+//             int vi = nodeCur->vertex;
+//             nodeCur = nodeCur->next;
+//             int vf = nodeCur->vertex;
+//             coverageMatrix[vi][vf] = 1;
+//             num_coverEdges++;
+//         }
+//     } else {
+//         Node * nodeCur = pcur.head;
+//         for(int i = 0; i<k; i++){
+//             chosenPaths->path_stored++;
+//             ensure_arrayPaths_capacity(chosenPaths);
+        
+//             chosenPaths->paths[0].head = nodeCur;
+
+//             int vi = nodeCur->vertex;
+//             nodeCur = nodeCur->next;
+//             int vf = nodeCur->vertex;
+//             coverageMatrix[vi][vf] = 1;
+//             num_coverEdges++;
+//         }
+//     }
+//     int path_idx = 1;
+//     // Chosing the paths from the second one onwards
+//     while(num_coverEdges != ds->total_edges){
+//         pcur = ds->arrayPaths.paths[path_idx];
+
+//         // Util variable: At least one vertex of the path was add? 1:0
+//         int util = 0;
+
+//         // Vertex Iteration
+//         Node * nodeCur = pcur.head;
+//         for(int i = 0; i<k; i++){
+//             int vi = nodeCur->vertex;
+//             nodeCur = nodeCur->next;
+//             int vf = nodeCur->vertex;
+//             if (coverageMatrix[vi][vf] == 0){
+//                 if (util==0){
+//                     chosenPaths->path_stored++;
+//                     ensure_arrayPaths_capacity(chosenPaths);
+//                     util++;
+//                 }
+//                 coverageMatrix[vi][vf] == 1;
+//                 num_coverEdges++;
+//                 chosenPaths->paths[chosenPaths->path_stored].tail->next = nodeCur->prev;
+//                 chosenPaths->paths[chosenPaths->path_stored].tail
+//             } else{
+//                 chosenPaths->path_stored++;
+//                 ensure_arrayPaths_capacity(chosenPaths);
+//                 nodeCur = nodeCur->next;
+//             }           
+//         }
+        
+
+//         path_idx++;
+//     }
+
+// }
+
+void write_solution(const char *directory, DataSet *ds, ArrayPaths *solution, double time_taken, int k) {
+    char filepath[512];
+    
+    // Constrói o caminho: results/heuristic/NOME_INSTANCIA_KBGFH_k3.txt
+    snprintf(filepath, sizeof(filepath), "%s/%s_KBGFH_k%d.txt", directory, ds->instance_name, k);
+    
+    FILE *f = fopen(filepath, "w");
+    if (!f) { 
+        fprintf(stderr, "Warning: Could not write to %s. Check if directory exists.\n", filepath); 
+        return; 
+    }
+
+    // Calcular o total de arestas únicas cobertas (Soma de edges de cada subpath)
+    int total_edges_covered = 0;
+    for(int i = 0; i < solution->path_stored; i++) {
+        // Num arestas = Num vértices (length) - 1
+        if (solution->paths[i].length > 0)
+            total_edges_covered += (solution->paths[i].length - 1);
+    }
+
+    // Header conforme solicitado
+    fprintf(f, "INSTANCE_NAME:%s\n", ds->instance_name);
+    fprintf(f, "HEURISTIC:K-Bounded Greedy Fragmentation Heuristic (K-BGFH)\n");
+    fprintf(f, "K:%d\n", k);
+    fprintf(f, "SELECTED_SUBPATHS:%d\n", solution->path_stored);
+    fprintf(f, "RUN_TIME_SECONDS:%.6f\n", time_taken);
+    fprintf(f, "TOTAL_UNIQUE_EDGES:%d\n", total_edges_covered);
+    fprintf(f, "\n");
+    fprintf(f, "# SELECTED FRAGMENTS (path_id;start_edge_index;num_edges;vertex_sequence)\n");
+    
+    // Lista de fragmentos
+    for(int i = 0; i < solution->path_stored; i++) {
+        Path *p = &solution->paths[i];
+        int num_edges = p->length - 1;
+        
+        // start_edge_index está fixo em 0 pois a struct atual não guarda o offset original.
+        fprintf(f, "%d;0;%d;", p->id, num_edges);
+        
+        Node *curr = p->head;
+        while(curr) {
+            fprintf(f, "%d", curr->vertex);
+            if(curr->next) fprintf(f, "->");
+            curr = curr->next;
+        }
+        fprintf(f, "\n");
+    }
+    
+    fclose(f);
+    printf("Results written to: %s\n", filepath);
+}
+
+// --- Core Function of the Heuristic ---
+
+// Auxiliary function to save the current fragment in the array of chosen fragments and reset the temporary struct
+void save_and_reset_fragment(Path *frag, ArrayPaths *chosenPaths) {
+    
+    // Only save if there is at least 1 edge (i.e., >= 2 vertices)
+    if (frag->head != NULL && frag->length >= 2) {
+        ensure_arrayPaths_capacity(chosenPaths);
+        chosenPaths->paths[chosenPaths->path_stored] = *frag; // Copy struct
+        chosenPaths->path_stored++;
+    } else {
+        // If it is an orphan node (e.g., isolated vertex), free memory
+        if (frag->head) free(frag->head);
+    }
+    // Reset fragment
+    frag->head = NULL;
+    frag->tail = NULL;
+    frag->length = 0;
+    // Increment ID for the next one
+    frag->id++; 
+}
+
+void fragmentation(int k, DataSet * ds, int ** coverageMatrix, ArrayPaths * chosenPaths) {
+    
+    // Iterate over all input paths
+    for (int i = 0; i < ds->arrayPaths.path_stored; i++) {
+        
+        Path * originalPath = &ds->arrayPaths.paths[i];
+        Node * currNode = originalPath->head;
+        
+        // Temporary fragment being built
+        Path currentFragment;
+        currentFragment.id = chosenPaths->path_stored;
+        currentFragment.length = 0; 
+        currentFragment.head = NULL;
+        currentFragment.tail = NULL;
+
+        // Traverse vertices of the original path: u -> v
+        while (currNode != NULL && currNode->next != NULL) {
+            int u = currNode->vertex;
+            int v = currNode->next->vertex;
+
+            // Check if edge (u, v) is already covered
+            // Adjust here if the graph is undirected: (matrix[u][v] || matrix[v][u])
+            int is_covered = (coverageMatrix[u][v] == 1); 
+
+            if (!is_covered) {
+                // --- Edge NOT Covered ---
+                
+                // 1. Mark as covered
+                coverageMatrix[u][v] = 1;
+                // coverageMatrix[v][u] = 1; // Adjust here if the graph is undirected
+
+                // 2. If fragment is empty, start with 'u'
+                if (currentFragment.head == NULL) {
+                    Node * n = create_node(u);
+                    currentFragment.head = n;
+                    currentFragment.tail = n;
+                    currentFragment.length = 1; 
+                }
+
+                // 3. Add 'v' to the fragment
+                Node * n = create_node(v);
+                n->prev = currentFragment.tail;
+                currentFragment.tail->next = n;
+                currentFragment.tail = n;
+                currentFragment.length++;
+
+                // 4. K Limit Check
+                // path.length counts vertices. k is edges.
+                // Ex: k=3 edges requires 4 vertices.
+                if (currentFragment.length == (k + 1)) {
+                    // We reached size k.
+                    // Save this piece.
+                    ensure_arrayPaths_capacity(chosenPaths);    ///
+                    chosenPaths->paths[chosenPaths->path_stored] = currentFragment;
+                    chosenPaths->path_stored++;
+
+                    // START OF NEXT FRAGMENT (Overlap on vertex)
+                    // Since the cut was by SIZE (and not by covered edge),
+                    // the next subpath MUST start at 'v' to continue covering the next edges.
+                    
+                    // Manually reset to keep vertex 'v'
+                    currentFragment.id++;
+                    Node * startNode = create_node(v); // The current 'v' becomes the 'u' of the next one
+                    currentFragment.head = startNode;
+                    currentFragment.tail = startNode;
+                    currentFragment.length = 1;
+                }
+
+            } else {
+                // --- Edge ALREADY Covered (The "Cut") ---
+                // We found a gap. The current fragment (if it exists) ends at 'u'.
+                // The next fragment (if any) will only start at the next valid edge.
+                
+                save_and_reset_fragment(&currentFragment, chosenPaths);
+                
+                // Note: We do not add 'v' to anything right now. 
+                // In the next loop iteration, 'currNode' will be 'v', and we will test edge v -> w.
+                // If v -> w is valid, a new fragment will start at 'v'.
+            }
+
+            // Advance in the original path
+            currNode = currNode->next;
+        }
+
+        // End of Path Loop: Save what remains in the buffer
+        save_and_reset_fragment(&currentFragment, chosenPaths);
+    }
+}
+
+
+
+
+// --- Main ---
+
+int main(int argc, char **argv){
+
     const char *default_input = "int-exact_cover/results/py_parsed_data/teste_dani_c_data.txt";
     const char *input_file = (argc >= 2) ? argv[1] : default_input;
     if (argc < 3) {
@@ -229,118 +551,53 @@ int main(int argc, char **argv) {
     int k = atoi(argv[2]);
     if (k <= 0) die("k must be > 0");
 
-    DataSet ds;
-    memset(&ds, 0, sizeof(ds));
-    parse_input_file(input_file, &ds);
+    // 1. Initialization
+    DataSet *ds = init_dataset();
 
-    init_coverage(&ds);
+    // 2. Parse
+    parse_input_file(input_file, ds);
 
-    // prepare results container
-    typedef struct {
-        int path_id;
-        int start_edge_idx;
-        int len_edges;
-        char *vertices_str;
-    } Fragment;
-    Fragment *solution = NULL;
-    int sol_count = 0, sol_cap = 0;
-    #define ENSURE_SOL_CAP() if(sol_cap==0){sol_cap=128;solution=malloc(sol_cap*sizeof(Fragment));} else if(sol_count>=sol_cap){sol_cap*=2;solution=realloc(solution,sol_cap*sizeof(Fragment));}
+    // Output stats to verify
+    printf("Instance: %s\n", ds->instance_name);
+    printf("Vertices: %d, Edges: %d, Paths Loaded: %d\n", 
+           ds->total_vertices, ds->total_edges, ds->arrayPaths.path_stored);
 
-    clock_t tstart = clock();
-
-    // main greedy loop: while uncovered edges exist, find fragment (any path, any position) with best uncovered count (len <= k)
-    while (!all_edges_covered(&ds)) {
-        int best_uncovered = 0;
-        int best_path_idx = -1;
-        int best_start = -1;
-        int best_len = 0;
-
-        // scan all paths
-        for (int pi = 0; pi < ds.paths_count; ++pi) {
-            Path *p = &ds.paths[pi];
-            if (p->num_edges <= 0) continue;
-            // consider every start position
-            for (int s = 0; s < p->num_edges; ++s) {
-                // try len 1..k but not exceeding remaining edges
-                for (int L = 1; L <= k && s + L <= p->num_edges; ++L) {
-                    int cnt_un = count_uncovered_in_fragment(&ds, p, s, L);
-                    if (cnt_un > best_uncovered || (cnt_un == best_uncovered && L > best_len)) {
-                        best_uncovered = cnt_un;
-                        best_path_idx = pi;
-                        best_start = s;
-                        best_len = L;
-                    }
-                }
-            }
+    // Verify Linked List of the first path (if exists)
+    if (ds->arrayPaths.path_stored > 0) {
+        printf("First Path Nodes: ");
+        Node *curr = ds->arrayPaths.paths[0].head;
+        while(curr) {
+            printf("%d -> ", curr->vertex);
+            curr = curr->next;
         }
-
-        if (best_uncovered == 0) {
-            // No fragment adds new uncovered edges -> we might have isolated uncovered edges that our path fragments can't reach,
-            // but this is unlikely because we enumerated all fragments. Break to avoid infinite loop.
-            break;
-        }
-
-        // select fragment and mark edges covered
-        Path *best_path = &ds.paths[best_path_idx];
-        ENSURE_SOL_CAP();
-        solution[sol_count].path_id = best_path->id;
-        solution[sol_count].start_edge_idx = best_start;
-        solution[sol_count].len_edges = best_len;
-        solution[sol_count].vertices_str = fragment_vertices_string(best_path, best_start, best_len);
-        sol_count++;
-
-        for (int i = 0; i < best_len; ++i) {
-            int eid = best_path->edge_ids[best_start + i];
-            ds.edges[eid].covered = 1;
-        }
+        printf("NULL\n");
     }
 
-    clock_t tend = clock();
-    double elapsed = (double)(tend - tstart) / CLOCKS_PER_SEC;
+    // 3. Prepare Structures
+    int ** coverageMatrix = init_coverageMatrix(ds->total_vertices);
+    ArrayPaths * chosenPaths = malloc(sizeof(ArrayPaths));
+    chosenPaths->path_capacity = 0;
+    chosenPaths->path_stored = 0;
+    chosenPaths->paths = NULL; 
 
-    // create output directory if needed
-    const char *outdir = "int-exact_cover/results/heuristic";
-    char cmd[512];
-    // try creating directory (POSIX)
-    snprintf(cmd, sizeof(cmd), "mkdir -p %s", outdir);
-    system(cmd);
+    // 4. Run Heuristic
+    // Logic for kbgfh heuristic
+    clock_t start = clock();
+    
+    fragmentation(k, ds, coverageMatrix, chosenPaths);
+    
+    clock_t end = clock();
+    double time_taken = ((double)(end - start)) / CLOCKS_PER_SEC;
 
-    // Build output filename: INSTANCE_HEUR_res_epoch.txt
-    time_t now = time(NULL);
-    char outfname[512];
-    snprintf(outfname, sizeof(outfname), "%s/%s_K-BGFH_res_%ld.txt", outdir, ds.instance_name, (long)now);
+    printf("Heuristic Completed. Subpaths chosen: %d\n", chosenPaths->path_stored);
 
-    FILE *fo = fopen(outfname, "w");
-    if (!fo) {
-        fprintf(stderr, "Failed to open output file '%s' for writing.\n", outfname);
-    } else {
-        fprintf(fo, "INSTANCE_NAME:%s\n", ds.instance_name);
-        fprintf(fo, "HEURISTIC:K-Bounded Greedy Fragmentation Heuristic (K-BGFH)\n");
-        fprintf(fo, "K:%d\n", k);
-        fprintf(fo, "SELECTED_SUBPATHS:%d\n", sol_count);
-        fprintf(fo, "RUN_TIME_SECONDS:%.6f\n", elapsed);
-        fprintf(fo, "TOTAL_UNIQUE_EDGES:%d\n", ds.edges_count);
-        fprintf(fo, "\n# SELECTED FRAGMENTS (path_id;start_edge_index;num_edges;vertex_sequence)\n");
-        for (int i = 0; i < sol_count; ++i) {
-            fprintf(fo, "%d;%d;%d;%s\n",
-                solution[i].path_id,
-                solution[i].start_edge_idx,
-                solution[i].len_edges,
-                solution[i].vertices_str);
-        }
-        fclose(fo);
-        printf("Wrote results to: %s\n", outfname);
-    }
+    // 5. Write Results
+    write_solution("int-exact_cover/results/heuristic", ds, chosenPaths, time_taken, k);
 
-    // also print a brief summary to stdout
-    printf("Instance: %s\nHeuristic: K-Bounded Greedy Fragmentation Heuristic (K-BGFH)\n", ds.instance_name);
-    printf("Unique edges discovered: %d\n", ds.edges_count);
-    printf("Selected fragments: %d\n", sol_count);
-    printf("Elapsed (s): %.6f\n", elapsed);
+    // 6. Cleanup
+    free_coverageMatrix(coverageMatrix, ds->total_vertices);
+    free_dataset(ds);
+    free_solutions(chosenPaths);    // Releases the solution found (output)
 
-    // cleanup
-    for (int i = 0; i < sol_count; ++i) free(solution[i].vertices_str);
-    free(solution);
-    free_dataset(&ds);
     return 0;
 }

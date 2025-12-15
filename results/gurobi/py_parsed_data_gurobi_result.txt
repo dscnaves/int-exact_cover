@@ -3,89 +3,6107 @@ Instância: py_parsed_data
 ===========================================================
 Resultados do Modelo Gurobi
 ------------------------------------------------------------
-• Valor da Função Objetivo........   : 24.0
-• Número de Subcaminhos Iniciais...  : 79
-• Limite Inferior (Lower Bound)......: 24.0
+• Valor da Função Objetivo........   : 2030.0
+• Número de Subcaminhos Iniciais...  : 839082
+• Limite Inferior (Lower Bound)......: 2030.0
 • GAP.............................   : 0.00%
-• Nós da Árvore de Decisão........   : 0.0
-• Tempo Total de Execução.........   : 0.006661891937255859 segundos
+• Nós da Árvore de Decisão........   : 39.0
+• Tempo Total de Execução.........   : 1907.3843221664429 segundos
 • Solução Ótima Encontrada?.......   : SIM
 • Status texto do Gurobi..........   : OPTIMAL
 ------------------------------------------------------------
 
 Subcaminhos Selecionados:
 ------------------------------------------------------------
-subcaminho 1 n°vertices (2): (12->20)
-  arestas: (12,20)
+subcaminho 1 n°vertices (2): (13->44)
+  arestas: (13,44)
 
-subcaminho 2 n°vertices (2): (13->9)
-  arestas: (13,9)
-
-subcaminho 3 n°vertices (2): (13->6)
-  arestas: (13,6)
-
-subcaminho 4 n°vertices (2): (4->12)
+subcaminho 2 n°vertices (2): (4->12)
   arestas: (4,12)
 
-subcaminho 5 n°vertices (3): (14->7->15)
-  arestas: (14,7), (7,15)
+subcaminho 3 n°vertices (2): (38->1)
+  arestas: (38,1)
 
-subcaminho 6 n°vertices (2): (19->12)
-  arestas: (19,12)
+subcaminho 4 n°vertices (2): (32->7)
+  arestas: (32,7)
 
-subcaminho 7 n°vertices (2): (18->10)
-  arestas: (18,10)
+subcaminho 5 n°vertices (2): (49->37)
+  arestas: (49,37)
 
-subcaminho 8 n°vertices (4): (5->1->10->18)
-  arestas: (5,1), (1,10), (10,18)
+subcaminho 6 n°vertices (2): (64->95)
+  arestas: (64,95)
 
-subcaminho 9 n°vertices (3): (14->5->10)
-  arestas: (14,5), (5,10)
+subcaminho 7 n°vertices (3): (11->9->2)
+  arestas: (11,9), (9,2)
 
-subcaminho 10 n°vertices (4): (2->15->1->5)
-  arestas: (2,15), (15,1), (1,5)
+subcaminho 8 n°vertices (4): (13->27->10->33)
+  arestas: (13,27), (27,10), (10,33)
 
-subcaminho 11 n°vertices (2): (6->15)
-  arestas: (6,15)
+subcaminho 9 n°vertices (2): (3->44)
+  arestas: (3,44)
 
-subcaminho 12 n°vertices (2): (15->20)
+subcaminho 10 n°vertices (2): (27->6)
+  arestas: (27,6)
+
+subcaminho 11 n°vertices (2): (23->12)
+  arestas: (23,12)
+
+subcaminho 12 n°vertices (2): (24->3)
+  arestas: (24,3)
+
+subcaminho 13 n°vertices (2): (50->35)
+  arestas: (50,35)
+
+subcaminho 14 n°vertices (3): (12->7->48)
+  arestas: (12,7), (7,48)
+
+subcaminho 15 n°vertices (2): (51->7)
+  arestas: (51,7)
+
+subcaminho 16 n°vertices (3): (4->19->23)
+  arestas: (4,19), (19,23)
+
+subcaminho 17 n°vertices (2): (14->15)
+  arestas: (14,15)
+
+subcaminho 18 n°vertices (2): (50->23)
+  arestas: (50,23)
+
+subcaminho 19 n°vertices (2): (26->42)
+  arestas: (26,42)
+
+subcaminho 20 n°vertices (2): (19->53)
+  arestas: (19,53)
+
+subcaminho 21 n°vertices (2): (22->44)
+  arestas: (22,44)
+
+subcaminho 22 n°vertices (2): (9->33)
+  arestas: (9,33)
+
+subcaminho 23 n°vertices (2): (10->5)
+  arestas: (10,5)
+
+subcaminho 24 n°vertices (3): (17->16->40)
+  arestas: (17,16), (16,40)
+
+subcaminho 25 n°vertices (4): (33->45->51->43)
+  arestas: (33,45), (45,51), (51,43)
+
+subcaminho 26 n°vertices (2): (36->37)
+  arestas: (36,37)
+
+subcaminho 27 n°vertices (2): (15->43)
+  arestas: (15,43)
+
+subcaminho 28 n°vertices (2): (33->34)
+  arestas: (33,34)
+
+subcaminho 29 n°vertices (2): (36->25)
+  arestas: (36,25)
+
+subcaminho 30 n°vertices (2): (22->39)
+  arestas: (22,39)
+
+subcaminho 31 n°vertices (2): (9->28)
+  arestas: (9,28)
+
+subcaminho 32 n°vertices (2): (1->45)
+  arestas: (1,45)
+
+subcaminho 33 n°vertices (2): (18->45)
+  arestas: (18,45)
+
+subcaminho 34 n°vertices (2): (19->36)
+  arestas: (19,36)
+
+subcaminho 35 n°vertices (2): (22->27)
+  arestas: (22,27)
+
+subcaminho 36 n°vertices (3): (8->16->15)
+  arestas: (8,16), (16,15)
+
+subcaminho 37 n°vertices (2): (9->16)
+  arestas: (9,16)
+
+subcaminho 38 n°vertices (2): (15->38)
+  arestas: (15,38)
+
+subcaminho 39 n°vertices (2): (40->18)
+  arestas: (40,18)
+
+subcaminho 40 n°vertices (2): (33->29)
+  arestas: (33,29)
+
+subcaminho 41 n°vertices (2): (36->20)
+  arestas: (36,20)
+
+subcaminho 42 n°vertices (2): (34->20)
+  arestas: (34,20)
+
+subcaminho 43 n°vertices (2): (11->44)
+  arestas: (11,44)
+
+subcaminho 44 n°vertices (2): (85->143)
+  arestas: (85,143)
+
+subcaminho 45 n°vertices (4): (18->16->14->53)
+  arestas: (18,16), (16,14), (14,53)
+
+subcaminho 46 n°vertices (4): (11->30->24->33)
+  arestas: (11,30), (30,24), (24,33)
+
+subcaminho 47 n°vertices (2): (15->21)
+  arestas: (15,21)
+
+subcaminho 48 n°vertices (2): (34->3)
+  arestas: (34,3)
+
+subcaminho 49 n°vertices (2): (42->48)
+  arestas: (42,48)
+
+subcaminho 50 n°vertices (2): (11->27)
+  arestas: (11,27)
+
+subcaminho 51 n°vertices (2): (5->33)
+  arestas: (5,33)
+
+subcaminho 52 n°vertices (2): (6->24)
+  arestas: (6,24)
+
+subcaminho 53 n°vertices (2): (35->51)
+  arestas: (35,51)
+
+subcaminho 54 n°vertices (2): (20->17)
+  arestas: (20,17)
+
+subcaminho 55 n°vertices (2): (5->21)
+  arestas: (5,21)
+
+subcaminho 56 n°vertices (2): (53->15)
+  arestas: (53,15)
+
+subcaminho 57 n°vertices (2): (32->44)
+  arestas: (32,44)
+
+subcaminho 58 n°vertices (2): (1->23)
+  arestas: (1,23)
+
+subcaminho 59 n°vertices (3): (48->8->40)
+  arestas: (48,8), (8,40)
+
+subcaminho 60 n°vertices (2): (15->109)
+  arestas: (15,109)
+
+subcaminho 61 n°vertices (2): (19->14)
+  arestas: (19,14)
+
+subcaminho 62 n°vertices (2): (20->5)
+  arestas: (20,5)
+
+subcaminho 63 n°vertices (2): (28->50)
+  arestas: (28,50)
+
+subcaminho 64 n°vertices (2): (37->5)
+  arestas: (37,5)
+
+subcaminho 65 n°vertices (4): (9->1->34->13)
+  arestas: (9,1), (1,34), (34,13)
+
+subcaminho 66 n°vertices (2): (42->43)
+  arestas: (42,43)
+
+subcaminho 67 n°vertices (2): (43->15)
+  arestas: (43,15)
+
+subcaminho 68 n°vertices (5): (4->39->15->5->30)
+  arestas: (4,39), (39,15), (15,5), (5,30)
+
+subcaminho 69 n°vertices (3): (21->53->26)
+  arestas: (21,53), (53,26)
+
+subcaminho 70 n°vertices (2): (51->44)
+  arestas: (51,44)
+
+subcaminho 71 n°vertices (2): (2->25)
+  arestas: (2,25)
+
+subcaminho 72 n°vertices (2): (38->33)
+  arestas: (38,33)
+
+subcaminho 73 n°vertices (2): (6->7)
+  arestas: (6,7)
+
+subcaminho 74 n°vertices (2): (32->39)
+  arestas: (32,39)
+
+subcaminho 75 n°vertices (2): (47->50)
+  arestas: (47,50)
+
+subcaminho 76 n°vertices (2): (2->13)
+  arestas: (2,13)
+
+subcaminho 77 n°vertices (3): (39->45->47)
+  arestas: (39,45), (45,47)
+
+subcaminho 78 n°vertices (2): (28->45)
+  arestas: (28,45)
+
+subcaminho 79 n°vertices (4): (50->39->34->5)
+  arestas: (50,39), (39,34), (34,5)
+
+subcaminho 80 n°vertices (2): (24->47)
+  arestas: (24,47)
+
+subcaminho 81 n°vertices (2): (7->51)
+  arestas: (7,51)
+
+subcaminho 82 n°vertices (2): (3->53)
+  arestas: (3,53)
+
+subcaminho 83 n°vertices (2): (46->20)
+  arestas: (46,20)
+
+subcaminho 84 n°vertices (2): (21->44)
+  arestas: (21,44)
+
+subcaminho 85 n°vertices (2): (42->26)
+  arestas: (42,26)
+
+subcaminho 86 n°vertices (2): (51->39)
+  arestas: (51,39)
+
+subcaminho 87 n°vertices (2): (5->11)
+  arestas: (5,11)
+
+subcaminho 88 n°vertices (2): (6->2)
+  arestas: (6,2)
+
+subcaminho 89 n°vertices (4): (39->35->43->53)
+  arestas: (39,35), (35,43), (43,53)
+
+subcaminho 90 n°vertices (2): (47->45)
+  arestas: (47,45)
+
+subcaminho 91 n°vertices (2): (10->49)
+  arestas: (10,49)
+
+subcaminho 92 n°vertices (2): (2->8)
+  arestas: (2,8)
+
+subcaminho 93 n°vertices (2): (74->68)
+  arestas: (74,68)
+
+subcaminho 94 n°vertices (2): (29->31)
+  arestas: (29,31)
+
+subcaminho 95 n°vertices (4): (8->34->29->27)
+  arestas: (8,34), (34,29), (29,27)
+
+subcaminho 96 n°vertices (3): (28->44->14)
+  arestas: (28,44), (44,14)
+
+subcaminho 97 n°vertices (3): (53->41->1)
+  arestas: (53,41), (41,1)
+
+subcaminho 98 n°vertices (2): (42->9)
+  arestas: (42,9)
+
+subcaminho 99 n°vertices (2): (111->59)
+  arestas: (111,59)
+
+subcaminho 100 n°vertices (3): (39->39->36)
+  arestas: (39,39), (39,36)
+
+subcaminho 101 n°vertices (5): (35->10->27->24->17)
+  arestas: (35,10), (10,27), (27,24), (24,17)
+
+subcaminho 102 n°vertices (2): (11->39)
+  arestas: (11,39)
+
+subcaminho 103 n°vertices (2): (14->30)
+  arestas: (14,30)
+
+subcaminho 104 n°vertices (3): (29->34->9)
+  arestas: (29,34), (34,9)
+
+subcaminho 105 n°vertices (2): (8->32)
+  arestas: (8,32)
+
+subcaminho 106 n°vertices (2): (16->77)
+  arestas: (16,77)
+
+subcaminho 107 n°vertices (2): (28->23)
+  arestas: (28,23)
+
+subcaminho 108 n°vertices (2): (29->14)
+  arestas: (29,14)
+
+subcaminho 109 n°vertices (3): (40->32->33)
+  arestas: (40,32), (32,33)
+
+subcaminho 110 n°vertices (3): (8->11->43)
+  arestas: (8,11), (11,43)
+
+subcaminho 111 n°vertices (3): (53->37->14)
+  arestas: (53,37), (37,14)
+
+subcaminho 112 n°vertices (2): (1->35)
+  arestas: (1,35)
+
+subcaminho 113 n°vertices (2): (28->11)
+  arestas: (28,11)
+
+subcaminho 114 n°vertices (4): (18->26->45->14)
+  arestas: (18,26), (26,45), (45,14)
+
+subcaminho 115 n°vertices (2): (21->22)
+  arestas: (21,22)
+
+subcaminho 116 n°vertices (2): (42->4)
+  arestas: (42,4)
+
+subcaminho 117 n°vertices (8): (49->40->2->20->23->15->42->14)
+  arestas: (49,40), (40,2), (2,20), (20,23), (23,15), (15,42), (42,14)
+
+subcaminho 118 n°vertices (2): (14->25)
+  arestas: (14,25)
+
+subcaminho 119 n°vertices (2): (44->32)
+  arestas: (44,32)
+
+subcaminho 120 n°vertices (3): (1->9->3)
+  arestas: (1,9), (9,3)
+
+subcaminho 121 n°vertices (2): (48->14)
+  arestas: (48,14)
+
+subcaminho 122 n°vertices (2): (8->27)
+  arestas: (8,27)
+
+subcaminho 123 n°vertices (2): (11->22)
+  arestas: (11,22)
+
+subcaminho 124 n°vertices (2): (44->20)
+  arestas: (44,20)
+
+subcaminho 125 n°vertices (2): (8->15)
+  arestas: (8,15)
+
+subcaminho 126 n°vertices (2): (34->47)
+  arestas: (34,47)
+
+subcaminho 127 n°vertices (2): (37->42)
+  arestas: (37,42)
+
+subcaminho 128 n°vertices (4): (48->26->37->33)
+  arestas: (48,26), (26,37), (37,33)
+
+subcaminho 129 n°vertices (2): (1->18)
+  arestas: (1,18)
+
+subcaminho 130 n°vertices (2): (33->44)
+  arestas: (33,44)
+
+subcaminho 131 n°vertices (2): (102->175)
+  arestas: (102,175)
+
+subcaminho 132 n°vertices (2): (21->5)
+  arestas: (21,5)
+
+subcaminho 133 n°vertices (3): (57->46->12)
+  arestas: (57,46), (46,12)
+
+subcaminho 134 n°vertices (6): (43->46->48->27->17->12)
+  arestas: (43,46), (46,48), (48,27), (27,17), (17,12)
+
+subcaminho 135 n°vertices (2): (15->11)
+  arestas: (15,11)
+
+subcaminho 136 n°vertices (2): (48->9)
+  arestas: (48,9)
+
+subcaminho 137 n°vertices (2): (57->45)
+  arestas: (57,45)
+
+subcaminho 138 n°vertices (2): (20->49)
+  arestas: (20,49)
+
+subcaminho 139 n°vertices (3): (29->41->24)
+  arestas: (29,41), (41,24)
+
+subcaminho 140 n°vertices (2): (8->10)
+  arestas: (8,10)
+
+subcaminho 141 n°vertices (2): (11->5)
+  arestas: (11,5)
+
+subcaminho 142 n°vertices (2): (13->48)
+  arestas: (13,48)
+
+subcaminho 143 n°vertices (3): (38->27->44)
+  arestas: (38,27), (27,44)
+
+subcaminho 144 n°vertices (2): (38->28)
+  arestas: (38,28)
+
+subcaminho 145 n°vertices (2): (67->121)
+  arestas: (67,121)
+
+subcaminho 146 n°vertices (3): (29->10->43)
+  arestas: (29,10), (10,43)
+
+subcaminho 147 n°vertices (3): (36->36->17)
+  arestas: (36,36), (36,17)
+
+subcaminho 148 n°vertices (2): (64->122)
+  arestas: (64,122)
+
+subcaminho 149 n°vertices (2): (43->47)
+  arestas: (43,47)
+
+subcaminho 150 n°vertices (2): (6->51)
+  arestas: (6,51)
+
+subcaminho 151 n°vertices (2): (31->8)
+  arestas: (31,8)
+
+subcaminho 152 n°vertices (2): (57->40)
+  arestas: (57,40)
+
+subcaminho 153 n°vertices (2): (3->48)
+  arestas: (3,48)
+
+subcaminho 154 n°vertices (2): (12->3)
+  arestas: (12,3)
+
+subcaminho 155 n°vertices (2): (45->1)
+  arestas: (45,1)
+
+subcaminho 156 n°vertices (2): (17->41)
+  arestas: (17,41)
+
+subcaminho 157 n°vertices (2): (20->32)
+  arestas: (20,32)
+
+subcaminho 158 n°vertices (2): (51->34)
+  arestas: (51,34)
+
+subcaminho 159 n°vertices (2): (13->43)
+  arestas: (13,43)
+
+subcaminho 160 n°vertices (2): (38->23)
+  arestas: (38,23)
+
+subcaminho 161 n°vertices (3): (16->11->31)
+  arestas: (16,11), (11,31)
+
+subcaminho 162 n°vertices (8): (45->3->20->44->28->21->19->35)
+  arestas: (45,3), (3,20), (20,44), (44,28), (28,21), (21,19), (19,35)
+
+subcaminho 163 n°vertices (2): (34->25)
+  arestas: (34,25)
+
+subcaminho 164 n°vertices (2): (47->40)
+  arestas: (47,40)
+
+subcaminho 165 n°vertices (4): (48->20->22->26)
+  arestas: (48,20), (20,22), (22,26)
+
+subcaminho 166 n°vertices (2): (9->49)
+  arestas: (9,49)
+
+subcaminho 167 n°vertices (2): (13->31)
+  arestas: (13,31)
+
+subcaminho 168 n°vertices (2): (43->42)
+  arestas: (43,42)
+
+subcaminho 169 n°vertices (3): (37->26->40)
+  arestas: (37,26), (26,40)
+
+subcaminho 170 n°vertices (2): (10->32)
+  arestas: (10,32)
+
+subcaminho 171 n°vertices (2): (3->43)
+  arestas: (3,43)
+
+subcaminho 172 n°vertices (3): (31->28->2)
+  arestas: (31,28), (28,2)
+
+subcaminho 173 n°vertices (2): (24->25)
+  arestas: (24,25)
+
+subcaminho 174 n°vertices (2): (57->23)
+  arestas: (57,23)
+
+subcaminho 175 n°vertices (7): (11->15->7->39->28->33->17)
+  arestas: (11,15), (15,7), (7,39), (39,28), (28,33), (33,17)
+
+subcaminho 176 n°vertices (3): (7->33->16)
+  arestas: (7,33), (33,16)
+
+subcaminho 177 n°vertices (2): (16->33)
+  arestas: (16,33)
+
+subcaminho 178 n°vertices (2): (17->24)
+  arestas: (17,24)
+
+subcaminho 179 n°vertices (2): (50->22)
+  arestas: (50,22)
+
+subcaminho 180 n°vertices (2): (13->26)
+  arestas: (13,26)
+
+subcaminho 181 n°vertices (2): (26->41)
+  arestas: (26,41)
+
+subcaminho 182 n°vertices (2): (47->23)
+  arestas: (47,23)
+
+subcaminho 183 n°vertices (2): (9->32)
+  arestas: (9,32)
+
+subcaminho 184 n°vertices (2): (43->25)
+  arestas: (43,25)
+
+subcaminho 185 n°vertices (2): (2->35)
+  arestas: (2,35)
+
+subcaminho 186 n°vertices (2): (40->22)
+  arestas: (40,22)
+
+subcaminho 187 n°vertices (2): (3->26)
+  arestas: (3,26)
+
+subcaminho 188 n°vertices (2): (36->24)
+  arestas: (36,24)
+
+subcaminho 189 n°vertices (2): (17->19)
+  arestas: (17,19)
+
+subcaminho 190 n°vertices (2): (16->109)
+  arestas: (16,109)
+
+subcaminho 191 n°vertices (2): (26->36)
+  arestas: (26,36)
+
+subcaminho 192 n°vertices (2): (47->18)
+  arestas: (47,18)
+
+subcaminho 193 n°vertices (2): (26->24)
+  arestas: (26,24)
+
+subcaminho 194 n°vertices (3): (38->46->8)
+  arestas: (38,46), (46,8)
+
+subcaminho 195 n°vertices (2): (53->47)
+  arestas: (53,47)
+
+subcaminho 196 n°vertices (2): (3->21)
+  arestas: (3,21)
+
+subcaminho 197 n°vertices (2): (41->8)
+  arestas: (41,8)
+
+subcaminho 198 n°vertices (2): (12->57)
+  arestas: (12,57)
+
+subcaminho 199 n°vertices (2): (3->9)
+  arestas: (3,9)
+
+subcaminho 200 n°vertices (2): (54->91)
+  arestas: (54,91)
+
+subcaminho 201 n°vertices (2): (72->59)
+  arestas: (72,59)
+
+subcaminho 202 n°vertices (2): (17->2)
+  arestas: (17,2)
+
+subcaminho 203 n°vertices (2): (39->49)
+  arestas: (39,49)
+
+subcaminho 204 n°vertices (2): (48->4)
+  arestas: (48,4)
+
+subcaminho 205 n°vertices (3): (35->1->53)
+  arestas: (35,1), (1,53)
+
+subcaminho 206 n°vertices (2): (47->1)
+  arestas: (47,1)
+
+subcaminho 207 n°vertices (3): (27->30->40)
+  arestas: (27,30), (30,40)
+
+subcaminho 208 n°vertices (2): (41->3)
+  arestas: (41,3)
+
+subcaminho 209 n°vertices (2): (150->59)
+  arestas: (150,59)
+
+subcaminho 210 n°vertices (2): (49->48)
+  arestas: (49,48)
+
+subcaminho 211 n°vertices (2): (7->2)
+  arestas: (7,2)
+
+subcaminho 212 n°vertices (2): (45->50)
+  arestas: (45,50)
+
+subcaminho 213 n°vertices (2): (46->41)
+  arestas: (46,41)
+
+subcaminho 214 n°vertices (2): (3->4)
+  arestas: (3,4)
+
+subcaminho 215 n°vertices (2): (11->49)
+  arestas: (11,49)
+
+subcaminho 216 n°vertices (3): (31->22->7)
+  arestas: (31,22), (22,7)
+
+subcaminho 217 n°vertices (2): (45->38)
+  arestas: (45,38)
+
+subcaminho 218 n°vertices (2): (8->42)
+  arestas: (8,42)
+
+subcaminho 219 n°vertices (2): (39->44)
+  arestas: (39,44)
+
+subcaminho 220 n°vertices (2): (30->12)
+  arestas: (30,12)
+
+subcaminho 221 n°vertices (2): (26->14)
+  arestas: (26,14)
+
+subcaminho 222 n°vertices (2): (27->5)
+  arestas: (27,5)
+
+subcaminho 223 n°vertices (2): (4->48)
+  arestas: (4,48)
+
+subcaminho 224 n°vertices (3): (42->41->27)
+  arestas: (42,41), (41,27)
+
+subcaminho 225 n°vertices (2): (5->20)
+  arestas: (5,20)
+
+subcaminho 226 n°vertices (2): (26->2)
+  arestas: (26,2)
+
+subcaminho 227 n°vertices (3): (28->1->27)
+  arestas: (28,1), (1,27)
+
+subcaminho 228 n°vertices (2): (50->34)
+  arestas: (50,34)
+
+subcaminho 229 n°vertices (2): (19->13)
+  arestas: (19,13)
+
+subcaminho 230 n°vertices (2): (53->25)
+  arestas: (53,25)
+
+subcaminho 231 n°vertices (2): (115->143)
+  arestas: (115,143)
+
+subcaminho 232 n°vertices (2): (46->36)
+  arestas: (46,36)
+
+subcaminho 233 n°vertices (2): (49->31)
+  arestas: (49,31)
+
+subcaminho 234 n°vertices (2): (67->99)
+  arestas: (67,99)
+
+subcaminho 235 n°vertices (2): (5->15)
+  arestas: (5,15)
+
+subcaminho 236 n°vertices (2): (39->27)
+  arestas: (39,27)
+
+subcaminho 237 n°vertices (3): (17->17->39)
+  arestas: (17,17), (17,39)
+
+subcaminho 238 n°vertices (2): (32->38)
+  arestas: (32,38)
+
+subcaminho 239 n°vertices (2): (23->6)
+  arestas: (23,6)
+
+subcaminho 240 n°vertices (2): (4->31)
+  arestas: (4,31)
+
+subcaminho 241 n°vertices (2): (53->20)
+  arestas: (53,20)
+
+subcaminho 242 n°vertices (2): (32->26)
+  arestas: (32,26)
+
+subcaminho 243 n°vertices (2): (13->21)
+  arestas: (13,21)
+
+subcaminho 244 n°vertices (3): (10->35->50)
+  arestas: (10,35), (35,50)
+
+subcaminho 245 n°vertices (2): (67->94)
+  arestas: (67,94)
+
+subcaminho 246 n°vertices (2): (28->32)
+  arestas: (28,32)
+
+subcaminho 247 n°vertices (2): (9->27)
+  arestas: (9,27)
+
+subcaminho 248 n°vertices (2): (42->25)
+  arestas: (42,25)
+
+subcaminho 249 n°vertices (2): (39->22)
+  arestas: (39,22)
+
+subcaminho 250 n°vertices (6): (50->15->10->16->27->11)
+  arestas: (50,15), (15,10), (10,16), (16,27), (27,11)
+
+subcaminho 251 n°vertices (2): (2->30)
+  arestas: (2,30)
+
+subcaminho 252 n°vertices (3): (44->48->5)
+  arestas: (44,48), (48,5)
+
+subcaminho 253 n°vertices (2): (35->28)
+  arestas: (35,28)
+
+subcaminho 254 n°vertices (3): (32->12->44)
+  arestas: (32,12), (12,44)
+
+subcaminho 255 n°vertices (2): (36->19)
+  arestas: (36,19)
+
+subcaminho 256 n°vertices (3): (36->43->17)
+  arestas: (36,43), (43,17)
+
+subcaminho 257 n°vertices (3): (40->47->51)
+  arestas: (40,47), (47,51)
+
+subcaminho 258 n°vertices (4): (34->22->20->26)
+  arestas: (34,22), (22,20), (20,26)
+
+subcaminho 259 n°vertices (2): (54->140)
+  arestas: (54,140)
+
+subcaminho 260 n°vertices (2): (13->4)
+  arestas: (13,4)
+
+subcaminho 261 n°vertices (2): (42->20)
+  arestas: (42,20)
+
+subcaminho 262 n°vertices (2): (21->49)
+  arestas: (21,49)
+
+subcaminho 263 n°vertices (2): (46->2)
+  arestas: (46,2)
+
+subcaminho 264 n°vertices (2): (22->21)
+  arestas: (22,21)
+
+subcaminho 265 n°vertices (2): (9->10)
+  arestas: (9,10)
+
+subcaminho 266 n°vertices (2): (48->53)
+  arestas: (48,53)
+
+subcaminho 267 n°vertices (2): (42->8)
+  arestas: (42,8)
+
+subcaminho 268 n°vertices (3): (22->10->29)
+  arestas: (22,10), (10,29)
+
+subcaminho 269 n°vertices (2): (14->29)
+  arestas: (14,29)
+
+subcaminho 270 n°vertices (2): (15->20)
   arestas: (15,20)
 
-subcaminho 13 n°vertices (3): (4->10->1)
-  arestas: (4,10), (10,1)
+subcaminho 271 n°vertices (2): (44->47)
+  arestas: (44,47)
 
-subcaminho 14 n°vertices (4): (9->17->3->10)
-  arestas: (9,17), (17,3), (3,10)
+subcaminho 272 n°vertices (2): (28->22)
+  arestas: (28,22)
 
-subcaminho 15 n°vertices (2): (8->1)
-  arestas: (8,1)
+subcaminho 273 n°vertices (2): (29->13)
+  arestas: (29,13)
 
-subcaminho 16 n°vertices (2): (12->8)
-  arestas: (12,8)
+subcaminho 274 n°vertices (2): (32->4)
+  arestas: (32,4)
 
-subcaminho 17 n°vertices (2): (3->5)
+subcaminho 275 n°vertices (2): (40->49)
+  arestas: (40,49)
+
+subcaminho 276 n°vertices (2): (49->4)
+  arestas: (49,4)
+
+subcaminho 277 n°vertices (2): (28->10)
+  arestas: (28,10)
+
+subcaminho 278 n°vertices (2): (22->16)
+  arestas: (22,16)
+
+subcaminho 279 n°vertices (4): (18->19->17->46)
+  arestas: (18,19), (19,17), (17,46)
+
+subcaminho 280 n°vertices (3): (35->37->31)
+  arestas: (35,37), (37,31)
+
+subcaminho 281 n°vertices (2): (30->49)
+  arestas: (30,49)
+
+subcaminho 282 n°vertices (3): (33->35->38)
+  arestas: (33,35), (35,38)
+
+subcaminho 283 n°vertices (2): (26->51)
+  arestas: (26,51)
+
+subcaminho 284 n°vertices (2): (33->6)
+  arestas: (33,6)
+
+subcaminho 285 n°vertices (3): (9->30->53)
+  arestas: (9,30), (30,53)
+
+subcaminho 286 n°vertices (2): (44->42)
+  arestas: (44,42)
+
+subcaminho 287 n°vertices (2): (29->8)
+  arestas: (29,8)
+
+subcaminho 288 n°vertices (2): (8->37)
+  arestas: (8,37)
+
+subcaminho 289 n°vertices (2): (38->44)
+  arestas: (38,44)
+
+subcaminho 290 n°vertices (2): (4->43)
+  arestas: (4,43)
+
+subcaminho 291 n°vertices (2): (28->5)
+  arestas: (28,5)
+
+subcaminho 292 n°vertices (2): (31->47)
+  arestas: (31,47)
+
+subcaminho 293 n°vertices (3): (24->15->17)
+  arestas: (24,15), (15,17)
+
+subcaminho 294 n°vertices (2): (1->17)
+  arestas: (1,17)
+
+subcaminho 295 n°vertices (2): (10->53)
+  arestas: (10,53)
+
+subcaminho 296 n°vertices (2): (19->8)
+  arestas: (19,8)
+
+subcaminho 297 n°vertices (2): (24->46)
+  arestas: (24,46)
+
+subcaminho 298 n°vertices (2): (18->5)
+  arestas: (18,5)
+
+subcaminho 299 n°vertices (2): (20->48)
+  arestas: (20,48)
+
+subcaminho 300 n°vertices (2): (45->28)
+  arestas: (45,28)
+
+subcaminho 301 n°vertices (2): (14->7)
+  arestas: (14,7)
+
+subcaminho 302 n°vertices (2): (23->43)
+  arestas: (23,43)
+
+subcaminho 303 n°vertices (2): (44->25)
+  arestas: (44,25)
+
+subcaminho 304 n°vertices (2): (4->38)
+  arestas: (4,38)
+
+subcaminho 305 n°vertices (2): (51->38)
+  arestas: (51,38)
+
+subcaminho 306 n°vertices (2): (37->36)
+  arestas: (37,36)
+
+subcaminho 307 n°vertices (2): (5->10)
+  arestas: (5,10)
+
+subcaminho 308 n°vertices (2): (10->48)
+  arestas: (10,48)
+
+subcaminho 309 n°vertices (2): (54->101)
+  arestas: (54,101)
+
+subcaminho 310 n°vertices (3): (57->12->37)
+  arestas: (57,12), (12,37)
+
+subcaminho 311 n°vertices (2): (27->32)
+  arestas: (27,32)
+
+subcaminho 312 n°vertices (3): (8->9->38)
+  arestas: (8,9), (9,38)
+
+subcaminho 313 n°vertices (2): (24->29)
+  arestas: (24,29)
+
+subcaminho 314 n°vertices (4): (7->36->27->28)
+  arestas: (7,36), (36,27), (27,28)
+
+subcaminho 315 n°vertices (3): (14->1->10)
+  arestas: (14,1), (1,10)
+
+subcaminho 316 n°vertices (2): (118->59)
+  arestas: (118,59)
+
+subcaminho 317 n°vertices (2): (20->31)
+  arestas: (20,31)
+
+subcaminho 318 n°vertices (2): (45->11)
+  arestas: (45,11)
+
+subcaminho 319 n°vertices (2): (38->22)
+  arestas: (38,22)
+
+subcaminho 320 n°vertices (2): (16->37)
+  arestas: (16,37)
+
+subcaminho 321 n°vertices (2): (50->49)
+  arestas: (50,49)
+
+subcaminho 322 n°vertices (2): (4->21)
+  arestas: (4,21)
+
+subcaminho 323 n°vertices (4): (39->31->40->5)
+  arestas: (39,31), (31,40), (40,5)
+
+subcaminho 324 n°vertices (2): (37->19)
+  arestas: (37,19)
+
+subcaminho 325 n°vertices (2): (43->41)
+  arestas: (43,41)
+
+subcaminho 326 n°vertices (2): (73->59)
+  arestas: (73,59)
+
+subcaminho 327 n°vertices (4): (11->6->10->12)
+  arestas: (11,6), (6,10), (10,12)
+
+subcaminho 328 n°vertices (2): (43->29)
+  arestas: (43,29)
+
+subcaminho 329 n°vertices (2): (6->33)
+  arestas: (6,33)
+
+subcaminho 330 n°vertices (2): (2->39)
+  arestas: (2,39)
+
+subcaminho 331 n°vertices (2): (36->51)
+  arestas: (36,51)
+
+subcaminho 332 n°vertices (2): (45->6)
+  arestas: (45,6)
+
+subcaminho 333 n°vertices (2): (23->21)
+  arestas: (23,21)
+
+subcaminho 334 n°vertices (2): (50->44)
+  arestas: (50,44)
+
+subcaminho 335 n°vertices (2): (16->20)
+  arestas: (16,20)
+
+subcaminho 336 n°vertices (3): (51->35->47)
+  arestas: (51,35), (35,47)
+
+subcaminho 337 n°vertices (2): (10->26)
+  arestas: (10,26)
+
+subcaminho 338 n°vertices (2): (37->2)
+  arestas: (37,2)
+
+subcaminho 339 n°vertices (2): (22->53)
+  arestas: (22,53)
+
+subcaminho 340 n°vertices (5): (36->18->43->7->46)
+  arestas: (36,18), (18,43), (43,7), (7,46)
+
+subcaminho 341 n°vertices (2): (40->44)
+  arestas: (40,44)
+
+subcaminho 342 n°vertices (3): (32->47->34)
+  arestas: (32,47), (47,34)
+
+subcaminho 343 n°vertices (5): (32->18->2->6->31)
+  arestas: (32,18), (18,2), (2,6), (6,31)
+
+subcaminho 344 n°vertices (2): (24->7)
+  arestas: (24,7)
+
+subcaminho 345 n°vertices (2): (51->11)
+  arestas: (51,11)
+
+subcaminho 346 n°vertices (2): (29->45)
+  arestas: (29,45)
+
+subcaminho 347 n°vertices (2): (17->6)
+  arestas: (17,6)
+
+subcaminho 348 n°vertices (2): (19->57)
+  arestas: (19,57)
+
+subcaminho 349 n°vertices (2): (138->59)
+  arestas: (138,59)
+
+subcaminho 350 n°vertices (2): (47->5)
+  arestas: (47,5)
+
+subcaminho 351 n°vertices (2): (10->9)
+  arestas: (10,9)
+
+subcaminho 352 n°vertices (2): (19->45)
+  arestas: (19,45)
+
+subcaminho 353 n°vertices (2): (15->47)
+  arestas: (15,47)
+
+subcaminho 354 n°vertices (2): (24->2)
+  arestas: (24,2)
+
+subcaminho 355 n°vertices (2): (33->38)
+  arestas: (33,38)
+
+subcaminho 356 n°vertices (2): (11->53)
+  arestas: (11,53)
+
+subcaminho 357 n°vertices (2): (29->40)
+  arestas: (29,40)
+
+subcaminho 358 n°vertices (2): (114->115)
+  arestas: (114,115)
+
+subcaminho 359 n°vertices (7): (35->24->31->27->14->37->57)
+  arestas: (35,24), (24,31), (31,27), (27,14), (14,37), (37,57)
+
+subcaminho 360 n°vertices (2): (17->1)
+  arestas: (17,1)
+
+subcaminho 361 n°vertices (3): (12->40->23)
+  arestas: (12,40), (40,23)
+
+subcaminho 362 n°vertices (2): (157->59)
+  arestas: (157,59)
+
+subcaminho 363 n°vertices (2): (5->47)
+  arestas: (5,47)
+
+subcaminho 364 n°vertices (2): (14->2)
+  arestas: (14,2)
+
+subcaminho 365 n°vertices (2): (1->49)
+  arestas: (1,49)
+
+subcaminho 366 n°vertices (2): (10->4)
+  arestas: (10,4)
+
+subcaminho 367 n°vertices (2): (18->49)
+  arestas: (18,49)
+
+subcaminho 368 n°vertices (2): (19->40)
+  arestas: (19,40)
+
+subcaminho 369 n°vertices (2): (82->68)
+  arestas: (82,68)
+
+subcaminho 370 n°vertices (2): (83->59)
+  arestas: (83,59)
+
+subcaminho 371 n°vertices (2): (147->59)
+  arestas: (147,59)
+
+subcaminho 372 n°vertices (2): (133->134)
+  arestas: (133,134)
+
+subcaminho 373 n°vertices (2): (34->24)
+  arestas: (34,24)
+
+subcaminho 374 n°vertices (2): (11->48)
+  arestas: (11,48)
+
+subcaminho 375 n°vertices (2): (33->21)
+  arestas: (33,21)
+
+subcaminho 376 n°vertices (2): (42->57)
+  arestas: (42,57)
+
+subcaminho 377 n°vertices (2): (2->51)
+  arestas: (2,51)
+
+subcaminho 378 n°vertices (2): (5->42)
+  arestas: (5,42)
+
+subcaminho 379 n°vertices (2): (1->44)
+  arestas: (1,44)
+
+subcaminho 380 n°vertices (2): (57->22)
+  arestas: (57,22)
+
+subcaminho 381 n°vertices (2): (74->99)
+  arestas: (74,99)
+
+subcaminho 382 n°vertices (2): (16->32)
+  arestas: (16,32)
+
+subcaminho 383 n°vertices (2): (13->25)
+  arestas: (13,25)
+
+subcaminho 384 n°vertices (2): (5->37)
+  arestas: (5,37)
+
+subcaminho 385 n°vertices (2): (43->24)
+  arestas: (43,24)
+
+subcaminho 386 n°vertices (2): (39->26)
+  arestas: (39,26)
+
+subcaminho 387 n°vertices (2): (102->54)
+  arestas: (102,54)
+
+subcaminho 388 n°vertices (2): (2->34)
+  arestas: (2,34)
+
+subcaminho 389 n°vertices (2): (5->25)
+  arestas: (5,25)
+
+subcaminho 390 n°vertices (2): (53->19)
+  arestas: (53,19)
+
+subcaminho 391 n°vertices (2): (23->16)
+  arestas: (23,16)
+
+subcaminho 392 n°vertices (9): (43->9->12->53->42->49->29->38->6)
+  arestas: (43,9), (9,12), (12,53), (53,42), (42,49), (49,29), (29,38), (38,6)
+
+subcaminho 393 n°vertices (2): (20->9)
+  arestas: (20,9)
+
+subcaminho 394 n°vertices (2): (53->7)
+  arestas: (53,7)
+
+subcaminho 395 n°vertices (2): (13->20)
+  arestas: (13,20)
+
+subcaminho 396 n°vertices (9): (17->53->21->1->40->30->57->24->50)
+  arestas: (17,53), (53,21), (21,1), (1,40), (40,30), (30,57), (57,24), (24,50)
+
+subcaminho 397 n°vertices (2): (34->2)
+  arestas: (34,2)
+
+subcaminho 398 n°vertices (2): (42->47)
+  arestas: (42,47)
+
+subcaminho 399 n°vertices (2): (49->13)
+  arestas: (49,13)
+
+subcaminho 400 n°vertices (2): (12->17)
+  arestas: (12,17)
+
+subcaminho 401 n°vertices (2): (43->19)
+  arestas: (43,19)
+
+subcaminho 402 n°vertices (2): (39->21)
+  arestas: (39,21)
+
+subcaminho 403 n°vertices (2): (167->59)
+  arestas: (167,59)
+
+subcaminho 404 n°vertices (2): (23->11)
+  arestas: (23,11)
+
+subcaminho 405 n°vertices (2): (20->4)
+  arestas: (20,4)
+
+subcaminho 406 n°vertices (2): (53->2)
+  arestas: (53,2)
+
+subcaminho 407 n°vertices (3): (51->15->3)
+  arestas: (51,15), (15,3)
+
+subcaminho 408 n°vertices (2): (16->10)
+  arestas: (16,10)
+
+subcaminho 409 n°vertices (2): (49->8)
+  arestas: (49,8)
+
+subcaminho 410 n°vertices (2): (3->57)
+  arestas: (3,57)
+
+subcaminho 411 n°vertices (2): (13->3)
+  arestas: (13,3)
+
+subcaminho 412 n°vertices (2): (46->1)
+  arestas: (46,1)
+
+subcaminho 413 n°vertices (2): (42->30)
+  arestas: (42,30)
+
+subcaminho 414 n°vertices (2): (43->2)
+  arestas: (43,2)
+
+subcaminho 415 n°vertices (2): (6->6)
+  arestas: (6,6)
+
+subcaminho 416 n°vertices (6): (51->33->3->11->8->6)
+  arestas: (51,33), (33,3), (3,11), (11,8), (8,6)
+
+subcaminho 417 n°vertices (2): (14->51)
+  arestas: (14,51)
+
+subcaminho 418 n°vertices (2): (39->4)
+  arestas: (39,4)
+
+subcaminho 419 n°vertices (2): (47->49)
+  arestas: (47,49)
+
+subcaminho 420 n°vertices (2): (8->53)
+  arestas: (8,53)
+
+subcaminho 421 n°vertices (2): (2->12)
+  arestas: (2,12)
+
+subcaminho 422 n°vertices (3): (46->23->50)
+  arestas: (46,23), (23,50)
+
+subcaminho 423 n°vertices (2): (112->59)
+  arestas: (112,59)
+
+subcaminho 424 n°vertices (2): (29->35)
+  arestas: (29,35)
+
+subcaminho 425 n°vertices (3): (27->31->25)
+  arestas: (27,31), (31,25)
+
+subcaminho 426 n°vertices (2): (36->1)
+  arestas: (36,1)
+
+subcaminho 427 n°vertices (2): (44->46)
+  arestas: (44,46)
+
+subcaminho 428 n°vertices (2): (32->3)
+  arestas: (32,3)
+
+subcaminho 429 n°vertices (2): (29->23)
+  arestas: (29,23)
+
+subcaminho 430 n°vertices (2): (22->15)
+  arestas: (22,15)
+
+subcaminho 431 n°vertices (2): (54->122)
+  arestas: (54,122)
+
+subcaminho 432 n°vertices (3): (24->43->3)
+  arestas: (24,43), (43,3)
+
+subcaminho 433 n°vertices (2): (30->48)
+  arestas: (30,48)
+
+subcaminho 434 n°vertices (2): (48->35)
+  arestas: (48,35)
+
+subcaminho 435 n°vertices (4): (42->33->40->57)
+  arestas: (42,33), (33,40), (40,57)
+
+subcaminho 436 n°vertices (2): (7->45)
+  arestas: (7,45)
+
+subcaminho 437 n°vertices (2): (8->36)
+  arestas: (8,36)
+
+subcaminho 438 n°vertices (2): (41->34)
+  arestas: (41,34)
+
+subcaminho 439 n°vertices (2): (29->18)
+  arestas: (29,18)
+
+subcaminho 440 n°vertices (2): (4->42)
+  arestas: (4,42)
+
+subcaminho 441 n°vertices (2): (1->39)
+  arestas: (1,39)
+
+subcaminho 442 n°vertices (2): (30->43)
+  arestas: (30,43)
+
+subcaminho 443 n°vertices (2): (31->34)
+  arestas: (31,34)
+
+subcaminho 444 n°vertices (5): (23->38->14->20->24)
+  arestas: (23,38), (38,14), (14,20), (20,24)
+
+subcaminho 445 n°vertices (2): (45->27)
+  arestas: (45,27)
+
+subcaminho 446 n°vertices (2): (41->29)
+  arestas: (41,29)
+
+subcaminho 447 n°vertices (2): (11->26)
+  arestas: (11,26)
+
+subcaminho 448 n°vertices (2): (44->24)
+  arestas: (44,24)
+
+subcaminho 449 n°vertices (2): (38->49)
+  arestas: (38,49)
+
+subcaminho 450 n°vertices (2): (162->163)
+  arestas: (162,163)
+
+subcaminho 451 n°vertices (2): (169->59)
+  arestas: (169,59)
+
+subcaminho 452 n°vertices (2): (13->57)
+  arestas: (13,57)
+
+subcaminho 453 n°vertices (2): (4->25)
+  arestas: (4,25)
+
+subcaminho 454 n°vertices (2): (53->14)
+  arestas: (53,14)
+
+subcaminho 455 n°vertices (2): (31->29)
+  arestas: (31,29)
+
+subcaminho 456 n°vertices (3): (22->13->17)
+  arestas: (22,13), (13,17)
+
+subcaminho 457 n°vertices (2): (21->9)
+  arestas: (21,9)
+
+subcaminho 458 n°vertices (2): (48->13)
+  arestas: (48,13)
+
+subcaminho 459 n°vertices (2): (57->49)
+  arestas: (57,49)
+
+subcaminho 460 n°vertices (2): (44->19)
+  arestas: (44,19)
+
+subcaminho 461 n°vertices (2): (8->14)
+  arestas: (8,14)
+
+subcaminho 462 n°vertices (2): (39->16)
+  arestas: (39,16)
+
+subcaminho 463 n°vertices (2): (17->50)
+  arestas: (17,50)
+
+subcaminho 464 n°vertices (2): (4->20)
+  arestas: (4,20)
+
+subcaminho 465 n°vertices (2): (102->267)
+  arestas: (102,267)
+
+subcaminho 466 n°vertices (2): (35->22)
+  arestas: (35,22)
+
+subcaminho 467 n°vertices (3): (5->19->27)
+  arestas: (5,19), (19,27)
+
+subcaminho 468 n°vertices (3): (47->13->14)
+  arestas: (47,13), (13,14)
+
+subcaminho 469 n°vertices (2): (16->47)
+  arestas: (16,47)
+
+subcaminho 470 n°vertices (2): (32->15)
+  arestas: (32,15)
+
+subcaminho 471 n°vertices (2): (30->21)
+  arestas: (30,21)
+
+subcaminho 472 n°vertices (2): (31->12)
+  arestas: (31,12)
+
+subcaminho 473 n°vertices (2): (57->44)
+  arestas: (57,44)
+
+subcaminho 474 n°vertices (5): (26->10->57->35->46)
+  arestas: (26,10), (10,57), (57,35), (35,46)
+
+subcaminho 475 n°vertices (2): (49->3)
+  arestas: (49,3)
+
+subcaminho 476 n°vertices (2): (45->5)
+  arestas: (45,5)
+
+subcaminho 477 n°vertices (2): (57->32)
+  arestas: (57,32)
+
+subcaminho 478 n°vertices (2): (17->45)
+  arestas: (17,45)
+
+subcaminho 479 n°vertices (2): (11->4)
+  arestas: (11,4)
+
+subcaminho 480 n°vertices (2): (50->43)
+  arestas: (50,43)
+
+subcaminho 481 n°vertices (2): (13->47)
+  arestas: (13,47)
+
+subcaminho 482 n°vertices (2): (16->42)
+  arestas: (16,42)
+
+subcaminho 483 n°vertices (2): (70->115)
+  arestas: (70,115)
+
+subcaminho 484 n°vertices (2): (13->35)
+  arestas: (13,35)
+
+subcaminho 485 n°vertices (2): (35->5)
+  arestas: (35,5)
+
+subcaminho 486 n°vertices (2): (31->7)
+  arestas: (31,7)
+
+subcaminho 487 n°vertices (2): (85->80)
+  arestas: (85,80)
+
+subcaminho 488 n°vertices (2): (9->41)
+  arestas: (9,41)
+
+subcaminho 489 n°vertices (2): (3->47)
+  arestas: (3,47)
+
+subcaminho 490 n°vertices (2): (36->45)
+  arestas: (36,45)
+
+subcaminho 491 n°vertices (2): (57->27)
+  arestas: (57,27)
+
+subcaminho 492 n°vertices (2): (102->103)
+  arestas: (102,103)
+
+subcaminho 493 n°vertices (2): (50->26)
+  arestas: (50,26)
+
+subcaminho 494 n°vertices (3): (7->4->40)
+  arestas: (7,4), (4,40)
+
+subcaminho 495 n°vertices (2): (22->47)
+  arestas: (22,47)
+
+subcaminho 496 n°vertices (2): (47->27)
+  arestas: (47,27)
+
+subcaminho 497 n°vertices (2): (9->36)
+  arestas: (9,36)
+
+subcaminho 498 n°vertices (2): (40->38)
+  arestas: (40,38)
+
+subcaminho 499 n°vertices (2): (18->53)
+  arestas: (18,53)
+
+subcaminho 500 n°vertices (2): (15->46)
+  arestas: (15,46)
+
+subcaminho 501 n°vertices (2): (3->30)
+  arestas: (3,30)
+
+subcaminho 502 n°vertices (2): (36->28)
+  arestas: (36,28)
+
+subcaminho 503 n°vertices (2): (17->11)
+  arestas: (17,11)
+
+subcaminho 504 n°vertices (2): (1->48)
+  arestas: (1,48)
+
+subcaminho 505 n°vertices (2): (26->28)
+  arestas: (26,28)
+
+subcaminho 506 n°vertices (2): (10->3)
+  arestas: (10,3)
+
+subcaminho 507 n°vertices (2): (19->39)
+  arestas: (19,39)
+
+subcaminho 508 n°vertices (2): (22->30)
+  arestas: (22,30)
+
+subcaminho 509 n°vertices (3): (1->46->45)
+  arestas: (1,46), (46,45)
+
+subcaminho 510 n°vertices (2): (7->23)
+  arestas: (7,23)
+
+subcaminho 511 n°vertices (5): (35->17->57->13->39)
+  arestas: (35,17), (17,57), (57,13), (13,39)
+
+subcaminho 512 n°vertices (2): (3->25)
+  arestas: (3,25)
+
+subcaminho 513 n°vertices (2): (18->36)
+  arestas: (18,36)
+
+subcaminho 514 n°vertices (2): (54->95)
+  arestas: (54,95)
+
+subcaminho 515 n°vertices (2): (33->20)
+  arestas: (33,20)
+
+subcaminho 516 n°vertices (2): (21->4)
+  arestas: (21,4)
+
+subcaminho 517 n°vertices (2): (27->26)
+  arestas: (27,26)
+
+subcaminho 518 n°vertices (2): (39->53)
+  arestas: (39,53)
+
+subcaminho 519 n°vertices (3): (26->8->35)
+  arestas: (26,8), (8,35)
+
+subcaminho 520 n°vertices (2): (23->32)
+  arestas: (23,32)
+
+subcaminho 521 n°vertices (2): (26->23)
+  arestas: (26,23)
+
+subcaminho 522 n°vertices (2): (4->57)
+  arestas: (4,57)
+
+subcaminho 523 n°vertices (2): (41->7)
+  arestas: (41,7)
+
+subcaminho 524 n°vertices (2): (19->22)
+  arestas: (19,22)
+
+subcaminho 525 n°vertices (2): (44->2)
+  arestas: (44,2)
+
+subcaminho 526 n°vertices (2): (40->4)
+  arestas: (40,4)
+
+subcaminho 527 n°vertices (2): (33->15)
+  arestas: (33,15)
+
+subcaminho 528 n°vertices (2): (42->51)
+  arestas: (42,51)
+
+subcaminho 529 n°vertices (2): (45->42)
+  arestas: (45,42)
+
+subcaminho 530 n°vertices (2): (30->16)
+  arestas: (30,16)
+
+subcaminho 531 n°vertices (2): (6->27)
+  arestas: (6,27)
+
+subcaminho 532 n°vertices (4): (45->57->2->53)
+  arestas: (45,57), (57,2), (2,53)
+
+subcaminho 533 n°vertices (2): (26->18)
+  arestas: (26,18)
+
+subcaminho 534 n°vertices (2): (27->9)
+  arestas: (27,9)
+
+subcaminho 535 n°vertices (2): (5->24)
+  arestas: (5,24)
+
+subcaminho 536 n°vertices (2): (30->4)
+  arestas: (30,4)
+
+subcaminho 537 n°vertices (2): (26->6)
+  arestas: (26,6)
+
+subcaminho 538 n°vertices (2): (50->38)
+  arestas: (50,38)
+
+subcaminho 539 n°vertices (2): (20->8)
+  arestas: (20,8)
+
+subcaminho 540 n°vertices (2): (28->53)
+  arestas: (28,53)
+
+subcaminho 541 n°vertices (3): (1->7->44)
+  arestas: (1,7), (7,44)
+
+subcaminho 542 n°vertices (2): (49->35)
+  arestas: (49,35)
+
+subcaminho 543 n°vertices (2): (42->34)
+  arestas: (42,34)
+
+subcaminho 544 n°vertices (2): (32->42)
+  arestas: (32,42)
+
+subcaminho 545 n°vertices (2): (4->35)
+  arestas: (4,35)
+
+subcaminho 546 n°vertices (2): (28->48)
+  arestas: (28,48)
+
+subcaminho 547 n°vertices (2): (29->39)
+  arestas: (29,39)
+
+subcaminho 548 n°vertices (3): (32->43->40)
+  arestas: (32,43), (43,40)
+
+subcaminho 549 n°vertices (2): (49->30)
+  arestas: (49,30)
+
+subcaminho 550 n°vertices (2): (50->21)
+  arestas: (50,21)
+
+subcaminho 551 n°vertices (2): (28->36)
+  arestas: (28,36)
+
+subcaminho 552 n°vertices (2): (9->31)
+  arestas: (9,31)
+
+subcaminho 553 n°vertices (4): (30->10->47->12)
+  arestas: (30,10), (10,47), (47,12)
+
+subcaminho 554 n°vertices (2): (18->48)
+  arestas: (18,48)
+
+subcaminho 555 n°vertices (2): (14->50)
+  arestas: (14,50)
+
+subcaminho 556 n°vertices (2): (9->19)
+  arestas: (9,19)
+
+subcaminho 557 n°vertices (2): (15->41)
+  arestas: (15,41)
+
+subcaminho 558 n°vertices (2): (35->32)
+  arestas: (35,32)
+
+subcaminho 559 n°vertices (2): (5->2)
+  arestas: (5,2)
+
+subcaminho 560 n°vertices (2): (14->38)
+  arestas: (14,38)
+
+subcaminho 561 n°vertices (2): (32->25)
+  arestas: (32,25)
+
+subcaminho 562 n°vertices (2): (29->22)
+  arestas: (29,22)
+
+subcaminho 563 n°vertices (3): (36->15->25)
+  arestas: (36,15), (15,25)
+
+subcaminho 564 n°vertices (5): (23->31->35->11->46)
+  arestas: (23,31), (31,35), (35,11), (11,46)
+
+subcaminho 565 n°vertices (2): (1->43)
+  arestas: (1,43)
+
+subcaminho 566 n°vertices (2): (46->6)
+  arestas: (46,6)
+
+subcaminho 567 n°vertices (2): (22->25)
+  arestas: (22,25)
+
+subcaminho 568 n°vertices (2): (15->36)
+  arestas: (15,36)
+
+subcaminho 569 n°vertices (2): (42->12)
+  arestas: (42,12)
+
+subcaminho 570 n°vertices (2): (15->24)
+  arestas: (15,24)
+
+subcaminho 571 n°vertices (2): (36->6)
+  arestas: (36,6)
+
+subcaminho 572 n°vertices (2): (44->51)
+  arestas: (44,51)
+
+subcaminho 573 n°vertices (2): (28->26)
+  arestas: (28,26)
+
+subcaminho 574 n°vertices (2): (38->53)
+  arestas: (38,53)
+
+subcaminho 575 n°vertices (2): (7->32)
+  arestas: (7,32)
+
+subcaminho 576 n°vertices (2): (1->38)
+  arestas: (1,38)
+
+subcaminho 577 n°vertices (2): (28->14)
+  arestas: (28,14)
+
+subcaminho 578 n°vertices (3): (30->18->24)
+  arestas: (30,18), (18,24)
+
+subcaminho 579 n°vertices (3): (36->32->21)
+  arestas: (36,32), (32,21)
+
+subcaminho 580 n°vertices (2): (1->26)
+  arestas: (1,26)
+
+subcaminho 581 n°vertices (4): (31->4->46->30)
+  arestas: (31,4), (4,46), (46,30)
+
+subcaminho 582 n°vertices (2): (22->8)
+  arestas: (22,8)
+
+subcaminho 583 n°vertices (2): (14->28)
+  arestas: (14,28)
+
+subcaminho 584 n°vertices (2): (15->19)
+  arestas: (15,19)
+
+subcaminho 585 n°vertices (2): (18->14)
+  arestas: (18,14)
+
+subcaminho 586 n°vertices (2): (20->57)
+  arestas: (20,57)
+
+subcaminho 587 n°vertices (2): (14->16)
+  arestas: (14,16)
+
+subcaminho 588 n°vertices (2): (38->48)
+  arestas: (38,48)
+
+subcaminho 589 n°vertices (2): (4->47)
+  arestas: (4,47)
+
+subcaminho 590 n°vertices (2): (37->45)
+  arestas: (37,45)
+
+subcaminho 591 n°vertices (2): (38->36)
+  arestas: (38,36)
+
+subcaminho 592 n°vertices (6): (34->40->10->17->18->50)
+  arestas: (34,40), (40,10), (10,17), (17,18), (18,50)
+
+subcaminho 593 n°vertices (2): (1->21)
+  arestas: (1,21)
+
+subcaminho 594 n°vertices (2): (34->38)
+  arestas: (34,38)
+
+subcaminho 595 n°vertices (2): (19->12)
+  arestas: (19,12)
+
+subcaminho 596 n°vertices (2): (15->14)
+  arestas: (15,14)
+
+subcaminho 597 n°vertices (2): (18->9)
+  arestas: (18,9)
+
+subcaminho 598 n°vertices (2): (45->32)
+  arestas: (45,32)
+
+subcaminho 599 n°vertices (2): (15->2)
+  arestas: (15,2)
+
+subcaminho 600 n°vertices (2): (23->47)
+  arestas: (23,47)
+
+subcaminho 601 n°vertices (3): (7->11->40)
+  arestas: (7,11), (11,40)
+
+subcaminho 602 n°vertices (2): (51->42)
+  arestas: (51,42)
+
+subcaminho 603 n°vertices (2): (37->40)
+  arestas: (37,40)
+
+subcaminho 604 n°vertices (2): (13->51)
+  arestas: (13,51)
+
+subcaminho 605 n°vertices (2): (1->16)
+  arestas: (1,16)
+
+subcaminho 606 n°vertices (2): (39->3)
+  arestas: (39,3)
+
+subcaminho 607 n°vertices (2): (148->59)
+  arestas: (148,59)
+
+subcaminho 608 n°vertices (2): (47->48)
+  arestas: (47,48)
+
+subcaminho 609 n°vertices (5): (48->31->10->8->17)
+  arestas: (48,31), (31,10), (10,8), (8,17)
+
+subcaminho 610 n°vertices (2): (15->90)
+  arestas: (15,90)
+
+subcaminho 611 n°vertices (2): (3->51)
+  arestas: (3,51)
+
+subcaminho 612 n°vertices (2): (6->42)
+  arestas: (6,42)
+
+subcaminho 613 n°vertices (2): (23->42)
+  arestas: (23,42)
+
+subcaminho 614 n°vertices (2): (133->89)
+  arestas: (133,89)
+
+subcaminho 615 n°vertices (2): (17->44)
+  arestas: (17,44)
+
+subcaminho 616 n°vertices (2): (2->48)
+  arestas: (2,48)
+
+subcaminho 617 n°vertices (2): (20->35)
+  arestas: (20,35)
+
+subcaminho 618 n°vertices (2): (11->3)
+  arestas: (11,3)
+
+subcaminho 619 n°vertices (2): (38->26)
+  arestas: (38,26)
+
+subcaminho 620 n°vertices (2): (16->41)
+  arestas: (16,41)
+
+subcaminho 621 n°vertices (2): (47->43)
+  arestas: (47,43)
+
+subcaminho 622 n°vertices (2): (51->25)
+  arestas: (51,25)
+
+subcaminho 623 n°vertices (2): (37->23)
+  arestas: (37,23)
+
+subcaminho 624 n°vertices (4): (7->13->32->14)
+  arestas: (7,13), (13,32), (32,14)
+
+subcaminho 625 n°vertices (6): (35->12->39->37->21->57)
+  arestas: (35,12), (12,39), (39,37), (37,21), (21,57)
+
+subcaminho 626 n°vertices (2): (47->31)
+  arestas: (47,31)
+
+subcaminho 627 n°vertices (2): (3->46)
+  arestas: (3,46)
+
+subcaminho 628 n°vertices (2): (6->37)
+  arestas: (6,37)
+
+subcaminho 629 n°vertices (2): (82->99)
+  arestas: (82,99)
+
+subcaminho 630 n°vertices (3): (41->43->45)
+  arestas: (41,43), (43,45)
+
+subcaminho 631 n°vertices (2): (24->28)
+  arestas: (24,28)
+
+subcaminho 632 n°vertices (2): (3->34)
+  arestas: (3,34)
+
+subcaminho 633 n°vertices (2): (21->25)
+  arestas: (21,25)
+
+subcaminho 634 n°vertices (2): (24->16)
+  arestas: (24,16)
+
+subcaminho 635 n°vertices (2): (42->7)
+  arestas: (42,7)
+
+subcaminho 636 n°vertices (2): (20->18)
+  arestas: (20,18)
+
+subcaminho 637 n°vertices (2): (51->20)
+  arestas: (51,20)
+
+subcaminho 638 n°vertices (3): (46->40->13)
+  arestas: (46,40), (40,13)
+
+subcaminho 639 n°vertices (2): (38->9)
+  arestas: (38,9)
+
+subcaminho 640 n°vertices (2): (16->24)
+  arestas: (16,24)
+
+subcaminho 641 n°vertices (3): (6->36->9)
+  arestas: (6,36), (36,9)
+
+subcaminho 642 n°vertices (2): (48->17)
+  arestas: (48,17)
+
+subcaminho 643 n°vertices (4): (18->21->28->13)
+  arestas: (18,21), (21,28), (28,13)
+
+subcaminho 644 n°vertices (4): (27->4->32->17)
+  arestas: (27,4), (4,32), (32,17)
+
+subcaminho 645 n°vertices (2): (7->27)
+  arestas: (7,27)
+
+subcaminho 646 n°vertices (2): (10->18)
+  arestas: (10,18)
+
+subcaminho 647 n°vertices (2): (3->29)
+  arestas: (3,29)
+
+subcaminho 648 n°vertices (2): (28->9)
+  arestas: (28,9)
+
+subcaminho 649 n°vertices (2): (6->20)
+  arestas: (6,20)
+
+subcaminho 650 n°vertices (3): (20->53->43)
+  arestas: (20,53), (53,43)
+
+subcaminho 651 n°vertices (2): (24->11)
+  arestas: (24,11)
+
+subcaminho 652 n°vertices (2): (33->47)
+  arestas: (33,47)
+
+subcaminho 653 n°vertices (2): (2->26)
+  arestas: (2,26)
+
+subcaminho 654 n°vertices (2): (42->2)
+  arestas: (42,2)
+
+subcaminho 655 n°vertices (2): (38->4)
+  arestas: (38,4)
+
+subcaminho 656 n°vertices (2): (21->8)
+  arestas: (21,8)
+
+subcaminho 657 n°vertices (5): (33->57->17->32->28)
+  arestas: (33,57), (57,17), (17,32), (32,28)
+
+subcaminho 658 n°vertices (3): (9->8->38)
+  arestas: (9,8), (8,38)
+
+subcaminho 659 n°vertices (2): (51->3)
+  arestas: (51,3)
+
+subcaminho 660 n°vertices (2): (26->27)
+  arestas: (26,27)
+
+subcaminho 661 n°vertices (2): (53->50)
+  arestas: (53,50)
+
+subcaminho 662 n°vertices (2): (10->13)
+  arestas: (10,13)
+
+subcaminho 663 n°vertices (2): (40->20)
+  arestas: (40,20)
+
+subcaminho 664 n°vertices (2): (19->49)
+  arestas: (19,49)
+
+subcaminho 665 n°vertices (2): (28->4)
+  arestas: (28,4)
+
+subcaminho 666 n°vertices (2): (15->51)
+  arestas: (15,51)
+
+subcaminho 667 n°vertices (2): (7->10)
+  arestas: (7,10)
+
+subcaminho 668 n°vertices (2): (33->42)
+  arestas: (33,42)
+
+subcaminho 669 n°vertices (2): (3->12)
+  arestas: (3,12)
+
+subcaminho 670 n°vertices (2): (11->57)
+  arestas: (11,57)
+
+subcaminho 671 n°vertices (2): (29->44)
+  arestas: (29,44)
+
+subcaminho 672 n°vertices (2): (21->3)
+  arestas: (21,3)
+
+subcaminho 673 n°vertices (2): (130->59)
+  arestas: (130,59)
+
+subcaminho 674 n°vertices (2): (17->5)
+  arestas: (17,5)
+
+subcaminho 675 n°vertices (2): (30->20)
+  arestas: (30,20)
+
+subcaminho 676 n°vertices (2): (57->43)
+  arestas: (57,43)
+
+subcaminho 677 n°vertices (2): (26->22)
+  arestas: (26,22)
+
+subcaminho 678 n°vertices (2): (5->51)
+  arestas: (5,51)
+
+subcaminho 679 n°vertices (2): (14->6)
+  arestas: (14,6)
+
+subcaminho 680 n°vertices (2): (53->45)
+  arestas: (53,45)
+
+subcaminho 681 n°vertices (2): (44->13)
+  arestas: (44,13)
+
+subcaminho 682 n°vertices (2): (47->4)
+  arestas: (47,4)
+
+subcaminho 683 n°vertices (3): (18->47->30)
+  arestas: (18,47), (47,30)
+
+subcaminho 684 n°vertices (2): (19->44)
+  arestas: (19,44)
+
+subcaminho 685 n°vertices (2): (120->59)
+  arestas: (120,59)
+
+subcaminho 686 n°vertices (2): (49->51)
+  arestas: (49,51)
+
+subcaminho 687 n°vertices (2): (13->46)
+  arestas: (13,46)
+
+subcaminho 688 n°vertices (2): (7->5)
+  arestas: (7,5)
+
+subcaminho 689 n°vertices (2): (40->3)
+  arestas: (40,3)
+
+subcaminho 690 n°vertices (2): (3->7)
+  arestas: (3,7)
+
+subcaminho 691 n°vertices (2): (49->39)
+  arestas: (49,39)
+
+subcaminho 692 n°vertices (2): (39->47)
+  arestas: (39,47)
+
+subcaminho 693 n°vertices (2): (30->15)
+  arestas: (30,15)
+
+subcaminho 694 n°vertices (2): (35->53)
+  arestas: (35,53)
+
+subcaminho 695 n°vertices (6): (36->57->48->51->46->21)
+  arestas: (36,57), (57,48), (48,51), (51,46), (46,21)
+
+subcaminho 696 n°vertices (2): (23->37)
+  arestas: (23,37)
+
+subcaminho 697 n°vertices (2): (30->3)
+  arestas: (30,3)
+
+subcaminho 698 n°vertices (2): (26->5)
+  arestas: (26,5)
+
+subcaminho 699 n°vertices (2): (20->30)
+  arestas: (20,30)
+
+subcaminho 700 n°vertices (2): (16->36)
+  arestas: (16,36)
+
+subcaminho 701 n°vertices (2): (49->34)
+  arestas: (49,34)
+
+subcaminho 702 n°vertices (2): (67->102)
+  arestas: (67,102)
+
+subcaminho 703 n°vertices (3): (1->50->24)
+  arestas: (1,50), (50,24)
+
+subcaminho 704 n°vertices (3): (29->49->19)
+  arestas: (29,49), (49,19)
+
+subcaminho 705 n°vertices (2): (31->1)
+  arestas: (31,1)
+
+subcaminho 706 n°vertices (2): (43->28)
+  arestas: (43,28)
+
+subcaminho 707 n°vertices (3): (15->13->29)
+  arestas: (15,13), (13,29)
+
+subcaminho 708 n°vertices (2): (2->38)
+  arestas: (2,38)
+
+subcaminho 709 n°vertices (2): (35->36)
+  arestas: (35,36)
+
+subcaminho 710 n°vertices (2): (53->23)
+  arestas: (53,23)
+
+subcaminho 711 n°vertices (2): (62->59)
+  arestas: (62,59)
+
+subcaminho 712 n°vertices (4): (40->12->50->33)
+  arestas: (40,12), (12,50), (50,33)
+
+subcaminho 713 n°vertices (2): (126->59)
+  arestas: (126,59)
+
+subcaminho 714 n°vertices (2): (53->11)
+  arestas: (53,11)
+
+subcaminho 715 n°vertices (2): (13->24)
+  arestas: (13,24)
+
+subcaminho 716 n°vertices (2): (16->19)
+  arestas: (16,19)
+
+subcaminho 717 n°vertices (2): (34->6)
+  arestas: (34,6)
+
+subcaminho 718 n°vertices (2): (43->23)
+  arestas: (43,23)
+
+subcaminho 719 n°vertices (2): (39->25)
+  arestas: (39,25)
+
+subcaminho 720 n°vertices (2): (54->55)
+  arestas: (54,55)
+
+subcaminho 721 n°vertices (2): (22->29)
+  arestas: (22,29)
+
+subcaminho 722 n°vertices (3): (13->6->19)
+  arestas: (13,6), (6,19)
+
+subcaminho 723 n°vertices (2): (9->18)
+  arestas: (9,18)
+
+subcaminho 724 n°vertices (2): (35->31)
+  arestas: (35,31)
+
+subcaminho 725 n°vertices (2): (39->13)
+  arestas: (39,13)
+
+subcaminho 726 n°vertices (3): (28->35->34)
+  arestas: (28,35), (35,34)
+
+subcaminho 727 n°vertices (5): (41->50->48->36->40)
+  arestas: (41,50), (50,48), (48,36), (36,40)
+
+subcaminho 728 n°vertices (2): (32->24)
+  arestas: (32,24)
+
+subcaminho 729 n°vertices (2): (57->4)
+  arestas: (57,4)
+
+subcaminho 730 n°vertices (2): (35->19)
+  arestas: (35,19)
+
+subcaminho 731 n°vertices (2): (53->6)
+  arestas: (53,6)
+
+subcaminho 732 n°vertices (4): (37->10->39->18)
+  arestas: (37,10), (10,39), (39,18)
+
+subcaminho 733 n°vertices (2): (49->12)
+  arestas: (49,12)
+
+subcaminho 734 n°vertices (2): (12->16)
+  arestas: (12,16)
+
+subcaminho 735 n°vertices (2): (50->3)
+  arestas: (50,3)
+
+subcaminho 736 n°vertices (4): (34->21->46->24)
+  arestas: (34,21), (21,46), (46,24)
+
+subcaminho 737 n°vertices (3): (40->34->4)
+  arestas: (40,34), (34,4)
+
+subcaminho 738 n°vertices (2): (22->24)
+  arestas: (22,24)
+
+subcaminho 739 n°vertices (2): (9->13)
+  arestas: (9,13)
+
+subcaminho 740 n°vertices (2): (12->4)
+  arestas: (12,4)
+
+subcaminho 741 n°vertices (2): (102->129)
+  arestas: (102,129)
+
+subcaminho 742 n°vertices (2): (43->6)
+  arestas: (43,6)
+
+subcaminho 743 n°vertices (2): (39->8)
+  arestas: (39,8)
+
+subcaminho 744 n°vertices (2): (45->53)
+  arestas: (45,53)
+
+subcaminho 745 n°vertices (2): (2->16)
+  arestas: (2,16)
+
+subcaminho 746 n°vertices (2): (36->5)
+  arestas: (36,5)
+
+subcaminho 747 n°vertices (2): (44->50)
+  arestas: (44,50)
+
+subcaminho 748 n°vertices (2): (16->90)
+  arestas: (16,90)
+
+subcaminho 749 n°vertices (2): (13->2)
+  arestas: (13,2)
+
+subcaminho 750 n°vertices (2): (67->75)
+  arestas: (67,75)
+
+subcaminho 751 n°vertices (2): (26->17)
+  arestas: (26,17)
+
+subcaminho 752 n°vertices (2): (4->51)
+  arestas: (4,51)
+
+subcaminho 753 n°vertices (2): (22->19)
+  arestas: (22,19)
+
+subcaminho 754 n°vertices (2): (43->1)
+  arestas: (43,1)
+
+subcaminho 755 n°vertices (2): (21->35)
+  arestas: (21,35)
+
+subcaminho 756 n°vertices (2): (27->57)
+  arestas: (27,57)
+
+subcaminho 757 n°vertices (2): (18->25)
+  arestas: (18,25)
+
+subcaminho 758 n°vertices (2): (48->39)
+  arestas: (48,39)
+
+subcaminho 759 n°vertices (2): (3->2)
+  arestas: (3,2)
+
+subcaminho 760 n°vertices (2): (11->47)
+  arestas: (11,47)
+
+subcaminho 761 n°vertices (2): (18->13)
+  arestas: (18,13)
+
+subcaminho 762 n°vertices (2): (45->36)
+  arestas: (45,36)
+
+subcaminho 763 n°vertices (2): (108->64)
+  arestas: (108,64)
+
+subcaminho 764 n°vertices (2): (23->51)
+  arestas: (23,51)
+
+subcaminho 765 n°vertices (2): (11->35)
+  arestas: (11,35)
+
+subcaminho 766 n°vertices (2): (22->2)
+  arestas: (22,2)
+
+subcaminho 767 n°vertices (2): (30->47)
+  arestas: (30,47)
+
+subcaminho 768 n°vertices (2): (31->38)
+  arestas: (31,38)
+
+subcaminho 769 n°vertices (2): (27->40)
+  arestas: (27,40)
+
+subcaminho 770 n°vertices (2): (18->8)
+  arestas: (18,8)
+
+subcaminho 771 n°vertices (2): (45->31)
+  arestas: (45,31)
+
+subcaminho 772 n°vertices (2): (15->1)
+  arestas: (15,1)
+
+subcaminho 773 n°vertices (2): (20->39)
+  arestas: (20,39)
+
+subcaminho 774 n°vertices (2): (8->23)
+  arestas: (8,23)
+
+subcaminho 775 n°vertices (2): (41->21)
+  arestas: (41,21)
+
+subcaminho 776 n°vertices (2): (4->29)
+  arestas: (4,29)
+
+subcaminho 777 n°vertices (2): (5->1)
+  arestas: (5,1)
+
+subcaminho 778 n°vertices (2): (1->3)
+  arestas: (1,3)
+
+subcaminho 779 n°vertices (4): (30->44->10->31)
+  arestas: (30,44), (44,10), (10,31)
+
+subcaminho 780 n°vertices (2): (30->30)
+  arestas: (30,30)
+
+subcaminho 781 n°vertices (2): (6->41)
+  arestas: (6,41)
+
+subcaminho 782 n°vertices (2): (46->17)
+  arestas: (46,17)
+
+subcaminho 783 n°vertices (2): (24->32)
+  arestas: (24,32)
+
+subcaminho 784 n°vertices (2): (46->5)
+  arestas: (46,5)
+
+subcaminho 785 n°vertices (2): (38->25)
+  arestas: (38,25)
+
+subcaminho 786 n°vertices (2): (23->29)
+  arestas: (23,29)
+
+subcaminho 787 n°vertices (2): (4->24)
+  arestas: (4,24)
+
+subcaminho 788 n°vertices (2): (38->13)
+  arestas: (38,13)
+
+subcaminho 789 n°vertices (2): (32->19)
+  arestas: (32,19)
+
+subcaminho 790 n°vertices (3): (17->51->31)
+  arestas: (17,51), (51,31)
+
+subcaminho 791 n°vertices (2): (10->34)
+  arestas: (10,34)
+
+subcaminho 792 n°vertices (2): (53->1)
+  arestas: (53,1)
+
+subcaminho 793 n°vertices (2): (28->25)
+  arestas: (28,25)
+
+subcaminho 794 n°vertices (2): (31->16)
+  arestas: (31,16)
+
+subcaminho 795 n°vertices (2): (24->27)
+  arestas: (24,27)
+
+subcaminho 796 n°vertices (2): (49->7)
+  arestas: (49,7)
+
+subcaminho 797 n°vertices (2): (50->47)
+  arestas: (50,47)
+
+subcaminho 798 n°vertices (2): (42->6)
+  arestas: (42,6)
+
+subcaminho 799 n°vertices (5): (22->38->5->4->28)
+  arestas: (22,38), (38,5), (5,4), (4,28)
+
+subcaminho 800 n°vertices (2): (51->19)
+  arestas: (51,19)
+
+subcaminho 801 n°vertices (2): (38->8)
+  arestas: (38,8)
+
+subcaminho 802 n°vertices (2): (14->27)
+  arestas: (14,27)
+
+subcaminho 803 n°vertices (2): (4->7)
+  arestas: (4,7)
+
+subcaminho 804 n°vertices (2): (35->9)
+  arestas: (35,9)
+
+subcaminho 805 n°vertices (2): (9->45)
+  arestas: (9,45)
+
+subcaminho 806 n°vertices (3): (7->30->37)
+  arestas: (7,30), (30,37)
+
+subcaminho 807 n°vertices (4): (53->33->12->38)
+  arestas: (53,33), (33,12), (12,38)
+
+subcaminho 808 n°vertices (2): (42->1)
+  arestas: (42,1)
+
+subcaminho 809 n°vertices (2): (50->30)
+  arestas: (50,30)
+
+subcaminho 810 n°vertices (2): (26->49)
+  arestas: (26,49)
+
+subcaminho 811 n°vertices (2): (51->2)
+  arestas: (51,2)
+
+subcaminho 812 n°vertices (2): (22->51)
+  arestas: (22,51)
+
+subcaminho 813 n°vertices (2): (14->10)
+  arestas: (14,10)
+
+subcaminho 814 n°vertices (3): (129->102->110)
+  arestas: (129,102), (102,110)
+
+subcaminho 815 n°vertices (2): (47->8)
+  arestas: (47,8)
+
+subcaminho 816 n°vertices (2): (41->33)
+  arestas: (41,33)
+
+subcaminho 817 n°vertices (2): (19->48)
+  arestas: (19,48)
+
+subcaminho 818 n°vertices (2): (28->3)
+  arestas: (28,3)
+
+subcaminho 819 n°vertices (2): (137->59)
+  arestas: (137,59)
+
+subcaminho 820 n°vertices (2): (33->41)
+  arestas: (33,41)
+
+subcaminho 821 n°vertices (2): (34->32)
+  arestas: (34,32)
+
+subcaminho 822 n°vertices (7): (31->17->34->11->37->30->14)
+  arestas: (31,17), (17,34), (34,11), (11,37), (37,30), (30,14)
+
+subcaminho 823 n°vertices (3): (9->42->3)
+  arestas: (9,42), (42,3)
+
+subcaminho 824 n°vertices (2): (6->53)
+  arestas: (6,53)
+
+subcaminho 825 n°vertices (2): (63->59)
+  arestas: (63,59)
+
+subcaminho 826 n°vertices (2): (26->44)
+  arestas: (26,44)
+
+subcaminho 827 n°vertices (2): (127->59)
+  arestas: (127,59)
+
+subcaminho 828 n°vertices (2): (5->50)
+  arestas: (5,50)
+
+subcaminho 829 n°vertices (2): (14->5)
+  arestas: (14,5)
+
+subcaminho 830 n°vertices (2): (23->41)
+  arestas: (23,41)
+
+subcaminho 831 n°vertices (2): (26->32)
+  arestas: (26,32)
+
+subcaminho 832 n°vertices (2): (44->23)
+  arestas: (44,23)
+
+subcaminho 833 n°vertices (2): (20->34)
+  arestas: (20,34)
+
+subcaminho 834 n°vertices (2): (40->25)
+  arestas: (40,25)
+
+subcaminho 835 n°vertices (2): (41->16)
+  arestas: (41,16)
+
+subcaminho 836 n°vertices (2): (34->27)
+  arestas: (34,27)
+
+subcaminho 837 n°vertices (2): (33->24)
+  arestas: (33,24)
+
+subcaminho 838 n°vertices (2): (5->45)
+  arestas: (5,45)
+
+subcaminho 839 n°vertices (2): (30->25)
+  arestas: (30,25)
+
+subcaminho 840 n°vertices (2): (44->18)
+  arestas: (44,18)
+
+subcaminho 841 n°vertices (9): (35->4->22->50->14->31->46->33->11)
+  arestas: (35,4), (4,22), (22,50), (50,14), (14,31), (31,46), (46,33), (33,11)
+
+subcaminho 842 n°vertices (2): (20->29)
+  arestas: (20,29)
+
+subcaminho 843 n°vertices (2): (23->24)
+  arestas: (23,24)
+
+subcaminho 844 n°vertices (2): (41->11)
+  arestas: (41,11)
+
+subcaminho 845 n°vertices (2): (19->26)
+  arestas: (19,26)
+
+subcaminho 846 n°vertices (2): (44->6)
+  arestas: (44,6)
+
+subcaminho 847 n°vertices (2): (49->44)
+  arestas: (49,44)
+
+subcaminho 848 n°vertices (2): (34->10)
+  arestas: (34,10)
+
+subcaminho 849 n°vertices (2): (119->85)
+  arestas: (119,85)
+
+subcaminho 850 n°vertices (2): (12->25)
+  arestas: (12,25)
+
+subcaminho 851 n°vertices (2): (33->7)
+  arestas: (33,7)
+
+subcaminho 852 n°vertices (2): (39->29)
+  arestas: (39,29)
+
+subcaminho 853 n°vertices (7): (14->57->33->39->10->50->17)
+  arestas: (14,57), (57,33), (33,39), (39,10), (10,50), (50,17)
+
+subcaminho 854 n°vertices (2): (5->28)
+  arestas: (5,28)
+
+subcaminho 855 n°vertices (2): (32->51)
+  arestas: (32,51)
+
+subcaminho 856 n°vertices (2): (23->19)
+  arestas: (23,19)
+
+subcaminho 857 n°vertices (2): (50->42)
+  arestas: (50,42)
+
+subcaminho 858 n°vertices (2): (19->21)
+  arestas: (19,21)
+
+subcaminho 859 n°vertices (2): (57->8)
+  arestas: (57,8)
+
+subcaminho 860 n°vertices (2): (28->57)
+  arestas: (28,57)
+
+subcaminho 861 n°vertices (2): (29->48)
+  arestas: (29,48)
+
+subcaminho 862 n°vertices (2): (53->10)
+  arestas: (53,10)
+
+subcaminho 863 n°vertices (2): (38->3)
+  arestas: (38,3)
+
+subcaminho 864 n°vertices (2): (16->18)
+  arestas: (16,18)
+
+subcaminho 865 n°vertices (2): (46->32)
+  arestas: (46,32)
+
+subcaminho 866 n°vertices (6): (22->48->12->43->35->33)
+  arestas: (22,48), (48,12), (12,43), (43,35), (35,33)
+
+subcaminho 867 n°vertices (2): (43->22)
+  arestas: (43,22)
+
+subcaminho 868 n°vertices (2): (9->40)
+  arestas: (9,40)
+
+subcaminho 869 n°vertices (2): (33->2)
+  arestas: (33,2)
+
+subcaminho 870 n°vertices (2): (42->38)
+  arestas: (42,38)
+
+subcaminho 871 n°vertices (2): (36->44)
+  arestas: (36,44)
+
+subcaminho 872 n°vertices (2): (5->23)
+  arestas: (5,23)
+
+subcaminho 873 n°vertices (2): (32->46)
+  arestas: (32,46)
+
+subcaminho 874 n°vertices (2): (15->50)
+  arestas: (15,50)
+
+subcaminho 875 n°vertices (2): (39->12)
+  arestas: (39,12)
+
+subcaminho 876 n°vertices (2): (20->7)
+  arestas: (20,7)
+
+subcaminho 877 n°vertices (2): (29->43)
+  arestas: (29,43)
+
+subcaminho 878 n°vertices (2): (23->2)
+  arestas: (23,2)
+
+subcaminho 879 n°vertices (2): (50->25)
+  arestas: (50,25)
+
+subcaminho 880 n°vertices (2): (19->4)
+  arestas: (19,4)
+
+subcaminho 881 n°vertices (2): (28->40)
+  arestas: (28,40)
+
+subcaminho 882 n°vertices (2): (92->59)
+  arestas: (92,59)
+
+subcaminho 883 n°vertices (2): (9->35)
+  arestas: (9,35)
+
+subcaminho 884 n°vertices (2): (16->1)
+  arestas: (16,1)
+
+subcaminho 885 n°vertices (2): (156->59)
+  arestas: (156,59)
+
+subcaminho 886 n°vertices (2): (10->7)
+  arestas: (10,7)
+
+subcaminho 887 n°vertices (2): (43->5)
+  arestas: (43,5)
+
+subcaminho 888 n°vertices (2): (6->9)
+  arestas: (6,9)
+
+subcaminho 889 n°vertices (2): (15->45)
+  arestas: (15,45)
+
+subcaminho 890 n°vertices (2): (48->43)
+  arestas: (48,43)
+
+subcaminho 891 n°vertices (2): (5->6)
+  arestas: (5,6)
+
+subcaminho 892 n°vertices (2): (3->6)
+  arestas: (3,6)
+
+subcaminho 893 n°vertices (3): (5->53->36)
+  arestas: (5,53), (53,36)
+
+subcaminho 894 n°vertices (2): (11->51)
+  arestas: (11,51)
+
+subcaminho 895 n°vertices (2): (14->42)
+  arestas: (14,42)
+
+subcaminho 896 n°vertices (2): (7->53)
+  arestas: (7,53)
+
+subcaminho 897 n°vertices (2): (2->3)
+  arestas: (2,3)
+
+subcaminho 898 n°vertices (2): (29->26)
+  arestas: (29,26)
+
+subcaminho 899 n°vertices (2): (13->1)
+  arestas: (13,1)
+
+subcaminho 900 n°vertices (2): (21->34)
+  arestas: (21,34)
+
+subcaminho 901 n°vertices (2): (42->16)
+  arestas: (42,16)
+
+subcaminho 902 n°vertices (2): (18->35)
+  arestas: (18,35)
+
+subcaminho 903 n°vertices (2): (3->1)
+  arestas: (3,1)
+
+subcaminho 904 n°vertices (2): (15->28)
+  arestas: (15,28)
+
+subcaminho 905 n°vertices (2): (8->39)
+  arestas: (8,39)
+
+subcaminho 906 n°vertices (2): (29->21)
+  arestas: (29,21)
+
+subcaminho 907 n°vertices (2): (1->42)
+  arestas: (1,42)
+
+subcaminho 908 n°vertices (2): (28->18)
+  arestas: (28,18)
+
+subcaminho 909 n°vertices (2): (98->59)
+  arestas: (98,59)
+
+subcaminho 910 n°vertices (3): (15->8->41)
+  arestas: (15,8), (8,41)
+
+subcaminho 911 n°vertices (2): (21->17)
+  arestas: (21,17)
+
+subcaminho 912 n°vertices (2): (15->23)
+  arestas: (15,23)
+
+subcaminho 913 n°vertices (2): (57->57)
+  arestas: (57,57)
+
+subcaminho 914 n°vertices (2): (11->29)
+  arestas: (11,29)
+
+subcaminho 915 n°vertices (2): (8->22)
+  arestas: (8,22)
+
+subcaminho 916 n°vertices (2): (39->24)
+  arestas: (39,24)
+
+subcaminho 917 n°vertices (4): (14->47->17->10)
+  arestas: (14,47), (47,17), (17,10)
+
+subcaminho 918 n°vertices (2): (29->4)
+  arestas: (29,4)
+
+subcaminho 919 n°vertices (2): (37->49)
+  arestas: (37,49)
+
+subcaminho 920 n°vertices (2): (38->40)
+  arestas: (38,40)
+
+subcaminho 921 n°vertices (2): (1->25)
+  arestas: (1,25)
+
+subcaminho 922 n°vertices (2): (34->42)
+  arestas: (34,42)
+
+subcaminho 923 n°vertices (2): (47->57)
+  arestas: (47,57)
+
+subcaminho 924 n°vertices (2): (19->16)
+  arestas: (19,16)
+
+subcaminho 925 n°vertices (2): (53->5)
+  arestas: (53,5)
+
+subcaminho 926 n°vertices (2): (133->110)
+  arestas: (133,110)
+
+subcaminho 927 n°vertices (2): (12->15)
+  arestas: (12,15)
+
+subcaminho 928 n°vertices (2): (15->6)
+  arestas: (15,6)
+
+subcaminho 929 n°vertices (3): (38->37->29)
+  arestas: (38,37), (37,29)
+
+subcaminho 930 n°vertices (2): (11->12)
+  arestas: (11,12)
+
+subcaminho 931 n°vertices (2): (5->18)
+  arestas: (5,18)
+
+subcaminho 932 n°vertices (2): (4->23)
+  arestas: (4,23)
+
+subcaminho 933 n°vertices (2): (38->35)
+  arestas: (38,35)
+
+subcaminho 934 n°vertices (2): (39->7)
+  arestas: (39,7)
+
+subcaminho 935 n°vertices (2): (74->75)
+  arestas: (74,75)
+
+subcaminho 936 n°vertices (2): (4->11)
+  arestas: (4,11)
+
+subcaminho 937 n°vertices (2): (10->44)
+  arestas: (10,44)
+
+subcaminho 938 n°vertices (2): (49->6)
+  arestas: (49,6)
+
+subcaminho 939 n°vertices (2): (6->46)
+  arestas: (6,46)
+
+subcaminho 940 n°vertices (2): (45->8)
+  arestas: (45,8)
+
+subcaminho 941 n°vertices (2): (24->37)
+  arestas: (24,37)
+
+subcaminho 942 n°vertices (2): (11->7)
+  arestas: (11,7)
+
+subcaminho 943 n°vertices (2): (51->41)
+  arestas: (51,41)
+
+subcaminho 944 n°vertices (2): (38->30)
+  arestas: (38,30)
+
+subcaminho 945 n°vertices (2): (39->2)
+  arestas: (39,2)
+
+subcaminho 946 n°vertices (2): (16->45)
+  arestas: (16,45)
+
+subcaminho 947 n°vertices (2): (51->29)
+  arestas: (51,29)
+
+subcaminho 948 n°vertices (2): (4->6)
+  arestas: (4,6)
+
+subcaminho 949 n°vertices (2): (38->18)
+  arestas: (38,18)
+
+subcaminho 950 n°vertices (2): (35->8)
+  arestas: (35,8)
+
+subcaminho 951 n°vertices (2): (47->35)
+  arestas: (47,35)
+
+subcaminho 952 n°vertices (2): (3->50)
+  arestas: (3,50)
+
+subcaminho 953 n°vertices (2): (15->77)
+  arestas: (15,77)
+
+subcaminho 954 n°vertices (4): (7->34->48->21)
+  arestas: (7,34), (34,48), (48,21)
+
+subcaminho 955 n°vertices (2): (2->47)
+  arestas: (2,47)
+
+subcaminho 956 n°vertices (2): (3->38)
+  arestas: (3,38)
+
+subcaminho 957 n°vertices (2): (21->29)
+  arestas: (21,29)
+
+subcaminho 958 n°vertices (2): (17->31)
+  arestas: (17,31)
+
+subcaminho 959 n°vertices (4): (57->11->17->20)
+  arestas: (57,11), (11,17), (17,20)
+
+subcaminho 960 n°vertices (2): (26->48)
+  arestas: (26,48)
+
+subcaminho 961 n°vertices (2): (44->39)
+  arestas: (44,39)
+
+subcaminho 962 n°vertices (2): (44->27)
+  arestas: (44,27)
+
+subcaminho 963 n°vertices (4): (45->43->33->51)
+  arestas: (45,43), (43,33), (33,51)
+
+subcaminho 964 n°vertices (2): (40->29)
+  arestas: (40,29)
+
+subcaminho 965 n°vertices (2): (3->33)
+  arestas: (3,33)
+
+subcaminho 966 n°vertices (2): (21->24)
+  arestas: (21,24)
+
+subcaminho 967 n°vertices (3): (21->48->44)
+  arestas: (21,48), (48,44)
+
+subcaminho 968 n°vertices (3): (17->43->8)
+  arestas: (17,43), (43,8)
+
+subcaminho 969 n°vertices (2): (17->14)
+  arestas: (17,14)
+
+subcaminho 970 n°vertices (2): (47->25)
+  arestas: (47,25)
+
+subcaminho 971 n°vertices (2): (30->29)
+  arestas: (30,29)
+
+subcaminho 972 n°vertices (2): (26->31)
+  arestas: (26,31)
+
+subcaminho 973 n°vertices (2): (44->22)
+  arestas: (44,22)
+
+subcaminho 974 n°vertices (2): (40->24)
+  arestas: (40,24)
+
+subcaminho 975 n°vertices (2): (7->14)
+  arestas: (7,14)
+
+subcaminho 976 n°vertices (2): (102->270)
+  arestas: (102,270)
+
+subcaminho 977 n°vertices (2): (3->16)
+  arestas: (3,16)
+
+subcaminho 978 n°vertices (2): (17->9)
+  arestas: (17,9)
+
+subcaminho 979 n°vertices (2): (57->47)
+  arestas: (57,47)
+
+subcaminho 980 n°vertices (2): (53->49)
+  arestas: (53,49)
+
+subcaminho 981 n°vertices (5): (33->27->50->31->30)
+  arestas: (33,27), (27,50), (50,31), (31,30)
+
+subcaminho 982 n°vertices (2): (50->46)
+  arestas: (50,46)
+
+subcaminho 983 n°vertices (2): (44->5)
+  arestas: (44,5)
+
+subcaminho 984 n°vertices (2): (7->9)
+  arestas: (7,9)
+
+subcaminho 985 n°vertices (2): (49->43)
+  arestas: (49,43)
+
+subcaminho 986 n°vertices (2): (12->47)
+  arestas: (12,47)
+
+subcaminho 987 n°vertices (2): (43->49)
+  arestas: (43,49)
+
+subcaminho 988 n°vertices (2): (39->51)
+  arestas: (39,51)
+
+subcaminho 989 n°vertices (2): (9->44)
+  arestas: (9,44)
+
+subcaminho 990 n°vertices (2): (27->12)
+  arestas: (27,12)
+
+subcaminho 991 n°vertices (2): (35->57)
+  arestas: (35,57)
+
+subcaminho 992 n°vertices (2): (36->48)
+  arestas: (36,48)
+
+subcaminho 993 n°vertices (2): (5->27)
+  arestas: (5,27)
+
+subcaminho 994 n°vertices (2): (30->7)
+  arestas: (30,7)
+
+subcaminho 995 n°vertices (2): (154->59)
+  arestas: (154,59)
+
+subcaminho 996 n°vertices (8): (12->8->48->34->33->46->50->27)
+  arestas: (12,8), (8,48), (48,34), (34,33), (33,46), (46,50), (50,27)
+
+subcaminho 997 n°vertices (2): (57->30)
+  arestas: (57,30)
+
+subcaminho 998 n°vertices (2): (26->9)
+  arestas: (26,9)
+
+subcaminho 999 n°vertices (2): (35->45)
+  arestas: (35,45)
+
+subcaminho 1000 n°vertices (2): (53->32)
+  arestas: (53,32)
+
+subcaminho 1001 n°vertices (2): (49->38)
+  arestas: (49,38)
+
+subcaminho 1002 n°vertices (2): (12->42)
+  arestas: (12,42)
+
+subcaminho 1003 n°vertices (2): (50->29)
+  arestas: (50,29)
+
+subcaminho 1004 n°vertices (2): (13->33)
+  arestas: (13,33)
+
+subcaminho 1005 n°vertices (2): (4->1)
+  arestas: (4,1)
+
+subcaminho 1006 n°vertices (2): (186->89)
+  arestas: (186,89)
+
+subcaminho 1007 n°vertices (2): (9->39)
+  arestas: (9,39)
+
+subcaminho 1008 n°vertices (2): (43->32)
+  arestas: (43,32)
+
+subcaminho 1009 n°vertices (7): (10->6->16->21->51->40->26)
+  arestas: (10,6), (6,16), (16,21), (21,51), (51,40), (40,26)
+
+subcaminho 1010 n°vertices (2): (42->37)
+  arestas: (42,37)
+
+subcaminho 1011 n°vertices (2): (30->2)
+  arestas: (30,2)
+
+subcaminho 1012 n°vertices (2): (57->25)
+  arestas: (57,25)
+
+subcaminho 1013 n°vertices (2): (2->42)
+  arestas: (2,42)
+
+subcaminho 1014 n°vertices (2): (35->40)
+  arestas: (35,40)
+
+subcaminho 1015 n°vertices (10): (20->36->31->42->50->57->34->15->40->11)
+  arestas: (20,36), (36,31), (31,42), (42,50), (50,57), (57,34), (34,15), (15,40), (40,11)
+
+subcaminho 1016 n°vertices (2): (13->28)
+  arestas: (13,28)
+
+subcaminho 1017 n°vertices (3): (31->15->16)
+  arestas: (31,15), (15,16)
+
+subcaminho 1018 n°vertices (2): (28->39)
+  arestas: (28,39)
+
+subcaminho 1019 n°vertices (2): (16->23)
+  arestas: (16,23)
+
+subcaminho 1020 n°vertices (3): (5->13->12)
+  arestas: (5,13), (13,12)
+
+subcaminho 1021 n°vertices (3): (18->23->40)
+  arestas: (18,23), (23,40)
+
+subcaminho 1022 n°vertices (2): (43->27)
+  arestas: (43,27)
+
+subcaminho 1023 n°vertices (2): (18->51)
+  arestas: (18,51)
+
+subcaminho 1024 n°vertices (2): (22->33)
+  arestas: (22,33)
+
+subcaminho 1025 n°vertices (2): (6->8)
+  arestas: (6,8)
+
+subcaminho 1026 n°vertices (2): (9->22)
+  arestas: (9,22)
+
+subcaminho 1027 n°vertices (2): (36->26)
+  arestas: (36,26)
+
+subcaminho 1028 n°vertices (2): (14->41)
+  arestas: (14,41)
+
+subcaminho 1029 n°vertices (3): (34->28->31)
+  arestas: (34,28), (28,31)
+
+subcaminho 1030 n°vertices (3): (15->53->57)
+  arestas: (15,53), (53,57)
+
+subcaminho 1031 n°vertices (2): (49->16)
+  arestas: (49,16)
+
+subcaminho 1032 n°vertices (2): (13->11)
+  arestas: (13,11)
+
+subcaminho 1033 n°vertices (2): (22->28)
+  arestas: (22,28)
+
+subcaminho 1034 n°vertices (2): (9->17)
+  arestas: (9,17)
+
+subcaminho 1035 n°vertices (2): (40->19)
+  arestas: (40,19)
+
+subcaminho 1036 n°vertices (3): (3->8->5)
+  arestas: (3,8), (8,5)
+
+subcaminho 1037 n°vertices (2): (15->27)
+  arestas: (15,27)
+
+subcaminho 1038 n°vertices (2): (35->18)
+  arestas: (35,18)
+
+subcaminho 1039 n°vertices (2): (29->20)
+  arestas: (29,20)
+
+subcaminho 1040 n°vertices (2): (8->49)
+  arestas: (8,49)
+
+subcaminho 1041 n°vertices (2): (41->47)
+  arestas: (41,47)
+
+subcaminho 1042 n°vertices (2): (26->21)
+  arestas: (26,21)
+
+subcaminho 1043 n°vertices (3): (36->49->14)
+  arestas: (36,49), (49,14)
+
+subcaminho 1044 n°vertices (2): (22->23)
+  arestas: (22,23)
+
+subcaminho 1045 n°vertices (2): (37->53)
+  arestas: (37,53)
+
+subcaminho 1046 n°vertices (3): (37->4->10)
+  arestas: (37,4), (4,10)
+
+subcaminho 1047 n°vertices (2): (1->29)
+  arestas: (1,29)
+
+subcaminho 1048 n°vertices (2): (19->20)
+  arestas: (19,20)
+
+subcaminho 1049 n°vertices (2): (22->11)
+  arestas: (22,11)
+
+subcaminho 1050 n°vertices (2): (15->22)
+  arestas: (15,22)
+
+subcaminho 1051 n°vertices (2): (36->4)
+  arestas: (36,4)
+
+subcaminho 1052 n°vertices (2): (45->40)
+  arestas: (45,40)
+
+subcaminho 1053 n°vertices (2): (8->44)
+  arestas: (8,44)
+
+subcaminho 1054 n°vertices (2): (33->1)
+  arestas: (33,1)
+
+subcaminho 1055 n°vertices (2): (173->59)
+  arestas: (173,59)
+
+subcaminho 1056 n°vertices (2): (44->37)
+  arestas: (44,37)
+
+subcaminho 1057 n°vertices (2): (4->50)
+  arestas: (4,50)
+
+subcaminho 1058 n°vertices (2): (67->155)
+  arestas: (67,155)
+
+subcaminho 1059 n°vertices (2): (64->145)
+  arestas: (64,145)
+
+subcaminho 1060 n°vertices (2): (51->50)
+  arestas: (51,50)
+
+subcaminho 1061 n°vertices (2): (5->22)
+  arestas: (5,22)
+
+subcaminho 1062 n°vertices (2): (38->39)
+  arestas: (38,39)
+
+subcaminho 1063 n°vertices (5): (36->50->37->28->17)
+  arestas: (36,50), (50,37), (37,28), (28,17)
+
+subcaminho 1064 n°vertices (2): (26->4)
+  arestas: (26,4)
+
+subcaminho 1065 n°vertices (2): (22->6)
+  arestas: (22,6)
+
+subcaminho 1066 n°vertices (2): (24->53)
+  arestas: (24,53)
+
+subcaminho 1067 n°vertices (3): (53->24->10)
+  arestas: (53,24), (24,10)
+
+subcaminho 1068 n°vertices (2): (19->3)
+  arestas: (19,3)
+
+subcaminho 1069 n°vertices (2): (45->35)
+  arestas: (45,35)
+
+subcaminho 1070 n°vertices (2): (46->26)
+  arestas: (46,26)
+
+subcaminho 1071 n°vertices (2): (24->41)
+  arestas: (24,41)
+
+subcaminho 1072 n°vertices (2): (42->32)
+  arestas: (42,32)
+
+subcaminho 1073 n°vertices (2): (20->43)
+  arestas: (20,43)
+
+subcaminho 1074 n°vertices (2): (51->45)
+  arestas: (51,45)
+
+subcaminho 1075 n°vertices (4): (40->39->23->36)
+  arestas: (40,39), (39,23), (23,36)
+
+subcaminho 1076 n°vertices (2): (38->34)
+  arestas: (38,34)
+
+subcaminho 1077 n°vertices (2): (41->25)
+  arestas: (41,25)
+
+subcaminho 1078 n°vertices (2): (31->37)
+  arestas: (31,37)
+
+subcaminho 1079 n°vertices (2): (28->34)
+  arestas: (28,34)
+
+subcaminho 1080 n°vertices (2): (6->45)
+  arestas: (6,45)
+
+subcaminho 1081 n°vertices (2): (24->36)
+  arestas: (24,36)
+
+subcaminho 1082 n°vertices (2): (42->27)
+  arestas: (42,27)
+
+subcaminho 1083 n°vertices (2): (45->18)
+  arestas: (45,18)
+
+subcaminho 1084 n°vertices (2): (46->9)
+  arestas: (46,9)
+
+subcaminho 1085 n°vertices (2): (23->33)
+  arestas: (23,33)
+
+subcaminho 1086 n°vertices (2): (51->28)
+  arestas: (51,28)
+
+subcaminho 1087 n°vertices (2): (38->17)
+  arestas: (38,17)
+
+subcaminho 1088 n°vertices (2): (14->36)
+  arestas: (14,36)
+
+subcaminho 1089 n°vertices (2): (32->23)
+  arestas: (32,23)
+
+subcaminho 1090 n°vertices (2): (4->16)
+  arestas: (4,16)
+
+subcaminho 1091 n°vertices (2): (10->38)
+  arestas: (10,38)
+
+subcaminho 1092 n°vertices (2): (31->20)
+  arestas: (31,20)
+
+subcaminho 1093 n°vertices (2): (32->11)
+  arestas: (32,11)
+
+subcaminho 1094 n°vertices (2): (45->13)
+  arestas: (45,13)
+
+subcaminho 1095 n°vertices (5): (36->13->40->7->50)
+  arestas: (36,13), (13,40), (40,7), (7,50)
+
+subcaminho 1096 n°vertices (2): (50->51)
+  arestas: (50,51)
+
+subcaminho 1097 n°vertices (3): (8->45->23)
+  arestas: (8,45), (45,23)
+
+subcaminho 1098 n°vertices (2): (29->57)
+  arestas: (29,57)
+
+subcaminho 1099 n°vertices (2): (60->59)
+  arestas: (60,59)
+
+subcaminho 1100 n°vertices (2): (47->29)
+  arestas: (47,29)
+
+subcaminho 1101 n°vertices (8): (49->21->20->12->18->3->24->1)
+  arestas: (49,21), (21,20), (20,12), (12,18), (18,3), (3,24), (24,1)
+
+subcaminho 1102 n°vertices (2): (35->13)
+  arestas: (35,13)
+
+subcaminho 1103 n°vertices (2): (14->19)
+  arestas: (14,19)
+
+subcaminho 1104 n°vertices (2): (40->51)
+  arestas: (40,51)
+
+subcaminho 1105 n°vertices (2): (34->53)
+  arestas: (34,53)
+
+subcaminho 1106 n°vertices (2): (3->32)
+  arestas: (3,32)
+
+subcaminho 1107 n°vertices (2): (24->14)
+  arestas: (24,14)
+
+subcaminho 1108 n°vertices (2): (33->50)
+  arestas: (33,50)
+
+subcaminho 1109 n°vertices (2): (21->11)
+  arestas: (21,11)
+
+subcaminho 1110 n°vertices (2): (17->13)
+  arestas: (17,13)
+
+subcaminho 1111 n°vertices (2): (48->15)
+  arestas: (48,15)
+
+subcaminho 1112 n°vertices (8): (48->41->45->39->30->26->50->18)
+  arestas: (48,41), (41,45), (45,39), (39,30), (30,26), (26,50), (50,18)
+
+subcaminho 1113 n°vertices (2): (32->1)
+  arestas: (32,1)
+
+subcaminho 1114 n°vertices (4): (1->33->18->22)
+  arestas: (1,33), (33,18), (18,22)
+
+subcaminho 1115 n°vertices (2): (37->43)
+  arestas: (37,43)
+
+subcaminho 1116 n°vertices (2): (34->36)
+  arestas: (34,36)
+
+subcaminho 1117 n°vertices (2): (3->15)
+  arestas: (3,15)
+
+subcaminho 1118 n°vertices (2): (12->51)
+  arestas: (12,51)
+
+subcaminho 1119 n°vertices (2): (21->6)
+  arestas: (21,6)
+
+subcaminho 1120 n°vertices (2): (6->57)
+  arestas: (6,57)
+
+subcaminho 1121 n°vertices (2): (53->48)
+  arestas: (53,48)
+
+subcaminho 1122 n°vertices (2): (23->45)
+  arestas: (23,45)
+
+subcaminho 1123 n°vertices (2): (19->47)
+  arestas: (19,47)
+
+subcaminho 1124 n°vertices (2): (20->38)
+  arestas: (20,38)
+
+subcaminho 1125 n°vertices (2): (7->8)
+  arestas: (7,8)
+
+subcaminho 1126 n°vertices (2): (41->20)
+  arestas: (41,20)
+
+subcaminho 1127 n°vertices (4): (1->37->41->4)
+  arestas: (1,37), (37,41), (41,4)
+
+subcaminho 1128 n°vertices (2): (16->44)
+  arestas: (16,44)
+
+subcaminho 1129 n°vertices (3): (18->57->10)
+  arestas: (18,57), (57,10)
+
+subcaminho 1130 n°vertices (2): (12->46)
+  arestas: (12,46)
+
+subcaminho 1131 n°vertices (2): (43->48)
+  arestas: (43,48)
+
+subcaminho 1132 n°vertices (2): (33->28)
+  arestas: (33,28)
+
+subcaminho 1133 n°vertices (2): (1->2)
+  arestas: (1,2)
+
+subcaminho 1134 n°vertices (4): (48->7->21->27)
+  arestas: (48,7), (7,21), (21,27)
+
+subcaminho 1135 n°vertices (2): (43->36)
+  arestas: (43,36)
+
+subcaminho 1136 n°vertices (3): (39->48->11)
+  arestas: (39,48), (48,11)
+
+subcaminho 1137 n°vertices (2): (39->38)
+  arestas: (39,38)
+
+subcaminho 1138 n°vertices (2): (57->29)
+  arestas: (57,29)
+
+subcaminho 1139 n°vertices (2): (2->46)
+  arestas: (2,46)
+
+subcaminho 1140 n°vertices (2): (20->33)
+  arestas: (20,33)
+
+subcaminho 1141 n°vertices (2): (11->1)
+  arestas: (11,1)
+
+subcaminho 1142 n°vertices (2): (53->31)
+  arestas: (53,31)
+
+subcaminho 1143 n°vertices (2): (23->28)
+  arestas: (23,28)
+
+subcaminho 1144 n°vertices (2): (16->39)
+  arestas: (16,39)
+
+subcaminho 1145 n°vertices (2): (20->21)
+  arestas: (20,21)
+
+subcaminho 1146 n°vertices (2): (33->23)
+  arestas: (33,23)
+
+subcaminho 1147 n°vertices (2): (34->14)
+  arestas: (34,14)
+
+subcaminho 1148 n°vertices (2): (12->29)
+  arestas: (12,29)
+
+subcaminho 1149 n°vertices (5): (8->28->41->9->50)
+  arestas: (8,28), (28,41), (41,9), (9,50)
+
+subcaminho 1150 n°vertices (2): (37->9)
+  arestas: (37,9)
+
+subcaminho 1151 n°vertices (2): (6->35)
+  arestas: (6,35)
+
+subcaminho 1152 n°vertices (2): (106->59)
+  arestas: (106,59)
+
+subcaminho 1153 n°vertices (2): (30->1)
+  arestas: (30,1)
+
+subcaminho 1154 n°vertices (2): (2->41)
+  arestas: (2,41)
+
+subcaminho 1155 n°vertices (2): (5->32)
+  arestas: (5,32)
+
+subcaminho 1156 n°vertices (2): (6->23)
+  arestas: (6,23)
+
+subcaminho 1157 n°vertices (2): (19->25)
+  arestas: (19,25)
+
+subcaminho 1158 n°vertices (2): (17->25)
+  arestas: (17,25)
+
+subcaminho 1159 n°vertices (2): (2->29)
+  arestas: (2,29)
+
+subcaminho 1160 n°vertices (2): (20->16)
+  arestas: (20,16)
+
+subcaminho 1161 n°vertices (7): (51->24->19->6->32->2->40)
+  arestas: (51,24), (24,19), (19,6), (6,32), (32,2), (2,40)
+
+subcaminho 1162 n°vertices (2): (38->7)
+  arestas: (38,7)
+
+subcaminho 1163 n°vertices (2): (16->22)
+  arestas: (16,22)
+
+subcaminho 1164 n°vertices (2): (64->101)
+  arestas: (64,101)
+
+subcaminho 1165 n°vertices (2): (13->15)
+  arestas: (13,15)
+
+subcaminho 1166 n°vertices (2): (43->26)
+  arestas: (43,26)
+
+subcaminho 1167 n°vertices (2): (64->89)
+  arestas: (64,89)
+
+subcaminho 1168 n°vertices (2): (3->27)
+  arestas: (3,27)
+
+subcaminho 1169 n°vertices (2): (6->18)
+  arestas: (6,18)
+
+subcaminho 1170 n°vertices (2): (24->9)
+  arestas: (24,9)
+
+subcaminho 1171 n°vertices (3): (18->31->45)
+  arestas: (18,31), (31,45)
+
+subcaminho 1172 n°vertices (2): (117->121)
+  arestas: (117,121)
+
+subcaminho 1173 n°vertices (2): (2->24)
+  arestas: (2,24)
+
+subcaminho 1174 n°vertices (2): (20->11)
+  arestas: (20,11)
+
+subcaminho 1175 n°vertices (3): (5->31->44)
+  arestas: (5,31), (31,44)
+
+subcaminho 1176 n°vertices (2): (29->47)
+  arestas: (29,47)
+
+subcaminho 1177 n°vertices (2): (16->17)
+  arestas: (16,17)
+
+subcaminho 1178 n°vertices (2): (17->8)
+  arestas: (17,8)
+
+subcaminho 1179 n°vertices (2): (51->1)
+  arestas: (51,1)
+
+subcaminho 1180 n°vertices (6): (41->40->33->37->27->36)
+  arestas: (41,40), (40,33), (33,37), (37,27), (27,36)
+
+subcaminho 1181 n°vertices (2): (16->5)
+  arestas: (16,5)
+
+subcaminho 1182 n°vertices (2): (47->7)
+  arestas: (47,7)
+
+subcaminho 1183 n°vertices (2): (64->84)
+  arestas: (64,84)
+
+subcaminho 1184 n°vertices (2): (6->13)
+  arestas: (6,13)
+
+subcaminho 1185 n°vertices (2): (15->49)
+  arestas: (15,49)
+
+subcaminho 1186 n°vertices (2): (48->47)
+  arestas: (48,47)
+
+subcaminho 1187 n°vertices (2): (3->10)
+  arestas: (3,10)
+
+subcaminho 1188 n°vertices (2): (36->8)
+  arestas: (36,8)
+
+subcaminho 1189 n°vertices (3): (21->26->20)
+  arestas: (21,26), (26,20)
+
+subcaminho 1190 n°vertices (2): (44->53)
+  arestas: (44,53)
+
+subcaminho 1191 n°vertices (2): (117->104)
+  arestas: (117,104)
+
+subcaminho 1192 n°vertices (2): (2->7)
+  arestas: (2,7)
+
+subcaminho 1193 n°vertices (2): (50->1)
+  arestas: (50,1)
+
+subcaminho 1194 n°vertices (2): (29->30)
+  arestas: (29,30)
+
+subcaminho 1195 n°vertices (2): (1->51)
+  arestas: (1,51)
+
+subcaminho 1196 n°vertices (2): (43->4)
+  arestas: (43,4)
+
+subcaminho 1197 n°vertices (2): (21->38)
+  arestas: (21,38)
+
+subcaminho 1198 n°vertices (4): (8->47->44->12)
+  arestas: (8,47), (47,44), (44,12)
+
+subcaminho 1199 n°vertices (6): (35->20->40->21->31->57)
+  arestas: (35,20), (20,40), (40,21), (21,31), (31,57)
+
+subcaminho 1200 n°vertices (2): (116->59)
+  arestas: (116,59)
+
+subcaminho 1201 n°vertices (2): (40->1)
+  arestas: (40,1)
+
+subcaminho 1202 n°vertices (2): (3->5)
   arestas: (3,5)
 
-subcaminho 18 n°vertices (2): (20->13)
-  arestas: (20,13)
+subcaminho 1203 n°vertices (2): (27->48)
+  arestas: (27,48)
 
-subcaminho 19 n°vertices (3): (8->16->2)
-  arestas: (8,16), (16,2)
+subcaminho 1204 n°vertices (2): (36->3)
+  arestas: (36,3)
 
-subcaminho 20 n°vertices (2): (2->5)
-  arestas: (2,5)
+subcaminho 1205 n°vertices (2): (15->32)
+  arestas: (15,32)
 
-subcaminho 21 n°vertices (2): (9->2)
-  arestas: (9,2)
+subcaminho 1206 n°vertices (7): (7->29->17->27->18->33->10)
+  arestas: (7,29), (29,17), (17,27), (27,18), (18,33), (33,10)
 
-subcaminho 22 n°vertices (2): (11->19)
+subcaminho 1207 n°vertices (2): (8->43)
+  arestas: (8,43)
+
+subcaminho 1208 n°vertices (2): (11->38)
+  arestas: (11,38)
+
+subcaminho 1209 n°vertices (2): (29->25)
+  arestas: (29,25)
+
+subcaminho 1210 n°vertices (3): (36->16->50)
+  arestas: (36,16), (16,50)
+
+subcaminho 1211 n°vertices (2): (44->36)
+  arestas: (44,36)
+
+subcaminho 1212 n°vertices (2): (4->49)
+  arestas: (4,49)
+
+subcaminho 1213 n°vertices (2): (8->31)
+  arestas: (8,31)
+
+subcaminho 1214 n°vertices (2): (110->102)
+  arestas: (110,102)
+
+subcaminho 1215 n°vertices (2): (26->3)
+  arestas: (26,3)
+
+subcaminho 1216 n°vertices (2): (4->37)
+  arestas: (4,37)
+
+subcaminho 1217 n°vertices (4): (8->3->28->12)
+  arestas: (8,3), (3,28), (28,12)
+
+subcaminho 1218 n°vertices (3): (37->6->40)
+  arestas: (37,6), (6,40)
+
+subcaminho 1219 n°vertices (2): (22->5)
+  arestas: (22,5)
+
+subcaminho 1220 n°vertices (2): (31->41)
+  arestas: (31,41)
+
+subcaminho 1221 n°vertices (4): (57->38->12->41)
+  arestas: (57,38), (38,12), (12,41)
+
+subcaminho 1222 n°vertices (2): (45->34)
+  arestas: (45,34)
+
+subcaminho 1223 n°vertices (2): (30->38)
+  arestas: (30,38)
+
+subcaminho 1224 n°vertices (2): (49->20)
+  arestas: (49,20)
+
+subcaminho 1225 n°vertices (2): (12->24)
+  arestas: (12,24)
+
+subcaminho 1226 n°vertices (2): (45->22)
+  arestas: (45,22)
+
+subcaminho 1227 n°vertices (2): (31->36)
+  arestas: (31,36)
+
+subcaminho 1228 n°vertices (2): (53->9)
+  arestas: (53,9)
+
+subcaminho 1229 n°vertices (2): (31->24)
+  arestas: (31,24)
+
+subcaminho 1230 n°vertices (2): (49->15)
+  arestas: (49,15)
+
+subcaminho 1231 n°vertices (2): (12->19)
+  arestas: (12,19)
+
+subcaminho 1232 n°vertices (2): (8->21)
+  arestas: (8,21)
+
+subcaminho 1233 n°vertices (2): (11->16)
+  arestas: (11,16)
+
+subcaminho 1234 n°vertices (2): (4->27)
+  arestas: (4,27)
+
+subcaminho 1235 n°vertices (3): (36->42->35)
+  arestas: (36,42), (42,35)
+
+subcaminho 1236 n°vertices (2): (4->15)
+  arestas: (4,15)
+
+subcaminho 1237 n°vertices (2): (31->19)
+  arestas: (31,19)
+
+subcaminho 1238 n°vertices (2): (32->10)
+  arestas: (32,10)
+
+subcaminho 1239 n°vertices (2): (9->53)
+  arestas: (9,53)
+
+subcaminho 1240 n°vertices (3): (33->32->41)
+  arestas: (33,32), (32,41)
+
+subcaminho 1241 n°vertices (2): (49->10)
+  arestas: (49,10)
+
+subcaminho 1242 n°vertices (2): (54->141)
+  arestas: (54,141)
+
+subcaminho 1243 n°vertices (2): (46->3)
+  arestas: (46,3)
+
+subcaminho 1244 n°vertices (2): (57->39)
+  arestas: (57,39)
+
+subcaminho 1245 n°vertices (2): (8->4)
+  arestas: (8,4)
+
+subcaminho 1246 n°vertices (2): (39->6)
+  arestas: (39,6)
+
+subcaminho 1247 n°vertices (3): (16->6->39)
+  arestas: (16,6), (6,39)
+
+subcaminho 1248 n°vertices (2): (26->57)
+  arestas: (26,57)
+
+subcaminho 1249 n°vertices (2): (47->39)
+  arestas: (47,39)
+
+subcaminho 1250 n°vertices (2): (32->5)
+  arestas: (32,5)
+
+subcaminho 1251 n°vertices (2): (10->20)
+  arestas: (10,20)
+
+subcaminho 1252 n°vertices (2): (31->2)
+  arestas: (31,2)
+
+subcaminho 1253 n°vertices (2): (3->42)
+  arestas: (3,42)
+
+subcaminho 1254 n°vertices (3): (6->11->25)
+  arestas: (6,11), (11,25)
+
+subcaminho 1255 n°vertices (4): (13->18->41->36)
+  arestas: (13,18), (18,41), (41,36)
+
+subcaminho 1256 n°vertices (4): (51->23->10->14)
+  arestas: (51,23), (23,10), (10,14)
+
+subcaminho 1257 n°vertices (2): (27->43)
+  arestas: (27,43)
+
+subcaminho 1258 n°vertices (2): (14->13)
+  arestas: (14,13)
+
+subcaminho 1259 n°vertices (2): (48->25)
+  arestas: (48,25)
+
+subcaminho 1260 n°vertices (2): (44->31)
+  arestas: (44,31)
+
+subcaminho 1261 n°vertices (2): (7->35)
+  arestas: (7,35)
+
+subcaminho 1262 n°vertices (2): (3->37)
+  arestas: (3,37)
+
+subcaminho 1263 n°vertices (7): (1->8->46->31->11->10->22)
+  arestas: (1,8), (8,46), (46,31), (31,11), (11,10), (10,22)
+
+subcaminho 1264 n°vertices (2): (21->16)
+  arestas: (21,16)
+
+subcaminho 1265 n°vertices (2): (27->38)
+  arestas: (27,38)
+
+subcaminho 1266 n°vertices (2): (18->6)
+  arestas: (18,6)
+
+subcaminho 1267 n°vertices (3): (28->27->16)
+  arestas: (28,27), (27,16)
+
+subcaminho 1268 n°vertices (2): (40->28)
+  arestas: (40,28)
+
+subcaminho 1269 n°vertices (2): (37->25)
+  arestas: (37,25)
+
+subcaminho 1270 n°vertices (2): (40->16)
+  arestas: (40,16)
+
+subcaminho 1271 n°vertices (2): (5->48)
+  arestas: (5,48)
+
+subcaminho 1272 n°vertices (2): (30->28)
+  arestas: (30,28)
+
+subcaminho 1273 n°vertices (2): (57->51)
+  arestas: (57,51)
+
+subcaminho 1274 n°vertices (2): (26->30)
+  arestas: (26,30)
+
+subcaminho 1275 n°vertices (2): (5->36)
+  arestas: (5,36)
+
+subcaminho 1276 n°vertices (2): (45->12)
+  arestas: (45,12)
+
+subcaminho 1277 n°vertices (2): (23->27)
+  arestas: (23,27)
+
+subcaminho 1278 n°vertices (2): (41->14)
+  arestas: (41,14)
+
+subcaminho 1279 n°vertices (2): (19->29)
+  arestas: (19,29)
+
+subcaminho 1280 n°vertices (2): (44->9)
+  arestas: (44,9)
+
+subcaminho 1281 n°vertices (2): (37->20)
+  arestas: (37,20)
+
+subcaminho 1282 n°vertices (2): (16->49)
+  arestas: (16,49)
+
+subcaminho 1283 n°vertices (2): (41->2)
+  arestas: (41,2)
+
+subcaminho 1284 n°vertices (2): (13->42)
+  arestas: (13,42)
+
+subcaminho 1285 n°vertices (2): (37->8)
+  arestas: (37,8)
+
+subcaminho 1286 n°vertices (2): (31->14)
+  arestas: (31,14)
+
+subcaminho 1287 n°vertices (2): (9->48)
+  arestas: (9,48)
+
+subcaminho 1288 n°vertices (2): (6->22)
+  arestas: (6,22)
+
+subcaminho 1289 n°vertices (2): (23->22)
+  arestas: (23,22)
+
+subcaminho 1290 n°vertices (2): (26->13)
+  arestas: (26,13)
+
+subcaminho 1291 n°vertices (2): (24->13)
+  arestas: (24,13)
+
+subcaminho 1292 n°vertices (2): (35->49)
+  arestas: (35,49)
+
+subcaminho 1293 n°vertices (2): (20->15)
+  arestas: (20,15)
+
+subcaminho 1294 n°vertices (2): (51->17)
+  arestas: (51,17)
+
+subcaminho 1295 n°vertices (6): (51->16->13->23->18->44)
+  arestas: (51,16), (16,13), (13,23), (23,18), (18,44)
+
+subcaminho 1296 n°vertices (2): (49->42)
+  arestas: (49,42)
+
+subcaminho 1297 n°vertices (3): (27->35->42)
+  arestas: (27,35), (35,42)
+
+subcaminho 1298 n°vertices (2): (9->43)
+  arestas: (9,43)
+
+subcaminho 1299 n°vertices (2): (30->6)
+  arestas: (30,6)
+
+subcaminho 1300 n°vertices (2): (6->17)
+  arestas: (6,17)
+
+subcaminho 1301 n°vertices (3): (32->29->53)
+  arestas: (32,29), (29,53)
+
+subcaminho 1302 n°vertices (2): (24->8)
+  arestas: (24,8)
+
+subcaminho 1303 n°vertices (5): (28->49->57->18->17)
+  arestas: (28,49), (49,57), (57,18), (18,17)
+
+subcaminho 1304 n°vertices (2): (35->44)
+  arestas: (35,44)
+
+subcaminho 1305 n°vertices (5): (9->14->24->48->23)
+  arestas: (9,14), (14,24), (24,48), (48,23)
+
+subcaminho 1306 n°vertices (2): (36->35)
+  arestas: (36,35)
+
+subcaminho 1307 n°vertices (2): (20->10)
+  arestas: (20,10)
+
+subcaminho 1308 n°vertices (2): (29->46)
+  arestas: (29,46)
+
+subcaminho 1309 n°vertices (2): (23->5)
+  arestas: (23,5)
+
+subcaminho 1310 n°vertices (2): (22->49)
+  arestas: (22,49)
+
+subcaminho 1311 n°vertices (2): (49->25)
+  arestas: (49,25)
+
+subcaminho 1312 n°vertices (2): (6->12)
+  arestas: (6,12)
+
+subcaminho 1313 n°vertices (3): (31->13->7)
+  arestas: (31,13), (13,7)
+
+subcaminho 1314 n°vertices (3): (40->41->37)
+  arestas: (40,41), (41,37)
+
+subcaminho 1315 n°vertices (2): (9->26)
+  arestas: (9,26)
+
+subcaminho 1316 n°vertices (2): (15->48)
+  arestas: (15,48)
+
+subcaminho 1317 n°vertices (2): (14->45)
+  arestas: (14,45)
+
+subcaminho 1318 n°vertices (2): (123->59)
+  arestas: (123,59)
+
+subcaminho 1319 n°vertices (2): (50->11)
+  arestas: (50,11)
+
+subcaminho 1320 n°vertices (2): (64->159)
+  arestas: (64,159)
+
+subcaminho 1321 n°vertices (2): (22->32)
+  arestas: (22,32)
+
+subcaminho 1322 n°vertices (2): (9->21)
+  arestas: (9,21)
+
+subcaminho 1323 n°vertices (2): (64->66)
+  arestas: (64,66)
+
+subcaminho 1324 n°vertices (2): (15->31)
+  arestas: (15,31)
+
+subcaminho 1325 n°vertices (2): (78->59)
+  arestas: (78,59)
+
+subcaminho 1326 n°vertices (2): (33->22)
+  arestas: (33,22)
+
+subcaminho 1327 n°vertices (2): (45->49)
+  arestas: (45,49)
+
+subcaminho 1328 n°vertices (2): (29->24)
+  arestas: (29,24)
+
+subcaminho 1329 n°vertices (2): (41->51)
+  arestas: (41,51)
+
+subcaminho 1330 n°vertices (2): (50->6)
+  arestas: (50,6)
+
+subcaminho 1331 n°vertices (2): (26->25)
+  arestas: (26,25)
+
+subcaminho 1332 n°vertices (7): (5->16->28->7->41->12->27)
+  arestas: (5,16), (16,28), (28,7), (7,41), (41,12), (12,27)
+
+subcaminho 1333 n°vertices (4): (50->36->22->43)
+  arestas: (50,36), (36,22), (22,43)
+
+subcaminho 1334 n°vertices (2): (31->51)
+  arestas: (31,51)
+
+subcaminho 1335 n°vertices (2): (15->26)
+  arestas: (15,26)
+
+subcaminho 1336 n°vertices (2): (40->6)
+  arestas: (40,6)
+
+subcaminho 1337 n°vertices (2): (27->53)
+  arestas: (27,53)
+
+subcaminho 1338 n°vertices (2): (11->32)
+  arestas: (11,32)
+
+subcaminho 1339 n°vertices (2): (45->44)
+  arestas: (45,44)
+
+subcaminho 1340 n°vertices (2): (146->59)
+  arestas: (146,59)
+
+subcaminho 1341 n°vertices (2): (8->25)
+  arestas: (8,25)
+
+subcaminho 1342 n°vertices (6): (19->30->41->49->18->28)
+  arestas: (19,30), (30,41), (41,49), (49,18), (18,28)
+
+subcaminho 1343 n°vertices (2): (33->5)
+  arestas: (33,5)
+
+subcaminho 1344 n°vertices (2): (11->20)
+  arestas: (11,20)
+
+subcaminho 1345 n°vertices (2): (29->7)
+  arestas: (29,7)
+
+subcaminho 1346 n°vertices (2): (5->26)
+  arestas: (5,26)
+
+subcaminho 1347 n°vertices (2): (1->28)
+  arestas: (1,28)
+
+subcaminho 1348 n°vertices (4): (41->46->49->17)
+  arestas: (41,46), (46,49), (49,17)
+
+subcaminho 1349 n°vertices (3): (21->39->11)
+  arestas: (21,39), (39,11)
+
+subcaminho 1350 n°vertices (2): (19->7)
+  arestas: (19,7)
+
+subcaminho 1351 n°vertices (2): (15->9)
+  arestas: (15,9)
+
+subcaminho 1352 n°vertices (2): (42->36)
+  arestas: (42,36)
+
+subcaminho 1353 n°vertices (2): (12->6)
+  arestas: (12,6)
+
+subcaminho 1354 n°vertices (3): (27->23->20)
+  arestas: (27,23), (23,20)
+
+subcaminho 1355 n°vertices (2): (5->9)
+  arestas: (5,9)
+
+subcaminho 1356 n°vertices (2): (1->11)
+  arestas: (1,11)
+
+subcaminho 1357 n°vertices (2): (19->2)
+  arestas: (19,2)
+
+subcaminho 1358 n°vertices (2): (28->38)
+  arestas: (28,38)
+
+subcaminho 1359 n°vertices (2): (46->25)
+  arestas: (46,25)
+
+subcaminho 1360 n°vertices (2): (24->40)
+  arestas: (24,40)
+
+subcaminho 1361 n°vertices (2): (88->59)
+  arestas: (88,59)
+
+subcaminho 1362 n°vertices (2): (12->1)
+  arestas: (12,1)
+
+subcaminho 1363 n°vertices (2): (152->59)
+  arestas: (152,59)
+
+subcaminho 1364 n°vertices (2): (39->5)
+  arestas: (39,5)
+
+subcaminho 1365 n°vertices (2): (42->19)
+  arestas: (42,19)
+
+subcaminho 1366 n°vertices (4): (50->2->57->53)
+  arestas: (50,2), (2,57), (57,53)
+
+subcaminho 1367 n°vertices (2): (51->32)
+  arestas: (51,32)
+
+subcaminho 1368 n°vertices (2): (38->21)
+  arestas: (38,21)
+
+subcaminho 1369 n°vertices (2): (14->40)
+  arestas: (14,40)
+
+subcaminho 1370 n°vertices (2): (47->38)
+  arestas: (47,38)
+
+subcaminho 1371 n°vertices (2): (10->42)
+  arestas: (10,42)
+
+subcaminho 1372 n°vertices (2): (107->59)
+  arestas: (107,59)
+
+subcaminho 1373 n°vertices (2): (3->41)
+  arestas: (3,41)
+
+subcaminho 1374 n°vertices (8): (13->30->23->7->19->24->5->41)
+  arestas: (13,30), (30,23), (23,7), (7,19), (19,24), (24,5), (5,41)
+
+subcaminho 1375 n°vertices (5): (24->39->14->12->33)
+  arestas: (24,39), (39,14), (14,12), (12,33)
+
+subcaminho 1376 n°vertices (2): (21->32)
+  arestas: (21,32)
+
+subcaminho 1377 n°vertices (2): (24->23)
+  arestas: (24,23)
+
+subcaminho 1378 n°vertices (2): (38->16)
+  arestas: (38,16)
+
+subcaminho 1379 n°vertices (2): (17->22)
+  arestas: (17,22)
+
+subcaminho 1380 n°vertices (2): (47->33)
+  arestas: (47,33)
+
+subcaminho 1381 n°vertices (2): (14->23)
+  arestas: (14,23)
+
+subcaminho 1382 n°vertices (3): (32->31->3)
+  arestas: (32,31), (31,3)
+
+subcaminho 1383 n°vertices (2): (10->25)
+  arestas: (10,25)
+
+subcaminho 1384 n°vertices (2): (34->57)
+  arestas: (34,57)
+
+subcaminho 1385 n°vertices (2): (3->36)
+  arestas: (3,36)
+
+subcaminho 1386 n°vertices (2): (34->45)
+  arestas: (34,45)
+
+subcaminho 1387 n°vertices (2): (64->56)
+  arestas: (64,56)
+
+subcaminho 1388 n°vertices (3): (37->46->22)
+  arestas: (37,46), (46,22)
+
+subcaminho 1389 n°vertices (2): (48->19)
+  arestas: (48,19)
+
+subcaminho 1390 n°vertices (2): (51->10)
+  arestas: (51,10)
+
+subcaminho 1391 n°vertices (3): (26->53->4)
+  arestas: (26,53), (53,4)
+
+subcaminho 1392 n°vertices (2): (14->18)
+  arestas: (14,18)
+
+subcaminho 1393 n°vertices (2): (47->16)
+  arestas: (47,16)
+
+subcaminho 1394 n°vertices (2): (8->20)
+  arestas: (8,20)
+
+subcaminho 1395 n°vertices (2): (20->47)
+  arestas: (20,47)
+
+subcaminho 1396 n°vertices (2): (29->2)
+  arestas: (29,2)
+
+subcaminho 1397 n°vertices (2): (37->47)
+  arestas: (37,47)
+
+subcaminho 1398 n°vertices (3): (30->13->37)
+  arestas: (30,13), (13,37)
+
+subcaminho 1399 n°vertices (2): (33->49)
+  arestas: (33,49)
+
+subcaminho 1400 n°vertices (2): (16->53)
+  arestas: (16,53)
+
+subcaminho 1401 n°vertices (2): (40->15)
+  arestas: (40,15)
+
+subcaminho 1402 n°vertices (2): (37->35)
+  arestas: (37,35)
+
+subcaminho 1403 n°vertices (2): (43->57)
+  arestas: (43,57)
+
+subcaminho 1404 n°vertices (3): (20->14->46)
+  arestas: (20,14), (14,46)
+
+subcaminho 1405 n°vertices (5): (51->27->39->46->10)
+  arestas: (51,27), (27,39), (39,46), (46,10)
+
+subcaminho 1406 n°vertices (3): (41->35->7)
+  arestas: (41,35), (35,7)
+
+subcaminho 1407 n°vertices (2): (6->49)
+  arestas: (6,49)
+
+subcaminho 1408 n°vertices (2): (15->4)
+  arestas: (15,4)
+
+subcaminho 1409 n°vertices (2): (23->49)
+  arestas: (23,49)
+
+subcaminho 1410 n°vertices (2): (48->2)
+  arestas: (48,2)
+
+subcaminho 1411 n°vertices (4): (27->34->30->39)
+  arestas: (27,34), (34,30), (30,39)
+
+subcaminho 1412 n°vertices (2): (20->42)
+  arestas: (20,42)
+
+subcaminho 1413 n°vertices (2): (53->40)
+  arestas: (53,40)
+
+subcaminho 1414 n°vertices (2): (44->8)
+  arestas: (44,8)
+
+subcaminho 1415 n°vertices (2): (7->12)
+  arestas: (7,12)
+
+subcaminho 1416 n°vertices (3): (36->14->21)
+  arestas: (36,14), (14,21)
+
+subcaminho 1417 n°vertices (2): (16->48)
+  arestas: (16,48)
+
+subcaminho 1418 n°vertices (2): (34->35)
+  arestas: (34,35)
+
+subcaminho 1419 n°vertices (2): (49->46)
+  arestas: (49,46)
+
+subcaminho 1420 n°vertices (2): (13->41)
+  arestas: (13,41)
+
+subcaminho 1421 n°vertices (2): (1->6)
+  arestas: (1,6)
+
+subcaminho 1422 n°vertices (2): (34->23)
+  arestas: (34,23)
+
+subcaminho 1423 n°vertices (2): (27->15)
+  arestas: (27,15)
+
+subcaminho 1424 n°vertices (2): (6->44)
+  arestas: (6,44)
+
+subcaminho 1425 n°vertices (2): (39->42)
+  arestas: (39,42)
+
+subcaminho 1426 n°vertices (5): (41->39->40->17->23)
+  arestas: (41,39), (39,40), (40,17), (17,23)
+
+subcaminho 1427 n°vertices (2): (2->50)
+  arestas: (2,50)
+
+subcaminho 1428 n°vertices (2): (20->37)
+  arestas: (20,37)
+
+subcaminho 1429 n°vertices (2): (27->3)
+  arestas: (27,3)
+
+subcaminho 1430 n°vertices (2): (35->48)
+  arestas: (35,48)
+
+subcaminho 1431 n°vertices (2): (53->35)
+  arestas: (53,35)
+
+subcaminho 1432 n°vertices (2): (16->43)
+  arestas: (16,43)
+
+subcaminho 1433 n°vertices (2): (20->25)
+  arestas: (20,25)
+
+subcaminho 1434 n°vertices (2): (13->36)
+  arestas: (13,36)
+
+subcaminho 1435 n°vertices (2): (4->4)
+  arestas: (4,4)
+
+subcaminho 1436 n°vertices (2): (16->31)
+  arestas: (16,31)
+
+subcaminho 1437 n°vertices (2): (34->18)
+  arestas: (34,18)
+
+subcaminho 1438 n°vertices (4): (12->36->23->39)
+  arestas: (12,36), (36,23), (23,39)
+
+subcaminho 1439 n°vertices (2): (57->16)
+  arestas: (57,16)
+
+subcaminho 1440 n°vertices (2): (17->29)
+  arestas: (17,29)
+
+subcaminho 1441 n°vertices (2): (2->33)
+  arestas: (2,33)
+
+subcaminho 1442 n°vertices (2): (67->104)
+  arestas: (67,104)
+
+subcaminho 1443 n°vertices (3): (17->21->43)
+  arestas: (17,21), (21,43)
+
+subcaminho 1444 n°vertices (2): (47->28)
+  arestas: (47,28)
+
+subcaminho 1445 n°vertices (2): (13->19)
+  arestas: (13,19)
+
+subcaminho 1446 n°vertices (2): (9->25)
+  arestas: (9,25)
+
+subcaminho 1447 n°vertices (2): (40->27)
+  arestas: (40,27)
+
+subcaminho 1448 n°vertices (2): (3->31)
+  arestas: (3,31)
+
+subcaminho 1449 n°vertices (2): (36->29)
+  arestas: (36,29)
+
+subcaminho 1450 n°vertices (2): (2->28)
+  arestas: (2,28)
+
+subcaminho 1451 n°vertices (2): (3->19)
+  arestas: (3,19)
+
+subcaminho 1452 n°vertices (2): (29->51)
+  arestas: (29,51)
+
+subcaminho 1453 n°vertices (2): (8->57)
+  arestas: (8,57)
+
+subcaminho 1454 n°vertices (2): (50->10)
+  arestas: (50,10)
+
+subcaminho 1455 n°vertices (3): (2->32->6)
+  arestas: (2,32), (32,6)
+
+subcaminho 1456 n°vertices (3): (1->47->10)
+  arestas: (1,47), (47,10)
+
+subcaminho 1457 n°vertices (2): (16->9)
+  arestas: (16,9)
+
+subcaminho 1458 n°vertices (2): (22->31)
+  arestas: (22,31)
+
+subcaminho 1459 n°vertices (2): (9->20)
+  arestas: (9,20)
+
+subcaminho 1460 n°vertices (2): (43->13)
+  arestas: (43,13)
+
+subcaminho 1461 n°vertices (2): (21->47)
+  arestas: (21,47)
+
+subcaminho 1462 n°vertices (2): (2->23)
+  arestas: (2,23)
+
+subcaminho 1463 n°vertices (2): (36->12)
+  arestas: (36,12)
+
+subcaminho 1464 n°vertices (2): (44->57)
+  arestas: (44,57)
+
+subcaminho 1465 n°vertices (2): (45->48)
+  arestas: (45,48)
+
+subcaminho 1466 n°vertices (2): (71->80)
+  arestas: (71,80)
+
+subcaminho 1467 n°vertices (2): (50->5)
+  arestas: (50,5)
+
+subcaminho 1468 n°vertices (2): (7->49)
+  arestas: (7,49)
+
+subcaminho 1469 n°vertices (2): (16->4)
+  arestas: (16,4)
+
+subcaminho 1470 n°vertices (2): (47->6)
+  arestas: (47,6)
+
+subcaminho 1471 n°vertices (2): (26->12)
+  arestas: (26,12)
+
+subcaminho 1472 n°vertices (2): (21->42)
+  arestas: (21,42)
+
+subcaminho 1473 n°vertices (2): (22->14)
+  arestas: (22,14)
+
+subcaminho 1474 n°vertices (2): (153->59)
+  arestas: (153,59)
+
+subcaminho 1475 n°vertices (7): (15->12->30->11->23->26->46)
+  arestas: (15,12), (12,30), (30,11), (11,23), (23,26), (26,46)
+
+subcaminho 1476 n°vertices (2): (18->20)
+  arestas: (18,20)
+
+subcaminho 1477 n°vertices (2): (36->7)
+  arestas: (36,7)
+
+subcaminho 1478 n°vertices (3): (3->17->47)
+  arestas: (3,17), (17,47)
+
+subcaminho 1479 n°vertices (2): (11->42)
+  arestas: (11,42)
+
+subcaminho 1480 n°vertices (2): (44->40)
+  arestas: (44,40)
+
+subcaminho 1481 n°vertices (2): (4->53)
+  arestas: (4,53)
+
+subcaminho 1482 n°vertices (2): (32->48)
+  arestas: (32,48)
+
+subcaminho 1483 n°vertices (2): (172->59)
+  arestas: (172,59)
+
+subcaminho 1484 n°vertices (2): (26->7)
+  arestas: (26,7)
+
+subcaminho 1485 n°vertices (3): (24->42->21)
+  arestas: (24,42), (42,21)
+
+subcaminho 1486 n°vertices (2): (53->30)
+  arestas: (53,30)
+
+subcaminho 1487 n°vertices (2): (22->9)
+  arestas: (22,9)
+
+subcaminho 1488 n°vertices (2): (32->36)
+  arestas: (32,36)
+
+subcaminho 1489 n°vertices (2): (1->15)
+  arestas: (1,15)
+
+subcaminho 1490 n°vertices (2): (49->36)
+  arestas: (49,36)
+
+subcaminho 1491 n°vertices (2): (18->15)
+  arestas: (18,15)
+
+subcaminho 1492 n°vertices (2): (30->42)
+  arestas: (30,42)
+
+subcaminho 1493 n°vertices (2): (46->29)
+  arestas: (46,29)
+
+subcaminho 1494 n°vertices (2): (49->24)
+  arestas: (49,24)
+
+subcaminho 1495 n°vertices (2): (12->28)
+  arestas: (12,28)
+
+subcaminho 1496 n°vertices (2): (8->30)
+  arestas: (8,30)
+
+subcaminho 1497 n°vertices (2): (108->54)
+  arestas: (108,54)
+
+subcaminho 1498 n°vertices (2): (39->32)
+  arestas: (39,32)
+
+subcaminho 1499 n°vertices (3): (28->16->46)
+  arestas: (28,16), (16,46)
+
+subcaminho 1500 n°vertices (2): (4->36)
+  arestas: (4,36)
+
+subcaminho 1501 n°vertices (2): (5->8)
+  arestas: (5,8)
+
+subcaminho 1502 n°vertices (2): (39->20)
+  arestas: (39,20)
+
+subcaminho 1503 n°vertices (4): (45->17->40->36)
+  arestas: (45,17), (17,40), (40,36)
+
+subcaminho 1504 n°vertices (2): (35->26)
+  arestas: (35,26)
+
+subcaminho 1505 n°vertices (2): (53->13)
+  arestas: (53,13)
+
+subcaminho 1506 n°vertices (2): (12->23)
+  arestas: (12,23)
+
+subcaminho 1507 n°vertices (7): (18->11->21->30->35->39->57)
+  arestas: (18,11), (11,21), (21,30), (30,35), (35,39), (39,57)
+
+subcaminho 1508 n°vertices (7): (30->32->27->1->12->48->57)
+  arestas: (30,32), (32,27), (27,1), (1,12), (12,48), (48,57)
+
+subcaminho 1509 n°vertices (2): (12->11)
+  arestas: (12,11)
+
+subcaminho 1510 n°vertices (2): (5->3)
+  arestas: (5,3)
+
+subcaminho 1511 n°vertices (8): (4->41->19->34->1->57->31->39)
+  arestas: (4,41), (41,19), (19,34), (34,1), (1,57), (57,31), (31,39)
+
+subcaminho 1512 n°vertices (2): (38->20)
+  arestas: (38,20)
+
+subcaminho 1513 n°vertices (2): (14->39)
+  arestas: (14,39)
+
+subcaminho 1514 n°vertices (2): (10->41)
+  arestas: (10,41)
+
+subcaminho 1515 n°vertices (2): (31->23)
+  arestas: (31,23)
+
+subcaminho 1516 n°vertices (2): (9->57)
+  arestas: (9,57)
+
+subcaminho 1517 n°vertices (2): (54->145)
+  arestas: (54,145)
+
+subcaminho 1518 n°vertices (2): (67->82)
+  arestas: (67,82)
+
+subcaminho 1519 n°vertices (2): (49->2)
+  arestas: (49,2)
+
+subcaminho 1520 n°vertices (2): (9->15)
+  arestas: (9,15)
+
+subcaminho 1521 n°vertices (2): (42->13)
+  arestas: (42,13)
+
+subcaminho 1522 n°vertices (2): (45->4)
+  arestas: (45,4)
+
+subcaminho 1523 n°vertices (2): (14->34)
+  arestas: (14,34)
+
+subcaminho 1524 n°vertices (2): (4->14)
+  arestas: (4,14)
+
+subcaminho 1525 n°vertices (2): (35->16)
+  arestas: (35,16)
+
+subcaminho 1526 n°vertices (2): (14->22)
+  arestas: (14,22)
+
+subcaminho 1527 n°vertices (2): (32->9)
+  arestas: (32,9)
+
+subcaminho 1528 n°vertices (2): (28->15)
+  arestas: (28,15)
+
+subcaminho 1529 n°vertices (2): (31->6)
+  arestas: (31,6)
+
+subcaminho 1530 n°vertices (2): (67->158)
+  arestas: (67,158)
+
+subcaminho 1531 n°vertices (3): (13->38->57)
+  arestas: (13,38), (38,57)
+
+subcaminho 1532 n°vertices (3): (40->35->27)
+  arestas: (40,35), (35,27)
+
+subcaminho 1533 n°vertices (2): (37->51)
+  arestas: (37,51)
+
+subcaminho 1534 n°vertices (2): (40->42)
+  arestas: (40,42)
+
+subcaminho 1535 n°vertices (2): (33->53)
+  arestas: (33,53)
+
+subcaminho 1536 n°vertices (3): (36->53->12)
+  arestas: (36,53), (53,12)
+
+subcaminho 1537 n°vertices (2): (64->55)
+  arestas: (64,55)
+
+subcaminho 1538 n°vertices (2): (27->47)
+  arestas: (27,47)
+
+subcaminho 1539 n°vertices (2): (36->2)
+  arestas: (36,2)
+
+subcaminho 1540 n°vertices (2): (14->17)
+  arestas: (14,17)
+
+subcaminho 1541 n°vertices (2): (23->53)
+  arestas: (23,53)
+
+subcaminho 1542 n°vertices (2): (44->35)
+  arestas: (44,35)
+
+subcaminho 1543 n°vertices (2): (20->46)
+  arestas: (20,46)
+
+subcaminho 1544 n°vertices (2): (29->1)
+  arestas: (29,1)
+
+subcaminho 1545 n°vertices (2): (41->28)
+  arestas: (41,28)
+
+subcaminho 1546 n°vertices (2): (33->48)
+  arestas: (33,48)
+
+subcaminho 1547 n°vertices (2): (1->22)
+  arestas: (1,22)
+
+subcaminho 1548 n°vertices (2): (34->39)
+  arestas: (34,39)
+
+subcaminho 1549 n°vertices (2): (33->36)
+  arestas: (33,36)
+
+subcaminho 1550 n°vertices (2): (27->42)
+  arestas: (27,42)
+
+subcaminho 1551 n°vertices (2): (5->57)
+  arestas: (5,57)
+
+subcaminho 1552 n°vertices (2): (6->48)
+  arestas: (6,48)
+
+subcaminho 1553 n°vertices (2): (23->48)
+  arestas: (23,48)
+
+subcaminho 1554 n°vertices (2): (26->39)
+  arestas: (26,39)
+
+subcaminho 1555 n°vertices (2): (44->30)
+  arestas: (44,30)
+
+subcaminho 1556 n°vertices (2): (38->32)
+  arestas: (38,32)
+
+subcaminho 1557 n°vertices (2): (41->23)
+  arestas: (41,23)
+
+subcaminho 1558 n°vertices (2): (19->38)
+  arestas: (19,38)
+
+subcaminho 1559 n°vertices (5): (22->45->33->43->51)
+  arestas: (22,45), (45,33), (33,43), (43,51)
+
+subcaminho 1560 n°vertices (2): (1->5)
+  arestas: (1,5)
+
+subcaminho 1561 n°vertices (3): (42->15->33)
+  arestas: (42,15), (15,33)
+
+subcaminho 1562 n°vertices (2): (102->266)
+  arestas: (102,266)
+
+subcaminho 1563 n°vertices (5): (48->30->17->37->22)
+  arestas: (48,30), (30,17), (17,37), (37,22)
+
+subcaminho 1564 n°vertices (2): (6->43)
+  arestas: (6,43)
+
+subcaminho 1565 n°vertices (2): (124->54)
+  arestas: (124,54)
+
+subcaminho 1566 n°vertices (2): (24->34)
+  arestas: (24,34)
+
+subcaminho 1567 n°vertices (2): (27->25)
+  arestas: (27,25)
+
+subcaminho 1568 n°vertices (2): (5->40)
+  arestas: (5,40)
+
+subcaminho 1569 n°vertices (2): (45->16)
+  arestas: (45,16)
+
+subcaminho 1570 n°vertices (2): (69->59)
+  arestas: (69,59)
+
+subcaminho 1571 n°vertices (2): (51->26)
+  arestas: (51,26)
+
+subcaminho 1572 n°vertices (2): (37->24)
+  arestas: (37,24)
+
+subcaminho 1573 n°vertices (2): (38->15)
+  arestas: (38,15)
+
+subcaminho 1574 n°vertices (2): (41->6)
+  arestas: (41,6)
+
+subcaminho 1575 n°vertices (2): (34->17)
+  arestas: (34,17)
+
+subcaminho 1576 n°vertices (2): (10->36)
+  arestas: (10,36)
+
+subcaminho 1577 n°vertices (2): (46->44)
+  arestas: (46,44)
+
+subcaminho 1578 n°vertices (2): (37->12)
+  arestas: (37,12)
+
+subcaminho 1579 n°vertices (3): (45->26->35)
+  arestas: (45,26), (26,35)
+
+subcaminho 1580 n°vertices (2): (54->89)
+  arestas: (54,89)
+
+subcaminho 1581 n°vertices (2): (6->38)
+  arestas: (6,38)
+
+subcaminho 1582 n°vertices (2): (31->18)
+  arestas: (31,18)
+
+subcaminho 1583 n°vertices (2): (27->20)
+  arestas: (27,20)
+
+subcaminho 1584 n°vertices (2): (2->44)
+  arestas: (2,44)
+
+subcaminho 1585 n°vertices (2): (57->15)
+  arestas: (57,15)
+
+subcaminho 1586 n°vertices (2): (20->19)
+  arestas: (20,19)
+
+subcaminho 1587 n°vertices (2): (38->10)
+  arestas: (38,10)
+
+subcaminho 1588 n°vertices (2): (23->14)
+  arestas: (23,14)
+
+subcaminho 1589 n°vertices (2): (4->9)
+  arestas: (4,9)
+
+subcaminho 1590 n°vertices (2): (51->9)
+  arestas: (51,9)
+
+subcaminho 1591 n°vertices (2): (46->39)
+  arestas: (46,39)
+
+subcaminho 1592 n°vertices (2): (37->7)
+  arestas: (37,7)
+
+subcaminho 1593 n°vertices (2): (85->86)
+  arestas: (85,86)
+
+subcaminho 1594 n°vertices (2): (9->47)
+  arestas: (9,47)
+
+subcaminho 1595 n°vertices (2): (47->15)
+  arestas: (47,15)
+
+subcaminho 1596 n°vertices (2): (42->45)
+  arestas: (42,45)
+
+subcaminho 1597 n°vertices (2): (10->19)
+  arestas: (10,19)
+
+subcaminho 1598 n°vertices (2): (6->21)
+  arestas: (6,21)
+
+subcaminho 1599 n°vertices (2): (15->57)
+  arestas: (15,57)
+
+subcaminho 1600 n°vertices (2): (24->12)
+  arestas: (24,12)
+
+subcaminho 1601 n°vertices (2): (2->27)
+  arestas: (2,27)
+
+subcaminho 1602 n°vertices (2): (36->39)
+  arestas: (36,39)
+
+subcaminho 1603 n°vertices (2): (29->50)
+  arestas: (29,50)
+
+subcaminho 1604 n°vertices (2): (23->9)
+  arestas: (23,9)
+
+subcaminho 1605 n°vertices (2): (108->103)
+  arestas: (108,103)
+
+subcaminho 1606 n°vertices (2): (50->32)
+  arestas: (50,32)
+
+subcaminho 1607 n°vertices (2): (20->2)
+  arestas: (20,2)
+
+subcaminho 1608 n°vertices (2): (51->4)
+  arestas: (51,4)
+
+subcaminho 1609 n°vertices (4): (46->46->4->30)
+  arestas: (46,46), (46,4), (4,30)
+
+subcaminho 1610 n°vertices (2): (16->8)
+  arestas: (16,8)
+
+subcaminho 1611 n°vertices (2): (43->12)
+  arestas: (43,12)
+
+subcaminho 1612 n°vertices (5): (50->7->28->43->21)
+  arestas: (50,7), (7,28), (28,43), (43,21)
+
+subcaminho 1613 n°vertices (2): (170->59)
+  arestas: (170,59)
+
+subcaminho 1614 n°vertices (6): (1->41->10->21->18->40)
+  arestas: (1,41), (41,10), (10,21), (21,18), (18,40)
+
+subcaminho 1615 n°vertices (2): (42->28)
+  arestas: (42,28)
+
+subcaminho 1616 n°vertices (2): (10->2)
+  arestas: (10,2)
+
+subcaminho 1617 n°vertices (3): (5->49->26)
+  arestas: (5,49), (49,26)
+
+subcaminho 1618 n°vertices (2): (3->13)
+  arestas: (3,13)
+
+subcaminho 1619 n°vertices (3): (46->42->11)
+  arestas: (46,42), (42,11)
+
+subcaminho 1620 n°vertices (2): (6->4)
+  arestas: (6,4)
+
+subcaminho 1621 n°vertices (2): (14->49)
+  arestas: (14,49)
+
+subcaminho 1622 n°vertices (2): (23->4)
+  arestas: (23,4)
+
+subcaminho 1623 n°vertices (2): (8->51)
+  arestas: (8,51)
+
+subcaminho 1624 n°vertices (2): (33->31)
+  arestas: (33,31)
+
+subcaminho 1625 n°vertices (2): (2->10)
+  arestas: (2,10)
+
+subcaminho 1626 n°vertices (2): (29->33)
+  arestas: (29,33)
+
+subcaminho 1627 n°vertices (2): (160->59)
+  arestas: (160,59)
+
+subcaminho 1628 n°vertices (2): (28->30)
+  arestas: (28,30)
+
+subcaminho 1629 n°vertices (2): (7->6)
+  arestas: (7,6)
+
+subcaminho 1630 n°vertices (2): (18->42)
+  arestas: (18,42)
+
+subcaminho 1631 n°vertices (2): (19->33)
+  arestas: (19,33)
+
+subcaminho 1632 n°vertices (2): (15->35)
+  arestas: (15,35)
+
+subcaminho 1633 n°vertices (2): (33->26)
+  arestas: (33,26)
+
+subcaminho 1634 n°vertices (2): (29->28)
+  arestas: (29,28)
+
+subcaminho 1635 n°vertices (2): (14->32)
+  arestas: (14,32)
+
+subcaminho 1636 n°vertices (2): (12->32)
+  arestas: (12,32)
+
+subcaminho 1637 n°vertices (2): (33->14)
+  arestas: (33,14)
+
+subcaminho 1638 n°vertices (2): (53->29)
+  arestas: (53,29)
+
+subcaminho 1639 n°vertices (2): (195->187)
+  arestas: (195,187)
+
+subcaminho 1640 n°vertices (2): (19->28)
+  arestas: (19,28)
+
+subcaminho 1641 n°vertices (2): (15->30)
+  arestas: (15,30)
+
+subcaminho 1642 n°vertices (2): (53->17)
+  arestas: (53,17)
+
+subcaminho 1643 n°vertices (2): (11->36)
+  arestas: (11,36)
+
+subcaminho 1644 n°vertices (2): (143->49)
+  arestas: (143,49)
+
+subcaminho 1645 n°vertices (2): (15->18)
+  arestas: (15,18)
+
+subcaminho 1646 n°vertices (2): (8->29)
+  arestas: (8,29)
+
+subcaminho 1647 n°vertices (2): (33->9)
+  arestas: (33,9)
+
+subcaminho 1648 n°vertices (2): (11->24)
+  arestas: (11,24)
+
+subcaminho 1649 n°vertices (2): (29->11)
+  arestas: (29,11)
+
+subcaminho 1650 n°vertices (2): (38->47)
+  arestas: (38,47)
+
+subcaminho 1651 n°vertices (2): (39->19)
+  arestas: (39,19)
+
+subcaminho 1652 n°vertices (2): (64->141)
+  arestas: (64,141)
+
+subcaminho 1653 n°vertices (2): (1->20)
+  arestas: (1,20)
+
+subcaminho 1654 n°vertices (2): (19->11)
+  arestas: (19,11)
+
+subcaminho 1655 n°vertices (3): (51->21->2)
+  arestas: (51,21), (21,2)
+
+subcaminho 1656 n°vertices (2): (24->49)
+  arestas: (24,49)
+
+subcaminho 1657 n°vertices (2): (33->4)
+  arestas: (33,4)
+
+subcaminho 1658 n°vertices (2): (11->19)
   arestas: (11,19)
 
-subcaminho 23 n°vertices (3): (6->11->15)
-  arestas: (6,11), (11,15)
+subcaminho 1659 n°vertices (3): (21->10->40)
+  arestas: (21,10), (10,40)
 
-subcaminho 24 n°vertices (2): (7->14)
-  arestas: (7,14)
+subcaminho 1660 n°vertices (2): (51->53)
+  arestas: (51,53)
+
+subcaminho 1661 n°vertices (2): (38->42)
+  arestas: (38,42)
+
+subcaminho 1662 n°vertices (2): (48->50)
+  arestas: (48,50)
+
+subcaminho 1663 n°vertices (2): (64->136)
+  arestas: (64,136)
+
+subcaminho 1664 n°vertices (2): (4->18)
+  arestas: (4,18)
+
+subcaminho 1665 n°vertices (2): (10->51)
+  arestas: (10,51)
+
+subcaminho 1666 n°vertices (2): (28->42)
+  arestas: (28,42)
+
+subcaminho 1667 n°vertices (2): (13->8)
+  arestas: (13,8)
+
+subcaminho 1668 n°vertices (2): (67->81)
+  arestas: (67,81)
+
+subcaminho 1669 n°vertices (2): (24->44)
+  arestas: (24,44)
+
+subcaminho 1670 n°vertices (2): (125->59)
+  arestas: (125,59)
+
+subcaminho 1671 n°vertices (2): (12->5)
+  arestas: (12,5)
+
+subcaminho 1672 n°vertices (2): (21->41)
+  arestas: (21,41)
+
+subcaminho 1673 n°vertices (4): (14->35->23->30)
+  arestas: (14,35), (35,23), (23,30)
+
+subcaminho 1674 n°vertices (2): (39->9)
+  arestas: (39,9)
+
+subcaminho 1675 n°vertices (2): (124->103)
+  arestas: (124,103)
+
+subcaminho 1676 n°vertices (2): (42->23)
+  arestas: (42,23)
+
+subcaminho 1677 n°vertices (2): (11->2)
+  arestas: (11,2)
+
+subcaminho 1678 n°vertices (2): (48->45)
+  arestas: (48,45)
+
+subcaminho 1679 n°vertices (2): (51->36)
+  arestas: (51,36)
+
+subcaminho 1680 n°vertices (2): (35->15)
+  arestas: (35,15)
+
+subcaminho 1681 n°vertices (2): (14->44)
+  arestas: (14,44)
+
+subcaminho 1682 n°vertices (2): (47->42)
+  arestas: (47,42)
+
+subcaminho 1683 n°vertices (2): (32->8)
+  arestas: (32,8)
+
+subcaminho 1684 n°vertices (2): (2->5)
+  arestas: (2,5)
+
+subcaminho 1685 n°vertices (6): (46->19->41->18->27->7)
+  arestas: (46,19), (19,41), (41,18), (18,27), (27,7)
+
+subcaminho 1686 n°vertices (2): (40->53)
+  arestas: (40,53)
+
+subcaminho 1687 n°vertices (2): (35->3)
+  arestas: (35,3)
+
+subcaminho 1688 n°vertices (2): (144->59)
+  arestas: (144,59)
+
+subcaminho 1689 n°vertices (2): (7->43)
+  arestas: (7,43)
+
+subcaminho 1690 n°vertices (2): (70->71)
+  arestas: (70,71)
+
+subcaminho 1691 n°vertices (2): (3->45)
+  arestas: (3,45)
+
+subcaminho 1692 n°vertices (2): (21->36)
+  arestas: (21,36)
+
+subcaminho 1693 n°vertices (2): (164->85)
+  arestas: (164,85)
+
+subcaminho 1694 n°vertices (2): (17->38)
+  arestas: (17,38)
+
+subcaminho 1695 n°vertices (3): (48->38->50)
+  arestas: (48,38), (38,50)
+
+subcaminho 1696 n°vertices (2): (17->26)
+  arestas: (17,26)
+
+subcaminho 1697 n°vertices (2): (47->37)
+  arestas: (47,37)
+
+subcaminho 1698 n°vertices (2): (26->43)
+  arestas: (26,43)
+
+subcaminho 1699 n°vertices (2): (7->38)
+  arestas: (7,38)
+
+subcaminho 1700 n°vertices (3): (22->46->27)
+  arestas: (22,46), (46,27)
+
+subcaminho 1701 n°vertices (2): (3->40)
+  arestas: (3,40)
+
+subcaminho 1702 n°vertices (3): (7->26->1)
+  arestas: (7,26), (26,1)
+
+subcaminho 1703 n°vertices (3): (36->41->17)
+  arestas: (36,41), (41,17)
+
+subcaminho 1704 n°vertices (2): (131->59)
+  arestas: (131,59)
+
+subcaminho 1705 n°vertices (2): (27->41)
+  arestas: (27,41)
+
+subcaminho 1706 n°vertices (2): (26->38)
+  arestas: (26,38)
+
+subcaminho 1707 n°vertices (2): (27->29)
+  arestas: (27,29)
+
+subcaminho 1708 n°vertices (2): (44->29)
+  arestas: (44,29)
+
+subcaminho 1709 n°vertices (2): (47->20)
+  arestas: (47,20)
+
+subcaminho 1710 n°vertices (2): (8->24)
+  arestas: (8,24)
+
+subcaminho 1711 n°vertices (2): (41->22)
+  arestas: (41,22)
+
+subcaminho 1712 n°vertices (2): (20->51)
+  arestas: (20,51)
+
+subcaminho 1713 n°vertices (2): (29->6)
+  arestas: (29,6)
+
+subcaminho 1714 n°vertices (2): (44->17)
+  arestas: (44,17)
+
+subcaminho 1715 n°vertices (2): (16->57)
+  arestas: (16,57)
+
+subcaminho 1716 n°vertices (2): (34->44)
+  arestas: (34,44)
+
+subcaminho 1717 n°vertices (2): (54->105)
+  arestas: (54,105)
+
+subcaminho 1718 n°vertices (2): (21->14)
+  arestas: (21,14)
+
+subcaminho 1719 n°vertices (2): (102->265)
+  arestas: (102,265)
+
+subcaminho 1720 n°vertices (2): (76->59)
+  arestas: (76,59)
+
+subcaminho 1721 n°vertices (2): (30->31)
+  arestas: (30,31)
+
+subcaminho 1722 n°vertices (2): (45->15)
+  arestas: (45,15)
+
+subcaminho 1723 n°vertices (2): (30->19)
+  arestas: (30,19)
+
+subcaminho 1724 n°vertices (2): (48->6)
+  arestas: (48,6)
+
+subcaminho 1725 n°vertices (8): (7->22->17->48->42->18->4->33)
+  arestas: (7,22), (22,17), (17,48), (48,42), (42,18), (18,4), (4,33)
+
+subcaminho 1726 n°vertices (2): (57->42)
+  arestas: (57,42)
+
+subcaminho 1727 n°vertices (2): (50->53)
+  arestas: (50,53)
+
+subcaminho 1728 n°vertices (2): (53->44)
+  arestas: (53,44)
+
+subcaminho 1729 n°vertices (2): (7->16)
+  arestas: (7,16)
+
+subcaminho 1730 n°vertices (2): (8->7)
+  arestas: (8,7)
+
+subcaminho 1731 n°vertices (2): (41->5)
+  arestas: (41,5)
+
+subcaminho 1732 n°vertices (2): (49->50)
+  arestas: (49,50)
+
+subcaminho 1733 n°vertices (2): (13->45)
+  arestas: (13,45)
+
+subcaminho 1734 n°vertices (2): (4->13)
+  arestas: (4,13)
+
+subcaminho 1735 n°vertices (4): (19->51->47->22)
+  arestas: (19,51), (51,47), (47,22)
+
+subcaminho 1736 n°vertices (2): (9->51)
+  arestas: (9,51)
+
+subcaminho 1737 n°vertices (2): (43->44)
+  arestas: (43,44)
+
+subcaminho 1738 n°vertices (3): (41->57->7)
+  arestas: (41,57), (57,7)
+
+subcaminho 1739 n°vertices (2): (48->1)
+  arestas: (48,1)
+
+subcaminho 1740 n°vertices (2): (31->5)
+  arestas: (31,5)
+
+subcaminho 1741 n°vertices (2): (23->25)
+  arestas: (23,25)
+
+subcaminho 1742 n°vertices (4): (37->18->32->40)
+  arestas: (37,18), (18,32), (32,40)
+
+subcaminho 1743 n°vertices (2): (44->7)
+  arestas: (44,7)
+
+subcaminho 1744 n°vertices (2): (32->45)
+  arestas: (32,45)
+
+subcaminho 1745 n°vertices (2): (23->13)
+  arestas: (23,13)
+
+subcaminho 1746 n°vertices (3): (57->5->12)
+  arestas: (57,5), (5,12)
+
+subcaminho 1747 n°vertices (2): (67->113)
+  arestas: (67,113)
+
+subcaminho 1748 n°vertices (3): (51->48->16)
+  arestas: (51,48), (48,16)
+
+subcaminho 1749 n°vertices (2): (28->51)
+  arestas: (28,51)
+
+subcaminho 1750 n°vertices (2): (16->35)
+  arestas: (16,35)
+
+subcaminho 1751 n°vertices (2): (22->57)
+  arestas: (22,57)
+
+subcaminho 1752 n°vertices (2): (49->33)
+  arestas: (49,33)
+
+subcaminho 1753 n°vertices (2): (9->46)
+  arestas: (9,46)
+
+subcaminho 1754 n°vertices (2): (43->39)
+  arestas: (43,39)
+
+subcaminho 1755 n°vertices (3): (43->18->39)
+  arestas: (43,18), (18,39)
+
+subcaminho 1756 n°vertices (4): (1->4->5->17)
+  arestas: (1,4), (4,5), (5,17)
+
+subcaminho 1757 n°vertices (2): (27->2)
+  arestas: (27,2)
+
+subcaminho 1758 n°vertices (2): (36->38)
+  arestas: (36,38)
+
+subcaminho 1759 n°vertices (2): (23->8)
+  arestas: (23,8)
+
+subcaminho 1760 n°vertices (2): (2->37)
+  arestas: (2,37)
+
+subcaminho 1761 n°vertices (2): (190->89)
+  arestas: (190,89)
+
+subcaminho 1762 n°vertices (2): (16->30)
+  arestas: (16,30)
+
+subcaminho 1763 n°vertices (2): (47->32)
+  arestas: (47,32)
+
+subcaminho 1764 n°vertices (2): (50->19)
+  arestas: (50,19)
+
+subcaminho 1765 n°vertices (6): (12->21->50->40->37->16)
+  arestas: (12,21), (21,50), (50,40), (40,37), (37,16)
+
+subcaminho 1766 n°vertices (4): (57->28->37->50)
+  arestas: (57,28), (28,37), (37,50)
+
+subcaminho 1767 n°vertices (2): (22->40)
+  arestas: (22,40)
+
+subcaminho 1768 n°vertices (2): (9->29)
+  arestas: (9,29)
+
+subcaminho 1769 n°vertices (2): (40->31)
+  arestas: (40,31)
+
+subcaminho 1770 n°vertices (2): (10->1)
+  arestas: (10,1)
+
+subcaminho 1771 n°vertices (2): (36->33)
+  arestas: (36,33)
+
+subcaminho 1772 n°vertices (2): (115->86)
+  arestas: (115,86)
+
+subcaminho 1773 n°vertices (2): (3->23)
+  arestas: (3,23)
+
+subcaminho 1774 n°vertices (2): (29->32)
+  arestas: (29,32)
+
+subcaminho 1775 n°vertices (2): (26->33)
+  arestas: (26,33)
+
+subcaminho 1776 n°vertices (2): (19->32)
+  arestas: (19,32)
+
+subcaminho 1777 n°vertices (2): (40->14)
+  arestas: (40,14)
+
+subcaminho 1778 n°vertices (2): (33->25)
+  arestas: (33,25)
+
+subcaminho 1779 n°vertices (2): (33->13)
+  arestas: (33,13)
+
+subcaminho 1780 n°vertices (2): (29->15)
+  arestas: (29,15)
+
+subcaminho 1781 n°vertices (2): (5->34)
+  arestas: (5,34)
+
+subcaminho 1782 n°vertices (2): (32->57)
+  arestas: (32,57)
+
+subcaminho 1783 n°vertices (2): (1->36)
+  arestas: (1,36)
+
+subcaminho 1784 n°vertices (2): (26->16)
+  arestas: (26,16)
+
+subcaminho 1785 n°vertices (2): (53->39)
+  arestas: (53,39)
+
+subcaminho 1786 n°vertices (2): (22->18)
+  arestas: (22,18)
+
+subcaminho 1787 n°vertices (2): (9->7)
+  arestas: (9,7)
+
+subcaminho 1788 n°vertices (2): (40->9)
+  arestas: (40,9)
+
+subcaminho 1789 n°vertices (2): (49->45)
+  arestas: (49,45)
+
+subcaminho 1790 n°vertices (2): (12->49)
+  arestas: (12,49)
+
+subcaminho 1791 n°vertices (2): (46->38)
+  arestas: (46,38)
+
+subcaminho 1792 n°vertices (2): (33->8)
+  arestas: (33,8)
+
+subcaminho 1793 n°vertices (2): (42->44)
+  arestas: (42,44)
+
+subcaminho 1794 n°vertices (2): (51->57)
+  arestas: (51,57)
+
+subcaminho 1795 n°vertices (2): (5->29)
+  arestas: (5,29)
+
+subcaminho 1796 n°vertices (2): (39->41)
+  arestas: (39,41)
+
+subcaminho 1797 n°vertices (2): (4->45)
+  arestas: (4,45)
+
+subcaminho 1798 n°vertices (2): (53->34)
+  arestas: (53,34)
+
+subcaminho 1799 n°vertices (2): (31->49)
+  arestas: (31,49)
+
+subcaminho 1800 n°vertices (2): (1->19)
+  arestas: (1,19)
+
+subcaminho 1801 n°vertices (2): (19->10)
+  arestas: (19,10)
+
+subcaminho 1802 n°vertices (2): (22->1)
+  arestas: (22,1)
+
+subcaminho 1803 n°vertices (2): (20->1)
+  arestas: (20,1)
+
+subcaminho 1804 n°vertices (2): (28->46)
+  arestas: (28,46)
+
+subcaminho 1805 n°vertices (2): (177->59)
+  arestas: (177,59)
+
+subcaminho 1806 n°vertices (2): (18->7)
+  arestas: (18,7)
+
+subcaminho 1807 n°vertices (2): (42->39)
+  arestas: (42,39)
+
+subcaminho 1808 n°vertices (2): (45->30)
+  arestas: (45,30)
+
+subcaminho 1809 n°vertices (2): (54->66)
+  arestas: (54,66)
+
+subcaminho 1810 n°vertices (2): (38->41)
+  arestas: (38,41)
+
+subcaminho 1811 n°vertices (2): (6->15)
+  arestas: (6,15)
+
+subcaminho 1812 n°vertices (3): (2->17->3)
+  arestas: (2,17), (17,3)
+
+subcaminho 1813 n°vertices (2): (6->3)
+  arestas: (6,3)
+
+subcaminho 1814 n°vertices (3): (5->46->35)
+  arestas: (5,46), (46,35)
+
+subcaminho 1815 n°vertices (2): (14->48)
+  arestas: (14,48)
+
+subcaminho 1816 n°vertices (2): (32->35)
+  arestas: (32,35)
+
+subcaminho 1817 n°vertices (2): (23->3)
+  arestas: (23,3)
+
+subcaminho 1818 n°vertices (2): (132->59)
+  arestas: (132,59)
+
+subcaminho 1819 n°vertices (2): (35->30)
+  arestas: (35,30)
+
+subcaminho 1820 n°vertices (2): (19->5)
+  arestas: (19,5)
+
+subcaminho 1821 n°vertices (2): (31->32)
+  arestas: (31,32)
+
+subcaminho 1822 n°vertices (2): (49->23)
+  arestas: (49,23)
+
+subcaminho 1823 n°vertices (2): (45->25)
+  arestas: (45,25)
+
+subcaminho 1824 n°vertices (8): (8->2->19->9->37->48->24->4)
+  arestas: (8,2), (2,19), (19,9), (9,37), (37,48), (48,24), (24,4)
+
+subcaminho 1825 n°vertices (2): (42->22)
+  arestas: (42,22)
+
+subcaminho 1826 n°vertices (2): (5->7)
+  arestas: (5,7)
+
+subcaminho 1827 n°vertices (2): (14->43)
+  arestas: (14,43)
+
+subcaminho 1828 n°vertices (2): (47->41)
+  arestas: (47,41)
+
+subcaminho 1829 n°vertices (2): (10->45)
+  arestas: (10,45)
+
+subcaminho 1830 n°vertices (2): (35->25)
+  arestas: (35,25)
+
+subcaminho 1831 n°vertices (3): (18->34->12)
+  arestas: (18,34), (34,12)
+
+subcaminho 1832 n°vertices (2): (28->24)
+  arestas: (28,24)
+
+subcaminho 1833 n°vertices (2): (46->11)
+  arestas: (46,11)
+
+subcaminho 1834 n°vertices (2): (54->56)
+  arestas: (54,56)
+
+subcaminho 1835 n°vertices (2): (24->26)
+  arestas: (24,26)
+
+subcaminho 1836 n°vertices (2): (42->17)
+  arestas: (42,17)
+
+subcaminho 1837 n°vertices (2): (15->29)
+  arestas: (15,29)
+
+subcaminho 1838 n°vertices (2): (51->18)
+  arestas: (51,18)
+
+subcaminho 1839 n°vertices (2): (36->11)
+  arestas: (36,11)
+
+subcaminho 1840 n°vertices (2): (14->26)
+  arestas: (14,26)
+
+subcaminho 1841 n°vertices (2): (47->24)
+  arestas: (47,24)
+
+subcaminho 1842 n°vertices (2): (28->19)
+  arestas: (28,19)
+
+subcaminho 1843 n°vertices (2): (7->25)
+  arestas: (7,25)
+
+subcaminho 1844 n°vertices (2): (1->31)
+  arestas: (1,31)
+
+subcaminho 1845 n°vertices (2): (48->22)
+  arestas: (48,22)
+
+subcaminho 1846 n°vertices (2): (27->51)
+  arestas: (27,51)
+
+subcaminho 1847 n°vertices (2): (23->57)
+  arestas: (23,57)
+
+subcaminho 1848 n°vertices (2): (41->44)
+  arestas: (41,44)
+
+subcaminho 1849 n°vertices (2): (48->10)
+  arestas: (48,10)
+
+subcaminho 1850 n°vertices (2): (142->59)
+  arestas: (142,59)
+
+subcaminho 1851 n°vertices (2): (20->50)
+  arestas: (20,50)
+
+subcaminho 1852 n°vertices (2): (29->5)
+  arestas: (29,5)
+
+subcaminho 1853 n°vertices (2): (7->20)
+  arestas: (7,20)
+
+subcaminho 1854 n°vertices (3): (32->53->18)
+  arestas: (32,53), (53,18)
+
+subcaminho 1855 n°vertices (2): (82->75)
+  arestas: (82,75)
+
+subcaminho 1856 n°vertices (2): (37->38)
+  arestas: (37,38)
+
+subcaminho 1857 n°vertices (2): (21->13)
+  arestas: (21,13)
+
+subcaminho 1858 n°vertices (2): (1->14)
+  arestas: (1,14)
+
+subcaminho 1859 n°vertices (3): (39->17->36)
+  arestas: (39,17), (17,36)
+
+subcaminho 1860 n°vertices (2): (161->59)
+  arestas: (161,59)
+
+subcaminho 1861 n°vertices (3): (37->39->33)
+  arestas: (37,39), (39,33)
+
+subcaminho 1862 n°vertices (2): (57->41)
+  arestas: (57,41)
+
+subcaminho 1863 n°vertices (2): (20->45)
+  arestas: (20,45)
+
+subcaminho 1864 n°vertices (2): (11->13)
+  arestas: (11,13)
+
+subcaminho 1865 n°vertices (2): (14->4)
+  arestas: (14,4)
+
+subcaminho 1866 n°vertices (4): (15->37->34->46)
+  arestas: (15,37), (37,34), (34,46)
+
+subcaminho 1867 n°vertices (2): (7->15)
+  arestas: (7,15)
+
+subcaminho 1868 n°vertices (2): (87->59)
+  arestas: (87,59)
+
+subcaminho 1869 n°vertices (2): (16->51)
+  arestas: (16,51)
+
+subcaminho 1870 n°vertices (2): (19->42)
+  arestas: (19,42)
+
+subcaminho 1871 n°vertices (2): (47->53)
+  arestas: (47,53)
+
+subcaminho 1872 n°vertices (3): (7->31->33)
+  arestas: (7,31), (31,33)
+
+subcaminho 1873 n°vertices (2): (151->59)
+  arestas: (151,59)
+
+subcaminho 1874 n°vertices (2): (7->3)
+  arestas: (7,3)
+
+subcaminho 1875 n°vertices (3): (30->50->20)
+  arestas: (30,50), (50,20)
+
+subcaminho 1876 n°vertices (2): (34->26)
+  arestas: (34,26)
+
+subcaminho 1877 n°vertices (3): (19->18->37)
+  arestas: (19,18), (18,37)
+
+subcaminho 1878 n°vertices (2): (6->47)
+  arestas: (6,47)
+
+subcaminho 1879 n°vertices (2): (24->38)
+  arestas: (24,38)
+
+subcaminho 1880 n°vertices (2): (57->36)
+  arestas: (57,36)
+
+subcaminho 1881 n°vertices (2): (5->44)
+  arestas: (5,44)
+
+subcaminho 1882 n°vertices (2): (23->35)
+  arestas: (23,35)
+
+subcaminho 1883 n°vertices (2): (8->1)
+  arestas: (8,1)
+
+subcaminho 1884 n°vertices (5): (12->22->37->17->33)
+  arestas: (12,22), (22,37), (37,17), (17,33)
+
+subcaminho 1885 n°vertices (3): (38->29->36)
+  arestas: (38,29), (29,36)
+
+subcaminho 1886 n°vertices (2): (20->28)
+  arestas: (20,28)
+
+subcaminho 1887 n°vertices (2): (38->19)
+  arestas: (38,19)
+
+subcaminho 1888 n°vertices (2): (16->34)
+  arestas: (16,34)
+
+subcaminho 1889 n°vertices (2): (47->36)
+  arestas: (47,36)
+
+subcaminho 1890 n°vertices (2): (43->38)
+  arestas: (43,38)
+
+subcaminho 1891 n°vertices (2): (10->28)
+  arestas: (10,28)
+
+subcaminho 1892 n°vertices (2): (3->39)
+  arestas: (3,39)
+
+subcaminho 1893 n°vertices (2): (24->21)
+  arestas: (24,21)
+
+subcaminho 1894 n°vertices (2): (57->19)
+  arestas: (57,19)
+
+subcaminho 1895 n°vertices (2): (2->36)
+  arestas: (2,36)
+
+subcaminho 1896 n°vertices (2): (16->29)
+  arestas: (16,29)
+
+subcaminho 1897 n°vertices (3): (48->32->34)
+  arestas: (48,32), (32,34)
+
+subcaminho 1898 n°vertices (2): (93->59)
+  arestas: (93,59)
+
+subcaminho 1899 n°vertices (2): (51->13)
+  arestas: (51,13)
+
+subcaminho 1900 n°vertices (2): (37->11)
+  arestas: (37,11)
+
+subcaminho 1901 n°vertices (2): (38->2)
+  arestas: (38,2)
+
+subcaminho 1902 n°vertices (2): (47->19)
+  arestas: (47,19)
+
+subcaminho 1903 n°vertices (2): (10->23)
+  arestas: (10,23)
+
+subcaminho 1904 n°vertices (2): (119->79)
+  arestas: (119,79)
+
+subcaminho 1905 n°vertices (2): (6->25)
+  arestas: (6,25)
+
+subcaminho 1906 n°vertices (5): (36->30->46->7->17)
+  arestas: (36,30), (30,46), (46,7), (7,17)
+
+subcaminho 1907 n°vertices (2): (15->61)
+  arestas: (15,61)
+
+subcaminho 1908 n°vertices (2): (171->59)
+  arestas: (171,59)
+
+subcaminho 1909 n°vertices (2): (79->80)
+  arestas: (79,80)
+
+subcaminho 1910 n°vertices (2): (2->31)
+  arestas: (2,31)
+
+subcaminho 1911 n°vertices (2): (3->22)
+  arestas: (3,22)
+
+subcaminho 1912 n°vertices (2): (17->15)
+  arestas: (17,15)
+
+subcaminho 1913 n°vertices (2): (51->8)
+  arestas: (51,8)
+
+subcaminho 1914 n°vertices (2): (29->42)
+  arestas: (29,42)
+
+subcaminho 1915 n°vertices (3): (27->49->28)
+  arestas: (27,49), (49,28)
+
+subcaminho 1916 n°vertices (2): (16->12)
+  arestas: (16,12)
+
+subcaminho 1917 n°vertices (2): (22->34)
+  arestas: (22,34)
+
+subcaminho 1918 n°vertices (7): (39->50->13->22->41->48->18)
+  arestas: (39,50), (50,13), (13,22), (22,41), (41,48), (48,18)
+
+subcaminho 1919 n°vertices (2): (47->14)
+  arestas: (47,14)
+
+subcaminho 1920 n°vertices (2): (64->91)
+  arestas: (64,91)
+
+subcaminho 1921 n°vertices (2): (13->5)
+  arestas: (13,5)
+
+subcaminho 1922 n°vertices (2): (43->16)
+  arestas: (43,16)
+
+subcaminho 1923 n°vertices (2): (115->80)
+  arestas: (115,80)
+
+subcaminho 1924 n°vertices (2): (9->11)
+  arestas: (9,11)
+
+subcaminho 1925 n°vertices (4): (17->7->40->43)
+  arestas: (17,7), (7,40), (40,43)
+
+subcaminho 1926 n°vertices (2): (15->44)
+  arestas: (15,44)
+
+subcaminho 1927 n°vertices (4): (34->51->49->27)
+  arestas: (34,51), (51,49), (49,27)
+
+subcaminho 1928 n°vertices (2): (2->14)
+  arestas: (2,14)
+
+subcaminho 1929 n°vertices (2): (11->50)
+  arestas: (11,50)
+
+subcaminho 1930 n°vertices (2): (29->37)
+  arestas: (29,37)
+
+subcaminho 1931 n°vertices (4): (45->9->5->43)
+  arestas: (45,9), (9,5), (5,43)
+
+subcaminho 1932 n°vertices (2): (26->15)
+  arestas: (26,15)
+
+subcaminho 1933 n°vertices (2): (53->38)
+  arestas: (53,38)
+
+subcaminho 1934 n°vertices (3): (36->21->7)
+  arestas: (36,21), (21,7)
+
+subcaminho 1935 n°vertices (2): (31->53)
+  arestas: (31,53)
+
+subcaminho 1936 n°vertices (2): (40->8)
+  arestas: (40,8)
+
+subcaminho 1937 n°vertices (3): (30->51->37)
+  arestas: (30,51), (51,37)
+
+subcaminho 1938 n°vertices (4): (18->46->51->12)
+  arestas: (18,46), (46,51), (51,12)
+
+subcaminho 1939 n°vertices (2): (15->39)
+  arestas: (15,39)
+
+subcaminho 1940 n°vertices (2): (45->46)
+  arestas: (45,46)
+
+subcaminho 1941 n°vertices (2): (33->30)
+  arestas: (33,30)
+
+subcaminho 1942 n°vertices (3): (46->43->10)
+  arestas: (46,43), (43,10)
+
+subcaminho 1943 n°vertices (2): (30->8)
+  arestas: (30,8)
+
+subcaminho 1944 n°vertices (2): (5->39)
+  arestas: (5,39)
+
+subcaminho 1945 n°vertices (2): (67->100)
+  arestas: (67,100)
+
+subcaminho 1946 n°vertices (2): (4->44)
+  arestas: (4,44)
+
+subcaminho 1947 n°vertices (3): (46->14->11)
+  arestas: (46,14), (14,11)
+
+subcaminho 1948 n°vertices (2): (31->48)
+  arestas: (31,48)
+
+subcaminho 1949 n°vertices (2): (13->34)
+  arestas: (13,34)
+
+subcaminho 1950 n°vertices (2): (58->59)
+  arestas: (58,59)
+
+subcaminho 1951 n°vertices (2): (12->31)
+  arestas: (12,31)
+
+subcaminho 1952 n°vertices (2): (45->29)
+  arestas: (45,29)
+
+subcaminho 1953 n°vertices (2): (8->33)
+  arestas: (8,33)
+
+subcaminho 1954 n°vertices (3): (39->43->34)
+  arestas: (39,43), (43,34)
+
+subcaminho 1955 n°vertices (2): (139->59)
+  arestas: (139,59)
+
+subcaminho 1956 n°vertices (2): (53->16)
+  arestas: (53,16)
+
+subcaminho 1957 n°vertices (2): (49->22)
+  arestas: (49,22)
+
+subcaminho 1958 n°vertices (2): (46->15)
+  arestas: (46,15)
+
+subcaminho 1959 n°vertices (3): (24->30->33)
+  arestas: (24,30), (30,33)
+
+subcaminho 1960 n°vertices (2): (9->23)
+  arestas: (9,23)
+
+subcaminho 1961 n°vertices (2): (12->14)
+  arestas: (12,14)
+
+subcaminho 1962 n°vertices (3): (15->34->7)
+  arestas: (15,34), (34,7)
+
+subcaminho 1963 n°vertices (2): (57->9)
+  arestas: (57,9)
+
+subcaminho 1964 n°vertices (2): (41->53)
+  arestas: (41,53)
+
+subcaminho 1965 n°vertices (2): (50->8)
+  arestas: (50,8)
+
+subcaminho 1966 n°vertices (2): (16->7)
+  arestas: (16,7)
+
+subcaminho 1967 n°vertices (2): (54->136)
+  arestas: (54,136)
+
+subcaminho 1968 n°vertices (2): (12->9)
+  arestas: (12,9)
+
+subcaminho 1969 n°vertices (2): (43->11)
+  arestas: (43,11)
+
+subcaminho 1970 n°vertices (2): (21->45)
+  arestas: (21,45)
+
+subcaminho 1971 n°vertices (6): (35->41->42->40->48->28)
+  arestas: (35,41), (41,42), (42,40), (40,48), (48,28)
+
+subcaminho 1972 n°vertices (6): (27->22->36->34->19->50)
+  arestas: (27,22), (22,36), (36,34), (34,19), (19,50)
+
+subcaminho 1973 n°vertices (2): (48->49)
+  arestas: (48,49)
+
+subcaminho 1974 n°vertices (2): (36->10)
+  arestas: (36,10)
+
+subcaminho 1975 n°vertices (2): (39->1)
+  arestas: (39,1)
+
+subcaminho 1976 n°vertices (2): (47->46)
+  arestas: (47,46)
+
+subcaminho 1977 n°vertices (2): (2->9)
+  arestas: (2,9)
+
+subcaminho 1978 n°vertices (2): (44->43)
+  arestas: (44,43)
+
+subcaminho 1979 n°vertices (2): (7->47)
+  arestas: (7,47)
+
+subcaminho 1980 n°vertices (2): (16->2)
+  arestas: (16,2)
+
+subcaminho 1981 n°vertices (2): (40->45)
+  arestas: (40,45)
+
+subcaminho 1982 n°vertices (2): (3->49)
+  arestas: (3,49)
+
+subcaminho 1983 n°vertices (2): (67->68)
+  arestas: (67,68)
+
+subcaminho 1984 n°vertices (2): (21->40)
+  arestas: (21,40)
+
+subcaminho 1985 n°vertices (2): (28->6)
+  arestas: (28,6)
+
+subcaminho 1986 n°vertices (2): (22->12)
+  arestas: (22,12)
+
+subcaminho 1987 n°vertices (2): (149->59)
+  arestas: (149,59)
+
+subcaminho 1988 n°vertices (2): (45->41)
+  arestas: (45,41)
+
+subcaminho 1989 n°vertices (2): (30->45)
+  arestas: (30,45)
+
+subcaminho 1990 n°vertices (3): (30->36->46)
+  arestas: (30,36), (36,46)
+
+subcaminho 1991 n°vertices (2): (2->4)
+  arestas: (2,4)
+
+subcaminho 1992 n°vertices (2): (26->47)
+  arestas: (26,47)
+
+subcaminho 1993 n°vertices (2): (35->2)
+  arestas: (35,2)
+
+subcaminho 1994 n°vertices (2): (44->38)
+  arestas: (44,38)
+
+subcaminho 1995 n°vertices (2): (7->42)
+  arestas: (7,42)
+
+subcaminho 1996 n°vertices (2): (41->31)
+  arestas: (41,31)
+
+subcaminho 1997 n°vertices (2): (168->59)
+  arestas: (168,59)
+
+subcaminho 1998 n°vertices (2): (31->43)
+  arestas: (31,43)
+
+subcaminho 1999 n°vertices (2): (21->23)
+  arestas: (21,23)
+
+subcaminho 2000 n°vertices (2): (27->45)
+  arestas: (27,45)
+
+subcaminho 2001 n°vertices (2): (27->33)
+  arestas: (27,33)
+
+subcaminho 2002 n°vertices (2): (18->1)
+  arestas: (18,1)
+
+subcaminho 2003 n°vertices (2): (44->33)
+  arestas: (44,33)
+
+subcaminho 2004 n°vertices (2): (45->24)
+  arestas: (45,24)
+
+subcaminho 2005 n°vertices (2): (14->3)
+  arestas: (14,3)
+
+subcaminho 2006 n°vertices (2): (41->26)
+  arestas: (41,26)
+
+subcaminho 2007 n°vertices (2): (44->21)
+  arestas: (44,21)
+
+subcaminho 2008 n°vertices (2): (4->34)
+  arestas: (4,34)
+
+subcaminho 2009 n°vertices (2): (37->32)
+  arestas: (37,32)
+
+subcaminho 2010 n°vertices (2): (16->61)
+  arestas: (16,61)
+
+subcaminho 2011 n°vertices (2): (102->269)
+  arestas: (102,269)
+
+subcaminho 2012 n°vertices (2): (31->26)
+  arestas: (31,26)
+
+subcaminho 2013 n°vertices (5): (48->40->46->37->13)
+  arestas: (48,40), (40,46), (46,37), (37,13)
+
+subcaminho 2014 n°vertices (2): (45->7)
+  arestas: (45,7)
+
+subcaminho 2015 n°vertices (2): (50->45)
+  arestas: (50,45)
+
+subcaminho 2016 n°vertices (2): (13->49)
+  arestas: (13,49)
+
+subcaminho 2017 n°vertices (2): (4->17)
+  arestas: (4,17)
+
+subcaminho 2018 n°vertices (2): (46->47)
+  arestas: (46,47)
+
+subcaminho 2019 n°vertices (2): (37->15)
+  arestas: (37,15)
+
+subcaminho 2020 n°vertices (3): (46->53->27)
+  arestas: (46,53), (53,27)
+
+subcaminho 2021 n°vertices (2): (31->21)
+  arestas: (31,21)
+
+subcaminho 2022 n°vertices (2): (42->53)
+  arestas: (42,53)
+
+subcaminho 2023 n°vertices (2): (6->29)
+  arestas: (6,29)
+
+subcaminho 2024 n°vertices (2): (31->9)
+  arestas: (31,9)
+
+subcaminho 2025 n°vertices (2): (24->20)
+  arestas: (24,20)
+
+subcaminho 2026 n°vertices (2): (36->47)
+  arestas: (36,47)
+
+subcaminho 2027 n°vertices (2): (45->2)
+  arestas: (45,2)
+
+subcaminho 2028 n°vertices (2): (32->49)
+  arestas: (32,49)
+
+subcaminho 2029 n°vertices (2): (23->17)
+  arestas: (23,17)
+
+subcaminho 2030 n°vertices (2): (17->42)
+  arestas: (17,42)
 
 ------------------------------------------------------------
 
