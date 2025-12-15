@@ -430,6 +430,7 @@ void save_and_reset_fragment(Path *frag, ArrayPaths *chosenPaths) {
     // Only save if there is at least 1 edge (i.e., >= 2 vertices)
     if (frag->head != NULL && frag->length >= 2) {
         ensure_arrayPaths_capacity(chosenPaths);
+        frag->id = chosenPaths->path_stored;
         chosenPaths->paths[chosenPaths->path_stored] = *frag; // Copy struct
         chosenPaths->path_stored++;
     } else {
@@ -466,6 +467,11 @@ void fragmentation(int k, DataSet * ds, int ** coverageMatrix, ArrayPaths * chos
 
             // Check if edge (u, v) is already covered
             // Adjust here if the graph is undirected: (matrix[u][v] || matrix[v][u])
+            if (u < 0 || u > ds->total_vertices || v < 0 || v > ds->total_vertices) {
+                fprintf(stderr, "Índice de vértice inválido: (%d, %d)\n", u, v);
+                currNode = currNode->next;
+                continue;
+            }
             int is_covered = (coverageMatrix[u][v] == 1); 
 
             if (!is_covered) {
@@ -497,6 +503,7 @@ void fragmentation(int k, DataSet * ds, int ** coverageMatrix, ArrayPaths * chos
                     // We reached size k.
                     // Save this piece.
                     ensure_arrayPaths_capacity(chosenPaths);    ///
+                    currentFragment.id = chosenPaths->path_stored;
                     chosenPaths->paths[chosenPaths->path_stored] = currentFragment;
                     chosenPaths->path_stored++;
 
