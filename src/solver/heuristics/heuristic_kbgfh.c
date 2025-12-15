@@ -1,9 +1,10 @@
 // heuristic_kbgfh.c
 // Compile: gcc -O2 -std=c11 -o bin/heuristic_kbgfh src/solver/heuristics/heuristic_kbgfh.c
+// gcc -O2 -std=c11 -Wall -Wextra -pedantic -o bin/heuristic_kbgfh src/solver/heuristics/heuristic_kbgfh.c
 // Usage: ./bin/heuristic_kbgfh [input_file] k 
 // ./bin/heuristic_kbgfh results/py_parsed_data/teste_dani_c_data.txt 3
 
-// Default input_file: int-exact_cover/results/py_parsed_data/teste_dani_c_data.txt
+// Default input_file: results/py_parsed_data/teste_dani_c_data.txt
 // Example: ./heuristic_kbgfh int-exact_cover/results/py_parsed_data/teste_dani_c_data.txt 3
 // ./bin/heuristic_kbgfh results/py_parsed_data/edges_to_ports_202202100000.anon_c_data.txt 25
 
@@ -12,6 +13,9 @@
 #include <stdlib.h>     // malloc, realloc, free, exit
 #include <string.h>     // strcpy, strtok, strlen, strcmp
 #include <time.h>       // measuring runtime and timestamp for output filenames
+#include <sys/stat.h>   // mkdir
+#include <sys/types.h>
+#include <errno.h>
 
 #define MAX_LINE 4096
 
@@ -53,6 +57,8 @@ typedef struct {
     int total_paths;
     ArrayEdges arrayEdges;
     ArrayPaths arrayPaths;      // Paths Pre Selected
+    int max_label;            // maximum raw label found in input (before remapping)
+    int * index_to_label;     // map from compact index -> original label
 } DataSet;
 
 
@@ -76,8 +82,16 @@ Node * create_node(int vertex){
 }
 
 ArrayPaths * init_ArrayPaths(){
-    ArrayPaths * ap;
+    ArrayPaths * ap = malloc(sizeof(ArrayPaths));
+    if (!ap) die("Memory allocation failed for ArrayPaths");
     ap->path_capacity = 64;
+    ap->path_stored = 0;
+    ap->paths = malloc(ap->path_capacity * sizeof(Path));
+    if (!ap->paths) {
+        free(ap);
+        die("Memory allocation failed for ArrayPaths.paths");
+    }
+    return ap;
 }
 
 // Initialize DataSet
@@ -223,8 +237,8 @@ void parse_input_file(const char *filename, DataSet *ds){
 
         while (vcur != NULL) {
             int vertex = atoi(vcur);
-            Node *new_node = create_node(atoi(vcur));
-            
+            Node *new_node = create_node(vertex);
+
             if (current_path->head == NULL) {
                 // First node
                 current_path->head = new_node;
@@ -268,6 +282,8 @@ void free_dataset(DataSet *ds) {
         free(ds->arrayPaths.paths);
     }
 
+        if (ds->index_to_label) free(ds->index_to_label);
+
     free(ds);
 }
 
@@ -302,81 +318,33 @@ void free_solutions(ArrayPaths *ap) {
     free(ap);
 }
 
-// int fragmentation(int k, DataSet * ds, int ** coverageMatrix, ArrayPaths * chosenPaths, int num_coverEdges){
-    
-//     // First choise of path
-//     Path pcur = ds->arrayPaths.paths[0];
-//     if (pcur.length <= k){
-//         chosenPaths->path_stored++;
-//         ensure_arrayPaths_capacity(chosenPaths);
-//         chosenPaths->paths[0] = pcur;
-
-//         Node * nodeCur = pcur.head;
-//         for(int i = 0; i<pcur.length-1; i++){
-//             int vi = nodeCur->vertex;
-//             nodeCur = nodeCur->next;
-//             int vf = nodeCur->vertex;
-//             coverageMatrix[vi][vf] = 1;
-//             num_coverEdges++;
-//         }
-//     } else {
-//         Node * nodeCur = pcur.head;
-//         for(int i = 0; i<k; i++){
-//             chosenPaths->path_stored++;
-//             ensure_arrayPaths_capacity(chosenPaths);
-        
-//             chosenPaths->paths[0].head = nodeCur;
-
-//             int vi = nodeCur->vertex;
-//             nodeCur = nodeCur->next;
-//             int vf = nodeCur->vertex;
-//             coverageMatrix[vi][vf] = 1;
-//             num_coverEdges++;
-//         }
-//     }
-//     int path_idx = 1;
-//     // Chosing the paths from the second one onwards
-//     while(num_coverEdges != ds->total_edges){
-//         pcur = ds->arrayPaths.paths[path_idx];
-
-//         // Util variable: At least one vertex of the path was add? 1:0
-//         int util = 0;
-
-//         // Vertex Iteration
-//         Node * nodeCur = pcur.head;
-//         for(int i = 0; i<k; i++){
-//             int vi = nodeCur->vertex;
-//             nodeCur = nodeCur->next;
-//             int vf = nodeCur->vertex;
-//             if (coverageMatrix[vi][vf] == 0){
-//                 if (util==0){
-//                     chosenPaths->path_stored++;
-//                     ensure_arrayPaths_capacity(chosenPaths);
-//                     util++;
-//                 }
-//                 coverageMatrix[vi][vf] == 1;
-//                 num_coverEdges++;
-//                 chosenPaths->paths[chosenPaths->path_stored].tail->next = nodeCur->prev;
-//                 chosenPaths->paths[chosenPaths->path_stored].tail
-//             } else{
-//                 chosenPaths->path_stored++;
-//                 ensure_arrayPaths_capacity(chosenPaths);
-//                 nodeCur = nodeCur->next;
-//             }           
-//         }
-        
-
-//         path_idx++;
-//     }
-
-// }
-
 void write_solution(const char *directory, DataSet *ds, ArrayPaths *solution, double time_taken, int k) {
     char filepath[512];
     
     // Constrói o caminho: results/heuristic/NOME_INSTANCIA_KBGFH_k3.txt
     snprintf(filepath, sizeof(filepath), "%s/%s_KBGFH_k%d.txt", directory, ds->instance_name, k);
     
+    // Ensure directory exists (create recursively if needed)
+    char tmpdir[512];
+    snprintf(tmpdir, sizeof(tmpdir), "%s", directory);
+    // iterate through path components and mkdir progressively
+    for (char *p = tmpdir + 1; *p; ++p) {
+        if (*p == '/') {
+            *p = '\0';
+            if (mkdir(tmpdir, 0755) != 0) {
+                if (errno != EEXIST) {
+                    fprintf(stderr, "Warning: could not create directory %s (errno=%d)\n", tmpdir, errno);
+                    break;
+                }
+            }
+            *p = '/';
+        }
+    }
+    // final attempt for full path
+    if (mkdir(directory, 0755) != 0 && errno != EEXIST) {
+        fprintf(stderr, "Warning: could not create directory %s (errno=%d)\n", directory, errno);
+    }
+
     FILE *f = fopen(filepath, "w");
     if (!f) { 
         fprintf(stderr, "Warning: Could not write to %s. Check if directory exists.\n", filepath); 
@@ -411,7 +379,9 @@ void write_solution(const char *directory, DataSet *ds, ArrayPaths *solution, do
         
         Node *curr = p->head;
         while(curr) {
-            fprintf(f, "%d", curr->vertex);
+            int original_label = curr->vertex;
+            if (ds->index_to_label) original_label = ds->index_to_label[curr->vertex];
+            fprintf(f, "%d", original_label);
             if(curr->next) fprintf(f, "->");
             curr = curr->next;
         }
@@ -547,7 +517,7 @@ void fragmentation(int k, DataSet * ds, int ** coverageMatrix, ArrayPaths * chos
 
 int main(int argc, char **argv){
 
-    const char *default_input = "int-exact_cover/results/py_parsed_data/teste_dani_c_data.txt";
+    const char *default_input = "results/py_parsed_data/teste_dani_c_data.txt";
     const char *input_file = (argc >= 2) ? argv[1] : default_input;
     if (argc < 3) {
         fprintf(stderr, "Usage: %s [input_file] k\nDefault input_file: %s\n", argv[0], default_input);
@@ -563,6 +533,55 @@ int main(int argc, char **argv){
 
     // 2. Parse
     parse_input_file(input_file, ds);
+
+    // After parsing, remap arbitrary raw labels to compact indices 1..N.
+    // This saves memory and guarantees the coverage matrix uses the
+    // minimal number of rows/cols. We also keep a reverse map so outputs
+    // can be printed with original labels.
+    int raw_max_label = ds->total_vertices;
+    // First compute actual maximum label found in parsed paths
+    for (int pi = 0; pi < ds->arrayPaths.path_stored; ++pi) {
+        Node *n = ds->arrayPaths.paths[pi].head;
+        while (n) {
+            if (n->vertex > raw_max_label) raw_max_label = n->vertex;
+            n = n->next;
+        }
+    }
+
+    // Build label -> index map (temporary)
+    int *label_to_index = calloc(raw_max_label + 1, sizeof(int));
+    if (!label_to_index) die("Memory allocation failed for label_to_index");
+
+    // index_to_label will map compact index -> original label (1-based)
+    int next_index = 0;
+    // allocate roughly raw_max_label+1 initially (we reallocate to exact size later)
+    int *temp_index_to_label = malloc((raw_max_label + 1) * sizeof(int));
+    if (!temp_index_to_label) die("Memory allocation failed for index_to_label temp");
+
+    for (int pi = 0; pi < ds->arrayPaths.path_stored; ++pi) {
+        Node *n = ds->arrayPaths.paths[pi].head;
+        while (n) {
+            int lab = n->vertex;
+            if (label_to_index[lab] == 0) {
+                next_index++;
+                label_to_index[lab] = next_index;
+                temp_index_to_label[next_index] = lab;
+            }
+            // rewrite node to compact index
+            n->vertex = label_to_index[lab];
+            n = n->next;
+        }
+    }
+
+    // Shrink index_to_label to exact size and store in dataset
+    ds->index_to_label = malloc((next_index + 1) * sizeof(int));
+    if (!ds->index_to_label) die("Memory allocation failed for ds->index_to_label");
+    for (int i = 1; i <= next_index; ++i) ds->index_to_label[i] = temp_index_to_label[i];
+    ds->max_label = raw_max_label;
+    ds->total_vertices = next_index; // compacted vertex count
+
+    free(label_to_index);
+    free(temp_index_to_label);
 
     // Output stats to verify
     printf("Instance: %s\n", ds->instance_name);
@@ -599,7 +618,7 @@ int main(int argc, char **argv){
     printf("Heuristic Completed. Subpaths chosen: %d\n", chosenPaths->path_stored);
 
     // 5. Write Results
-    write_solution("int-exact_cover/results/heuristic", ds, chosenPaths, time_taken, k);
+    write_solution("results/heuristic", ds, chosenPaths, time_taken, k);
 
     // 6. Cleanup
     free_coverageMatrix(coverageMatrix, ds->total_vertices);
